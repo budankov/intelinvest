@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="390" height="331" viewBox="0 0 390 331">
+    <defs>
+        <path id="a" d="M50 82h290v193H50z"/>
+        <filter id="n" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <mask id="o" width="290" height="193" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <circle id="b" cx="195" cy="91" r="3"/>
+        <mask id="p" width="6" height="6" x="0" y="0" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <path id="c" d="M20 273h350v14H20z"/>
+        <mask id="q" width="350" height="14" x="0" y="0" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <path id="d" d="M170 273h50v8h-50z"/>
+        <mask id="r" width="50" height="8" x="0" y="0" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+        <rect id="e" width="260" height="168" x="65" y="97" rx="2"/>
+        <mask id="s" width="260" height="168" x="0" y="0" fill="#fff">
+            <use xlink:href="#e"/>
+        </mask>
+        <rect id="f" width="90" height="100" x="85" y="146" rx="10"/>
+        <mask id="t" width="90" height="100" x="0" y="0" fill="#fff">
+            <use xlink:href="#f"/>
+        </mask>
+        <rect id="g" width="220" height="22" x="85" y="114" rx="5"/>
+        <mask id="u" width="220" height="22" x="0" y="0" fill="#fff">
+            <use xlink:href="#g"/>
+        </mask>
+        <rect id="h" width="120" height="100" x="185" y="146" rx="10"/>
+        <mask id="v" width="120" height="100" x="0" y="0" fill="#fff">
+            <use xlink:href="#h"/>
+        </mask>
+        <rect id="i" width="140" height="110" x="245" y="123" rx="10"/>
+        <mask id="w" width="140" height="110" x="0" y="0" fill="#fff">
+            <use xlink:href="#i"/>
+        </mask>
+        <rect id="j" width="100" height="110" rx="10"/>
+        <mask id="x" width="100" height="110" x="0" y="0" fill="#fff">
+            <use xlink:href="#j"/>
+        </mask>
+        <rect id="k" width="56" height="22" x="140" y="41" rx="6"/>
+        <mask id="y" width="56" height="22" x="0" y="0" fill="#fff">
+            <use xlink:href="#k"/>
+        </mask>
+        <circle id="l" cx="141" cy="42" r="5"/>
+        <mask id="z" width="10" height="10" x="0" y="0" fill="#fff">
+            <use xlink:href="#l"/>
+        </mask>
+        <circle id="m" cx="20" cy="247" r="7"/>
+        <mask id="A" width="14" height="14" x="0" y="0" fill="#fff">
+            <use xlink:href="#m"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+        <path stroke="#BECBDC" stroke-dasharray="4" stroke-width="2" d="M273 0c-49.706 0-90 40.294-90 90s40.294 90 90 90 90-40.294 90-90"/>
+        <use fill="#F6F9FC" xlink:href="#a"/>
+        <use fill="#000" filter="url(#n)" xlink:href="#a"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#o)" xlink:href="#a"/>
+        <use fill="#F6F9FC" stroke="#577399" stroke-width="4" mask="url(#p)" xlink:href="#b"/>
+        <rect width="390" height="18" y="281" fill="#EBF1FA" rx="8"/>
+        <rect width="360" height="8" x="15" y="283" fill="#BECBDC" opacity=".5" rx="4"/>
+        <use fill="#FFF" stroke="#577399" stroke-width="4" mask="url(#q)" xlink:href="#c"/>
+        <use fill="#EBF1FA" stroke="#577399" stroke-width="4" mask="url(#r)" xlink:href="#d"/>
+        <use fill="#EBF1FA" stroke="#577399" stroke-width="4" mask="url(#s)" xlink:href="#e"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#t)" opacity=".3" xlink:href="#f"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#u)" opacity=".3" xlink:href="#g"/>
+        <path stroke="#FFABCB" stroke-dasharray="4,2" stroke-width="2" d="M168 111V60"/>
+        <path stroke="#BECBDC" stroke-linecap="square" stroke-width="2" d="M140 116.5v17.03M194 116.5v17.03M250 116.5v17.03"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#v)" opacity=".3" xlink:href="#h"/>
+        <use fill="#FFF" stroke="#577399" stroke-width="4" mask="url(#w)" xlink:href="#i"/>
+        <path fill="#CEDDF9" d="M269 176h5v39h-5z"/>
+        <path fill="#ABE808" d="M276 163h5v52h-5z"/>
+        <path fill="#EBF1FA" d="M265 139h38v6h-38zM349 139h16v6h-16z"/>
+        <path fill="#CEDDF9" d="M289 186h5v29h-5z"/>
+        <path fill="#ABE808" d="M296 176h5v39h-5z"/>
+        <path fill="#CEDDF9" d="M329 182h5v33h-5z"/>
+        <path fill="#ABE808" d="M336 176h5v39h-5z"/>
+        <path fill="#CEDDF9" d="M349 182h5v33h-5z"/>
+        <path fill="#ABE808" d="M356 156h5v59h-5z"/>
+        <path fill="#CEDDF9" d="M309 190h5v25h-5z"/>
+        <path fill="#ABE808" d="M316 186h5v29h-5z"/>
+        <g transform="translate(25 112)">
+            <use fill="#FFF" stroke="#577399" stroke-width="4" mask="url(#x)" xlink:href="#j"/>
+            <path fill="#ABE808" d="M16 30h68v10H16z"/>
+            <path fill="#EBF1FA" d="M16 16h38v6H16z"/>
+            <path fill="#ABE808" d="M16 48h68v10H16z"/>
+            <path fill="#FFABCB" d="M16 66h68v10H16z"/>
+            <path fill="#ABE808" d="M16 84h68v10H16z"/>
+        </g>
+        <use fill="#FFF" stroke="#577399" stroke-width="4" mask="url(#y)" xlink:href="#k"/>
+        <use fill="#F6F9FC" stroke="#577399" stroke-width="4" mask="url(#z)" xlink:href="#l"/>
+        <rect width="24" height="6" x="148" y="49" fill="#EBF1FA" rx="3"/>
+        <rect width="12" height="6" x="176" y="49" fill="#ABE808" rx="3"/>
+        <use stroke="#CEDDF9" stroke-width="6" mask="url(#A)" xlink:href="#m"/>
+        <circle cx="262" cy="39" r="9" fill="#CEDDF9"/>
+        <path stroke="#EBF1FA" stroke-linecap="round" stroke-width="5" d="M317.5 34.5v20M307.5 44.5h20M87.5 24.5v20M77.5 34.5h20"/>
+        <circle cx="118" cy="325" r="5" fill="#CEDEF9"/>
+    </g>
+</svg>

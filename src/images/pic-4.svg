@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="378" height="330" viewBox="0 0 378 330">
+    <defs>
+        <circle id="a" cx="45" cy="45" r="45"/>
+        <filter id="d" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <mask id="e" width="94" height="94" x="-2" y="-2">
+            <path fill="#fff" d="M-2-2h94v94H-2z"/>
+            <use xlink:href="#a"/>
+        </mask>
+        <path id="g" d="M25.379 84.47s1.843-12.048 17.919-12.048c0 0 3.886.185 3.886 0 18.484 0 18.114 12.692 18.114 12.692v10.994h-40.2l.28-11.638z"/>
+        <filter id="h" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <path id="i" d="M61.933 53c-.758 8.41-7.824 15-16.433 15-8.607 0-15.675-6.587-16.433-15H27.51A2.499 2.499 0 0 1 25 50.5c0-1.38 1.112-2.5 2.51-2.5H29V28h33v20h1.49c1.387 0 2.51 1.11 2.51 2.5 0 1.38-1.112 2.5-2.51 2.5h-1.557z"/>
+        <filter id="j" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="5" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.807843137 0 0 0 0 0.866666667 0 0 0 0 0.976470588 0 0 0 1 0"/>
+        </filter>
+        <path id="k" d="M29.514 35.675s5.608 4.389 10.187 4.467c7.102.12 10.478-7.004 10.478-7.004s1.903 2.964 5.589 2.964c3.685 0 6.232-.899 6.232-.899v14.468s3.306-5.56 3.306-18.832c0-13.27-9.154-15.09-12.465-15.09-3.31 0-5.5 2.196-5.5 2.196s-2.436-3.116-9.85-3.116c-7.412 0-12.908 5.392-12.908 12.685S26.948 37.7 26.948 37.7v11.985h3.26l-.694-14.01z"/>
+        <filter id="l" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="b" cx="35" cy="35" r="35"/>
+        <filter id="m" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <mask id="n" width="74" height="74" x="-2" y="-2">
+            <path fill="#fff" d="M-2-2h74v74H-2z"/>
+            <use xlink:href="#b"/>
+        </mask>
+        <path id="p" d="M19.74 65.699s1.432-9.37 13.936-9.37c0 0 3.022.143 3.022 0 14.377 0 14.089 9.87 14.089 9.87v8.552H19.521l.218-9.052z"/>
+        <filter id="q" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <path id="r" d="M48.17 41.222c-.59 6.541-6.085 11.667-12.781 11.667-6.695 0-12.192-5.123-12.781-11.667h-1.229a1.935 1.935 0 0 1-1.935-1.944c0-1.074.866-1.945 1.935-1.945h1.177V21.778h25.666v15.555H49.4c1.068 0 1.934.863 1.934 1.945a1.939 1.939 0 0 1-1.934 1.944h-1.23z"/>
+        <filter id="s" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="5" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <path id="t" d="M22.955 27.747s4.362 3.414 7.923 3.474c5.525.094 8.15-5.447 8.15-5.447s1.48 2.305 4.347 2.305c2.866 0 4.847-.699 4.847-.699v11.253s2.572-4.325 2.572-14.647-7.12-11.737-9.695-11.737-4.279 1.708-4.279 1.708-1.894-2.423-7.66-2.423-10.04 4.193-10.04 9.866c0 5.672 1.84 7.923 1.84 7.923v9.322h2.535l-.54-10.898z"/>
+        <filter id="u" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="c" cx="46" cy="39" r="35"/>
+        <filter id="v" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <mask id="w" width="74" height="74" x="-2" y="-2">
+            <path fill="#fff" d="M9 2h74v74H9z"/>
+            <use xlink:href="#c"/>
+        </mask>
+        <path id="y" d="M30.74 69.699s1.432-9.37 13.936-9.37c0 0 3.022.143 3.022 0 14.377 0 14.089 9.87 14.089 9.87v8.552H30.521l.218-9.052z"/>
+        <filter id="z" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <path id="A" d="M59.17 45.222c-.59 6.541-6.085 11.667-12.781 11.667-6.695 0-12.192-5.123-12.781-11.667h-1.229a1.935 1.935 0 0 1-1.935-1.944c0-1.074.866-1.945 1.935-1.945h1.177V25.778h25.666v15.555H60.4c1.068 0 1.934.863 1.934 1.945a1.939 1.939 0 0 1-1.934 1.944h-1.23z"/>
+        <filter id="B" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="5" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.807843137 0 0 0 0 0.866666667 0 0 0 0 0.976470588 0 0 0 1 0"/>
+        </filter>
+        <path id="C" d="M33.955 31.747s5.558 2.098 9.12 2.159c5.523.094 10.06-3.584 10.06-3.584s.36 2.053 3.226 2.053c2.867 0 2.861-.995 2.861-.995v11.253s2.572-4.325 2.572-14.647-5.433-15.04-14.799-15.04c-19.365 0-15.035 20.377-15.035 20.377v9.322h2.535l-.54-10.898z"/>
+        <filter id="D" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#F6F9FC" d="M210.7 9.835c-62.303 29.943-20.971 96.202-49.934 132.517-28.962 36.314-115.174 18.538-130.608 66.444-15.433 47.906 53.273 177.396 162.071 93.683 108.799-83.713 156.414 16.788 182.256-72.69 25.842-89.476-100.235-73.74-71.866-140.886 28.37-67.146-29.614-109.01-91.918-79.068z"/>
+        <circle cx="256" cy="63" r="9" fill="#CEDDF9"/>
+        <circle cx="112" cy="288" r="4" fill="#EBF1FA"/>
+        <path stroke="#CEDDF9" stroke-linecap="round" stroke-width="5" d="M200.5 275.5v20M190.5 285.5h20"/>
+        <g stroke="#FFABCB" stroke-linecap="round" stroke-width="5">
+            <path d="M298.5 205.405v16.19M290.405 213.5h16.19"/>
+        </g>
+        <path stroke="#BECBDC" stroke-dasharray="4" stroke-width="2" d="M44.152 137.703c-91.558 43.375-16.504 172.055 32.91 136.422 49.415-35.633-10.987-49.47-17.054-77.45-15.856-73.12 117.054 33.86 149.726-28.706"/>
+        <g transform="translate(92 167)">
+            <mask id="f" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <use fill="#F6F9FC" xlink:href="#a"/>
+            <use fill="#000" filter="url(#d)" xlink:href="#a"/>
+            <use stroke="#577399" stroke-width="4" mask="url(#e)" xlink:href="#a"/>
+            <g mask="url(#f)">
+                <use fill="#CEDDF9" xlink:href="#g"/>
+                <use fill="#000" filter="url(#h)" xlink:href="#g"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#g"/>
+            </g>
+            <path fill="#FFF" stroke="#577399" stroke-width="2" d="M43 67h5v10h-5z" mask="url(#f)"/>
+            <g mask="url(#f)">
+                <use fill="#FFF" xlink:href="#i"/>
+                <use fill="#000" filter="url(#j)" xlink:href="#i"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#i"/>
+            </g>
+            <g mask="url(#f)">
+                <use fill="#CEDDF9" xlink:href="#k"/>
+                <use fill="#000" filter="url(#l)" xlink:href="#k"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#k"/>
+            </g>
+            <rect width="8" height="3" x="26" y="49" fill="#CEDDF9" mask="url(#f)" rx="1.5"/>
+            <path fill="#CEDDF9" d="M30 49h4v5.931h-2.765L30 54z" mask="url(#f)"/>
+            <path stroke="#577399" stroke-linecap="square" stroke-width="2" d="M26.5 48h3" mask="url(#f)"/>
+            <rect width="8" height="3" x="57" y="49" fill="#FFF" mask="url(#f)" rx="1.5"/>
+        </g>
+        <g transform="translate(38 73)">
+            <mask id="o" fill="#fff">
+                <use xlink:href="#b"/>
+            </mask>
+            <use fill="#EBF1FA" xlink:href="#b"/>
+            <use fill="#000" filter="url(#m)" xlink:href="#b"/>
+            <use stroke="#577399" stroke-width="4" mask="url(#n)" xlink:href="#b"/>
+            <g mask="url(#o)">
+                <use fill="#ABE808" xlink:href="#p"/>
+                <use fill="#000" filter="url(#q)" xlink:href="#p"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#p"/>
+            </g>
+            <path fill="#FFF" stroke="#577399" stroke-width="2" d="M33.444 52.111h3.889v7.778h-3.889z" mask="url(#o)"/>
+            <g mask="url(#o)">
+                <use fill="#CEDDF9" xlink:href="#r"/>
+                <use fill="#000" filter="url(#s)" xlink:href="#r"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#r"/>
+            </g>
+            <g mask="url(#o)">
+                <use fill="#CEDDF9" xlink:href="#t"/>
+                <use fill="#000" filter="url(#u)" xlink:href="#t"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#t"/>
+            </g>
+            <rect width="6.222" height="2.333" x="20.222" y="38.111" fill="#FFF" mask="url(#o)" rx="1.167"/>
+            <path fill="#FFF" d="M24 39h4v5h-4z" mask="url(#o)"/>
+            <path stroke="#577399" stroke-linecap="square" stroke-width="2" d="M20.611 37.333h2.333" mask="url(#o)"/>
+            <rect width="6.222" height="2.333" x="44.333" y="38.111" fill="#CEDDF9" mask="url(#o)" rx="1.167"/>
+        </g>
+        <g transform="translate(287 104)">
+            <path stroke="#577399" stroke-dasharray="2,10" stroke-width="10" d="M15.887 2.645A44.815 44.815 0 0 0 .366 28.759"/>
+            <mask id="x" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <use fill="#EBF1FA" xlink:href="#c"/>
+            <use fill="#000" filter="url(#v)" xlink:href="#c"/>
+            <use stroke="#577399" stroke-width="4" mask="url(#w)" xlink:href="#c"/>
+            <path fill="#CEDDF9" stroke="#577399" stroke-width="2" d="M52 34c4.489 0 12.445 2.503 12 14-.77 10.725 5 9 5 9s-.764 6.82-8 7c-7.236.18-13-2.573-13-12 0-9.295.257-18 4-18z" mask="url(#x)"/>
+            <g mask="url(#x)">
+                <use fill="#CEDDF9" xlink:href="#y"/>
+                <use fill="#000" filter="url(#z)" xlink:href="#y"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#y"/>
+            </g>
+            <path fill="#FFF" stroke="#577399" stroke-width="2" d="M44.444 56.111h3.889v7.778h-3.889z" mask="url(#x)"/>
+            <g mask="url(#x)">
+                <use fill="#FFF" xlink:href="#A"/>
+                <use fill="#000" filter="url(#B)" xlink:href="#A"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#A"/>
+            </g>
+            <path fill="#CEDDF9" d="M35 43h4v5.931h-2.765L35 48z" mask="url(#x)"/>
+            <g mask="url(#x)">
+                <use fill="#CEDDF9" xlink:href="#C"/>
+                <use fill="#000" filter="url(#D)" xlink:href="#C"/>
+                <use stroke="#577399" stroke-width="2" xlink:href="#C"/>
+            </g>
+            <rect width="6.222" height="2.333" x="31.222" y="42.111" fill="#CEDDF9" mask="url(#x)" rx="1.167"/>
+            <path stroke="#577399" stroke-linecap="square" stroke-width="2" d="M31.611 41.333h2.333" mask="url(#x)"/>
+            <rect width="6.222" height="2.333" x="55.333" y="42.111" fill="#FFF" mask="url(#x)" rx="1.167"/>
+        </g>
+        <path stroke="#577399" stroke-linecap="square" stroke-width="2" d="M82.5 143.5l25 32M110.5 109.5l187 28M183.5 207.5l118-47"/>
+        <g stroke="#BECBDC" stroke-width="2">
+            <path d="M230.019 151.746c.004-.052.003-.057.003-.062-.006-.062-.007-.068-.009-.075-.018-.06-.022-.067-.025-.074l-.034-.059-.05-.058c-.047-.038-.052-.04-.057-.043-.055-.03-.061-.031-.067-.034a1.34 1.34 0 0 0-.076-.02.835.835 0 0 0-.083-.002c-.01 0-24.729 2.695-24.729 2.695a.375.375 0 0 0-.18.676l5.984 4.364-.112 7.776 4.233-4.773 7.745 5.594a.373.373 0 0 0 .56-.154l6.87-15.654a1.87 1.87 0 0 0 .027-.097zM229.567 151.8l-15.215 10.417M229.567 151.8l-18.56 7.45"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="391" height="362" viewBox="0 0 391 362">
+    <defs>
+        <rect id="g" width="330" height="25" y="55" rx="10"/>
+        <filter id="h" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="a" cx="87" cy="336" r="10"/>
+        <mask id="i" width="20" height="20" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <circle id="b" cx="16.5" cy="67.5" r="4.5"/>
+        <mask id="j" width="9" height="9" x="0" y="0" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <circle id="c" cx="29.5" cy="67.5" r="4.5"/>
+        <mask id="k" width="9" height="9" x="0" y="0" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <circle id="d" cx="42.5" cy="67.5" r="4.5"/>
+        <mask id="l" width="9" height="9" x="0" y="0" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+        <rect id="e" width="56" height="22" x="230" y="112" rx="4"/>
+        <mask id="m" width="56" height="22" x="0" y="0" fill="#fff">
+            <use xlink:href="#e"/>
+        </mask>
+        <circle id="f" cx="245" cy="192" r="4"/>
+        <mask id="n" width="8" height="8" x="0" y="0" fill="#fff">
+            <use xlink:href="#f"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(1 2)">
+        <rect width="330" height="260" x="20" y="75" fill="#F6F9FC" rx="20"/>
+        <rect width="330" height="260" y="55" fill="#FFF" stroke="#577399" stroke-width="2" rx="10"/>
+        <use fill="#EBF1FA" xlink:href="#g"/>
+        <use fill="#000" filter="url(#h)" xlink:href="#g"/>
+        <use stroke="#577399" stroke-width="2" xlink:href="#g"/>
+        <path stroke="#EBF1FA" stroke-linecap="round" stroke-width="5" d="M60 .5v20"/>
+        <circle cx="184" cy="39" r="5" fill="#CEDEF9"/>
+        <circle cx="286" cy="353" r="7" fill="#CEDEF9"/>
+        <path stroke="#EBF1FA" stroke-linecap="round" stroke-width="5" d="M50 10.5h20"/>
+        <use stroke="#CEDDF9" stroke-width="6" mask="url(#i)" xlink:href="#a"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#j)" opacity=".3" xlink:href="#b"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#k)" opacity=".3" xlink:href="#c"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#l)" opacity=".3" xlink:href="#d"/>
+        <path fill="#EBF1FA" d="M80 205h10v86H80zM100 187h10v104h-10zM120 155h10v136h-10zM140 165h10v126h-10zM160 225h10v66h-10zM180 245h10v46h-10zM200 239h10v52h-10zM220 265h10v26h-10z"/>
+        <path fill="#CEDDF9" d="M240 239h10v52h-10z"/>
+        <path fill="#EBF1FA" d="M260 198h10v93h-10zM280 187h10v104h-10zM300 135h10v156h-10z"/>
+        <path stroke="#577399" stroke-width="2" d="M80.766 191.99L111.594 165l30.828-29.24 30.829 92.719 30.828 24.335 30.828-59.433 30.829-5.334 30.828-45.988 30.828 22.707 30.829.582 30.828-77.16"/>
+        <path fill="#EBF1FA" d="M20 100h60v6H20zM20 114h40v6H20zM20 128h50v6H20zM20 142h47v6H20z"/>
+        <g stroke="#FFF" stroke-width="2">
+            <path fill="#CEDDF9" d="M45.04 214.295A14.942 14.942 0 0 1 35.17 218c-8.285 0-15-6.716-15-15 0-4.099 1.644-7.814 4.309-10.521L35 203l10.04 11.295z"/>
+            <path fill="#ABE808" d="M50 205.263C48.909 212.473 42.685 218 35.17 218c-2.588 0-5.023-.655-7.148-1.81L35 203v-15h.17c7.515 0 13.739 5.526 14.83 12.737v4.526z"/>
+        </g>
+        <g stroke="#FFF" stroke-width="2">
+            <path fill="#CEDDF9" d="M45.19 248.839A14.962 14.962 0 0 1 50.17 260c0 8.284-6.716 15-15 15-8.285 0-15-6.716-15-15 0-4.099 1.644-7.814 4.309-10.521L35 260l10.19-11.161z"/>
+            <path fill="#FFABCB" d="M45.691 249.309A14.952 14.952 0 0 0 35 245V260l10.691-10.691z"/>
+        </g>
+        <use fill="#FFF" stroke="#577399" stroke-width="4" mask="url(#m)" xlink:href="#e"/>
+        <path fill="#ABE808" d="M238 120h22v6h-22z"/>
+        <path stroke="#FFABCB" stroke-dasharray="4,2" stroke-width="2" d="M245 188v-53.6"/>
+        <use fill="#F6F9FC" stroke="#577399" stroke-width="4" mask="url(#n)" xlink:href="#f"/>
+    </g>
+</svg>

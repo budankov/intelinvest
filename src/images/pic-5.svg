@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392" height="260" viewBox="0 0 392 260">
+    <defs>
+        <circle id="a" cx="120" cy="241" r="7"/>
+        <mask id="f" width="14" height="14" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <circle id="b" cx="12" cy="162" r="12"/>
+        <mask id="g" width="24" height="24" x="0" y="0" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <path id="c" d="M41 65c0-6.627 5.376-12 12.009-12H242l10 9 10-9h67.002C335.628 53 341 58.376 341 65v76c0 6.627-5.366 12-11.992 12H52.992C46.369 153 41 147.624 41 141V65z"/>
+        <mask id="h" width="304" height="104" x="-2" y="-2">
+            <path fill="#fff" d="M39 51h304v104H39z"/>
+            <use xlink:href="#c"/>
+        </mask>
+        <rect id="d" width="100" height="22" x="154" y="119" rx="5"/>
+        <mask id="j" width="100" height="22" x="0" y="0" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+        <rect id="e" width="300" height="50" x="41" y="173" rx="12"/>
+        <filter id="k" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dx="6" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <mask id="l" width="304" height="54" x="-2" y="-2">
+            <path fill="#fff" d="M39 171h304v54H39z"/>
+            <use xlink:href="#e"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="310" height="120" x="61" y="64" fill="#F6F9FC" rx="20"/>
+        <circle cx="153.5" cy="5.5" r="5.5" fill="#ABE808"/>
+        <path stroke="#FFABCB" stroke-linecap="round" stroke-width="5" d="M379.5 134.5v20M369.5 144.5h20"/>
+        <circle cx="193" cy="255" r="5" fill="#CEDEF9"/>
+        <use stroke="#EBF1FA" stroke-width="4" mask="url(#f)" xlink:href="#a"/>
+        <path stroke="#BECBDC" stroke-dasharray="4" stroke-width="2" d="M254 79H33.998C22.953 79 14 87.946 14 99v80c0 11.045 8.952 20 19.998 20h200.004"/>
+        <use fill="#FFF" stroke="#CEDDF9" stroke-width="6" mask="url(#g)" xlink:href="#b"/>
+        <mask id="i" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <use fill="#FFF" xlink:href="#c"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#h)" xlink:href="#c"/>
+        <path stroke="#EBF1FA" stroke-linecap="square" stroke-width="2" d="M41.5 84h208.03" mask="url(#i)"/>
+        <path fill="#FFABCB" d="M201 53h8v10h-8zM214 53h8v10h-8z" mask="url(#i)"/>
+        <g stroke="#EBF1FA" stroke-width="4" mask="url(#i)">
+            <use mask="url(#j)" xlink:href="#d"/>
+        </g>
+        <path fill="#EBF1FA" d="M53 97h58v6H53zM53 111h38v6H53zM53 133h78v6H53z" mask="url(#i)"/>
+        <path fill="#ABE808" d="M252 53h93v80h-93zM255 138h68v10h-68z" mask="url(#i)"/>
+        <text fill="#FFF" font-family="Gilroy-Semibold, Gilroy" font-size="54" font-weight="500" mask="url(#i)">
+            <tspan x="285" y="112">$</tspan>
+        </text>
+        <path stroke="#577399" stroke-dasharray="5" stroke-width="2" d="M252 66.5v87.092" mask="url(#i)"/>
+        <use fill="#F6F9FC" xlink:href="#e"/>
+        <use fill="#000" filter="url(#k)" xlink:href="#e"/>
+        <use stroke="#577399" stroke-width="4" mask="url(#l)" xlink:href="#e"/>
+        <path fill="#BECBDC" fill-opacity=".398" d="M53 190h58v16H53zM131 190h98v16h-98z"/>
+        <text fill="#D3E1FA" font-family="Gilroy-Extrabold, Gilroy" font-size="16" font-weight="600">
+            <tspan x="51" y="73">GAZP</tspan>
+        </text>
+        <path stroke="#577399" stroke-dasharray="5" stroke-width="2" d="M252 171.5v52.09"/>
+    </g>
+</svg>
