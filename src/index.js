@@ -9,7 +9,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/intelinvest">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       {/* <BrowserRouter> */}
       <App />
     </BrowserRouter>
