@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c1575ec.css",
-    "main.js": "/static/js/main.afd98c1f.js",
-    "static/css/607.8ee972d6.chunk.css": "/static/css/607.8ee972d6.chunk.css",
-    "static/js/607.187adede.chunk.js": "/static/js/607.187adede.chunk.js",
-    "index.html": "/index.html",
-    "main.0c1575ec.css.map": "/static/css/main.0c1575ec.css.map",
-    "main.afd98c1f.js.map": "/static/js/main.afd98c1f.js.map",
-    "607.8ee972d6.chunk.css.map": "/static/css/607.8ee972d6.chunk.css.map",
-    "607.187adede.chunk.js.map": "/static/js/607.187adede.chunk.js.map"
+    "main.css": "/intelinvest/static/css/main.0c1575ec.css",
+    "main.js": "/intelinvest/static/js/main.91078761.js",
+    "static/css/607.8ee972d6.chunk.css": "/intelinvest/static/css/607.8ee972d6.chunk.css",
+    "static/js/607.187adede.chunk.js": "/intelinvest/static/js/607.187adede.chunk.js",
+    "index.html": "/intelinvest/index.html",
+    "main.0c1575ec.css.map": "/intelinvest/static/css/main.0c1575ec.css.map",
+    "main.91078761.js.map": "/intelinvest/static/js/main.91078761.js.map",
+    "607.8ee972d6.chunk.css.map": "/intelinvest/static/css/607.8ee972d6.chunk.css.map",
+    "607.187adede.chunk.js.map": "/intelinvest/static/js/607.187adede.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c1575ec.css",
-    "static/js/main.afd98c1f.js"
+    "static/js/main.91078761.js"
   ]
 }
