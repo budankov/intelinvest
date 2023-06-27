@@ -4,11 +4,16 @@
   display: flex;
   justify-content: center;
   background: var(--hero-bcg);
-  padding: 10px 0px;
+  padding: 20px 0px;
+  transition: padding var(--timing);
 
   // @media screen and (min-width: 1280px) {
   //   padding: 40px 20px;
   // }
+}
+
+.header.fixed {
+  padding: 10px 0px;
 }
 
 .nav__container {
@@ -47,13 +52,6 @@
   z-index: 30;
 }
 
-.nav__item:last-child .nav__link {
-  background-color: #3b6ec9;
-  border-radius: 6px;
-  color: var(--white);
-  padding: 6px 20px;
-}
-
 .nav__link {
   font-size: 14px;
   font-family: OpenSans;
@@ -79,10 +77,22 @@
     transform: scaleX(1);
     transform-origin: left;
   }
+}
+
+.nav__link.lastItem {
+  background-color: var(--blue);
+  border-radius: 6px;
+  color: var(--white);
+  padding: 6px 20px;
 
   &:focus,
   &:hover {
-    color: #373737;
+    background-color: var(--white);
+    color: var(--blue);
+  }
+
+  &::after {
+    display: none;
   }
 }
 

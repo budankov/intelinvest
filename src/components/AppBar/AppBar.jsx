@@ -9,6 +9,7 @@ import logo from '../../images/index_logo.png';
 const AppBar = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,12 +19,23 @@ const AppBar = () => {
     setMenuOpen(false);
   };
 
+  const handleScroll = () => {
+    setIsScrolled(window.pageYOffset > 0);
+  };
+
   useEffect(() => {
     closeMenu();
   }, [location.pathname]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.fixed : ''}`}>
       <nav className={styles.nav__container}>
         <a className={styles.logo} href="/">
           <img src={logo} alt="logo" />
@@ -56,12 +68,17 @@ const AppBar = () => {
             </Link>
           </li>
           <li className={styles.nav__item}>
+            <Link className={styles.nav__link} to="/login" onClick={closeMenu}>
+              Увійти
+            </Link>
+          </li>
+          <li className={styles.nav__item}>
             <Link
-              className={styles.nav__link}
-              to="/cabinet"
+              className={`${styles.nav__link} ${styles.lastItem}`}
+              to="/register"
               onClick={closeMenu}
             >
-              Повернутися до портфелю
+              Реєстрація
             </Link>
           </li>
         </ul>
