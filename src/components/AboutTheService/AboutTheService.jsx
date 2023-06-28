@@ -1,11 +1,9 @@
-import styles from './Hero.module.scss';
+import styles from './AboutTheService.module.scss';
 
-// import heroImg from '../../images/home-bcg-img.png';
-
-const Hero = () => {
+const AboutTheService = () => {
   return (
-    <div className={styles.wrapper}>
-      <h2>Hero</h2>
+    <div id="about-the-service" lassName={styles.wrapper}>
+      <h2>AboutTheService</h2>
       <p>
         Стандартний Lorem Ipsum, використовуваний з XVI ст. "Lorem ipsum dolor
         sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -76,5 +74,4 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;
+export default AboutTheService;

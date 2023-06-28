@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import { Spin as Hamburger } from 'hamburger-react';
 
 import styles from './AppBar.module.scss';
@@ -48,38 +49,70 @@ const AppBar = () => {
         )}
         <ul className={`${styles.nav__list} ${menuOpen ? styles.open : ''}`}>
           <li className={styles.nav__item}>
-            <Link className={styles.nav__link} to="/" onClick={closeMenu}>
-              О сервесі
-            </Link>
+            <ScrollLink
+              className={styles.nav__link}
+              to="#about-the-service"
+              onClick={closeMenu}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              О сервісі
+            </ScrollLink>
           </li>
           <li className={styles.nav__item}>
-            <Link className={styles.nav__link} to="/" onClick={closeMenu}>
+            <ScrollLink
+              className={styles.nav__link}
+              to="#advantages"
+              onClick={closeMenu}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               Переваги
-            </Link>
+            </ScrollLink>
           </li>
           <li className={styles.nav__item}>
-            <Link className={styles.nav__link} to="/" onClick={closeMenu}>
+            <ScrollLink
+              className={styles.nav__link}
+              to="#they-trust-us"
+              onClick={closeMenu}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               Нам довіряють
-            </Link>
+            </ScrollLink>
           </li>
           <li className={styles.nav__item}>
-            <Link className={styles.nav__link} to="/" onClick={closeMenu}>
+            <RouterLink
+              className={styles.nav__link}
+              to="/features"
+              onClick={closeMenu}
+            >
               Можливості
-            </Link>
+            </RouterLink>
           </li>
           <li className={styles.nav__item}>
-            <Link className={styles.nav__link} to="/login" onClick={closeMenu}>
+            <RouterLink
+              className={styles.nav__link}
+              to="/login"
+              onClick={closeMenu}
+            >
               Увійти
-            </Link>
+            </RouterLink>
           </li>
           <li className={styles.nav__item}>
-            <Link
+            <RouterLink
               className={`${styles.nav__link} ${styles.lastItem}`}
               to="/register"
               onClick={closeMenu}
             >
               Реєстрація
-            </Link>
+            </RouterLink>
           </li>
         </ul>
       </nav>
