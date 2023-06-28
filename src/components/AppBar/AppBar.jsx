@@ -51,7 +51,7 @@ const AppBar = () => {
           <li className={styles.nav__item}>
             <ScrollLink
               className={styles.nav__link}
-              to="#about-the-service"
+              to="about-the-service"
               onClick={closeMenu}
               spy={true}
               smooth={true}
@@ -64,7 +64,7 @@ const AppBar = () => {
           <li className={styles.nav__item}>
             <ScrollLink
               className={styles.nav__link}
-              to="#advantages"
+              to="advantages"
               onClick={closeMenu}
               spy={true}
               smooth={true}
@@ -77,7 +77,7 @@ const AppBar = () => {
           <li className={styles.nav__item}>
             <ScrollLink
               className={styles.nav__link}
-              to="#they-trust-us"
+              to="they-trust-us"
               onClick={closeMenu}
               spy={true}
               smooth={true}
