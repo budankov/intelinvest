@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Spin as Hamburger } from 'hamburger-react';
 
 import styles from './AppBar.module.scss';
@@ -23,6 +22,23 @@ const AppBar = () => {
   const handleScroll = () => {
     setIsScrolled(window.pageYOffset > 0);
   };
+
+  const scrollToElement = id => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     closeMenu();
@@ -49,70 +65,67 @@ const AppBar = () => {
         )}
         <ul className={`${styles.nav__list} ${menuOpen ? styles.open : ''}`}>
           <li className={styles.nav__item}>
-            <ScrollLink
+            <a
               className={styles.nav__link}
-              to="about-the-service"
-              onClick={closeMenu}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              href="/#about-the-service"
+              onClick={() => {
+                closeMenu();
+                scrollToElement('about-the-service');
+              }}
             >
               О сервісі
-            </ScrollLink>
+            </a>
           </li>
           <li className={styles.nav__item}>
-            <ScrollLink
+            <a
               className={styles.nav__link}
-              to="advantages"
-              onClick={closeMenu}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              href="/#advantages"
+              onClick={() => {
+                closeMenu();
+                scrollToElement('advantages');
+              }}
             >
               Переваги
-            </ScrollLink>
+            </a>
           </li>
           <li className={styles.nav__item}>
-            <ScrollLink
+            <a
               className={styles.nav__link}
-              to="they-trust-us"
-              onClick={closeMenu}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              href="/#they-trust-us"
+              onClick={() => {
+                closeMenu();
+                scrollToElement('they-trust-us');
+              }}
             >
               Нам довіряють
-            </ScrollLink>
+            </a>
           </li>
           <li className={styles.nav__item}>
-            <RouterLink
+            <NavLink
               className={styles.nav__link}
               to="/features"
               onClick={closeMenu}
             >
               Можливості
-            </RouterLink>
+            </NavLink>
           </li>
           <li className={styles.nav__item}>
-            <RouterLink
+            <NavLink
               className={styles.nav__link}
               to="/login"
               onClick={closeMenu}
             >
               Увійти
-            </RouterLink>
+            </NavLink>
           </li>
           <li className={styles.nav__item}>
-            <RouterLink
+            <NavLink
               className={`${styles.nav__link} ${styles.lastItem}`}
               to="/register"
               onClick={closeMenu}
             >
               Реєстрація
-            </RouterLink>
+            </NavLink>
           </li>
         </ul>
       </nav>
