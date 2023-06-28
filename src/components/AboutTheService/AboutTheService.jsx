@@ -2,7 +2,7 @@ import styles from './AboutTheService.module.scss';
 
 const AboutTheService = () => {
   return (
-    <div id="about-the-service" lassName={styles.wrapper}>
+    <div id="about-the-service" className={styles.wrapper}>
       <h2>AboutTheService</h2>
       <p>
         Стандартний Lorem Ipsum, використовуваний з XVI ст. "Lorem ipsum dolor
