@@ -3,6 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { Spin as Hamburger } from 'hamburger-react';
 
+import Modal from 'shared/components/Modal/Modal';
+import LoginForm from 'components/LoginForm/LoginForm';
+import RegisterForm from 'components/RegisterForm/RegisterForm';
+
 import styles from './AppBar.module.scss';
 
 import logo from '../../images/index_logo.png';
@@ -11,6 +15,13 @@ const AppBar = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState(null);
+
+  const handleModal = componentName => {
+    setSelectedComponent(componentName);
+    setShowModal(true);
+  };
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -105,15 +116,29 @@ const AppBar = () => {
             </li>
           </ul>
           <div className={styles.nav__btn}>
-            <button type="button" className={styles.btnSignIn}>
+            <button
+              className={styles.btnSignIn}
+              type="button"
+              onClick={() => handleModal('LoginForm')}
+            >
               Увійти
             </button>
-            <button type="button" className={styles.btnRegister}>
+            <button
+              className={styles.btnRegister}
+              type="button"
+              onClick={() => handleModal('RegisterForm')}
+            >
               Реєстрація
             </button>
           </div>
         </div>
       </nav>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          {selectedComponent === 'LoginForm' && <LoginForm />}
+          {selectedComponent === 'RegisterForm' && <RegisterForm />}
+        </Modal>
+      )}
     </header>
   );
 };
