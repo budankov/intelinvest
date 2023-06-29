@@ -6,6 +6,7 @@ import styles from './AppBar.module.scss';
 
 import logo from '../../images/index_logo.png';
 
+//Версія без ліб скролу, з переходом по якорям.
 const AppBar = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
