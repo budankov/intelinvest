@@ -117,7 +117,9 @@
   color: #888888;
 }
 
-.authScreenNavigationLink {
+.authScreenNavigationBtn {
+  border: none;
+  background-color: transparent;
   color: var(--blue);
   transition: color var(--timing);
   position: relative;

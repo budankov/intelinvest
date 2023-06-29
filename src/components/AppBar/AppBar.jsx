@@ -135,8 +135,16 @@ const AppBar = () => {
       </nav>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          {selectedComponent === 'LoginForm' && <LoginForm />}
-          {selectedComponent === 'RegisterForm' && <RegisterForm />}
+          {selectedComponent === 'LoginForm' && (
+            <LoginForm
+              onRegisterClick={() => setSelectedComponent('RegisterForm')}
+            />
+          )}
+          {selectedComponent === 'RegisterForm' && (
+            <RegisterForm
+              onLoginClick={() => setSelectedComponent('LoginForm')}
+            />
+          )}
         </Modal>
       )}
     </header>

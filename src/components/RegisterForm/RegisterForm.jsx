@@ -12,7 +12,7 @@ import { ReactComponent as EyeClosed } from 'images/icons/eye-closed.svg';
 
 import styles from './RegisterForm.module.scss';
 
-const RegisterForm = () => {
+const RegisterForm = ({ onLoginClick }) => {
   const [showPassword1, setShowPassword1] = useState(false); // стан для показу / приховування пароля першого інпута
   const [showPassword2, setShowPassword2] = useState(false); // стан для показу / приховування пароля другого інпута
 
@@ -126,9 +126,12 @@ const RegisterForm = () => {
         </button>
         <p className={styles.authScreenNavigation}>
           Вже є аккаунт?&nbsp;
-          <NavLink to="/login" className={styles.authScreenNavigationLink}>
+          <button
+            onClick={onLoginClick}
+            className={styles.authScreenNavigationBtn}
+          >
             Увійти
-          </NavLink>
+          </button>
         </p>
       </form>
     </div>
