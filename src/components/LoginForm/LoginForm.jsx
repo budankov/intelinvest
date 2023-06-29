@@ -28,8 +28,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h2 className={styles.formTitle}>Login</h2>
+    <div className={styles.loginFormContainer}>
+      <h2 className={styles.formTitle}>Вхід</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.formLabelConteiner}>
           <label className={styles.formLabel}>
@@ -37,7 +37,7 @@ const LoginForm = () => {
               className={`${styles.formInput} ${
                 errors.email ? styles.error : ''
               } ${watch('email') && !errors.email ? styles.success : ''}`}
-              placeholder="Email"
+              placeholder="Ел. пошта"
               {...register('email')}
               type="email"
             />
@@ -53,9 +53,9 @@ const LoginForm = () => {
                 } ${
                   watch('password') && !errors.password ? styles.success : ''
                 }`}
-                placeholder="Password"
+                placeholder="Пароль"
                 {...register('password')}
-                type={showPassword ? 'text' : 'password'} // Встановлюємо тип як "password" або "text", залежно від стану
+                type={showPassword ? 'text' : 'password'}
               />
               <button
                 className={styles.showPasswordButton}
@@ -75,12 +75,12 @@ const LoginForm = () => {
           </label>
         </div>
         <button className={styles.authBtn} type="submit">
-          Login
+          Увійти
         </button>
         <p className={styles.authScreenNavigation}>
-          Don't have an account?&nbsp;
+          Немає облікового запису?&nbsp;
           <NavLink to="/register" className={styles.authScreenNavigationLink}>
-            Register
+            Зареєструватися
           </NavLink>
         </p>
       </form>

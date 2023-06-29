@@ -45,8 +45,8 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
-      <h2 className={styles.formTitle}>Registration</h2>
+    <div className={styles.registerFormContainer}>
+      <h2 className={styles.formTitle}>Реєстрація</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.formLabelConteiner}>
           <label className={styles.formLabel}>
@@ -54,7 +54,7 @@ const RegisterForm = () => {
               className={`${styles.formInput} ${
                 errors.email ? styles.error : ''
               } ${watch('email') && !errors.email ? styles.success : ''}`}
-              placeholder="Email"
+              placeholder="Ел. пошта"
               {...register('email')}
               type="email"
             />
@@ -70,7 +70,7 @@ const RegisterForm = () => {
                 } ${
                   watch('password1') && !errors.password1 ? styles.success : ''
                 }`}
-                placeholder="Password"
+                placeholder="Пароль"
                 {...register('password1', { required: true })}
                 type={showPassword1 ? 'text' : 'password'}
               />
@@ -99,7 +99,7 @@ const RegisterForm = () => {
                 } ${
                   watch('password2') && !errors.password2 ? styles.success : ''
                 }`}
-                placeholder="Confirm password"
+                placeholder="Підтвердьте пароль"
                 {...register('password2', { validate: validatePassword })}
                 type={showPassword2 ? 'text' : 'password'}
               />
@@ -122,12 +122,12 @@ const RegisterForm = () => {
           </label>
         </div>
         <button className={styles.authBtn} type="submit">
-          Registration
+          Зареєструватися
         </button>
         <p className={styles.authScreenNavigation}>
-          Already have an account?&nbsp;
+          Вже є аккаунт?&nbsp;
           <NavLink to="/login" className={styles.authScreenNavigationLink}>
-            Login
+            Увійти
           </NavLink>
         </p>
       </form>
