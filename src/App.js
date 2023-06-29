@@ -5,7 +5,7 @@ import AppBar from 'components/AppBar/AppBar';
 import Loader from 'shared/components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
-const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
+const AppPage = lazy(() => import('./pages/AppPage'));
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <AppBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/app" element={<AppPage />} />
       </Routes>
       <Outlet />
     </Suspense>

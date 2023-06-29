@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import registerSchema from './Yup';
 
-// import { toast } from 'react-toastify';
+// Firebase
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth';
+import { app, googleAuthProvider } from 'shared/api/firebaseApi';
 
 // Icons
 import { ReactComponent as EyeOpen } from 'images/icons/eye-open.svg';
@@ -13,20 +19,31 @@ import { ReactComponent as EyeClosed } from 'images/icons/eye-closed.svg';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = ({ onLoginClick }) => {
-  const [showPassword1, setShowPassword1] = useState(false); // стан для показу / приховування пароля першого інпута
-  const [showPassword2, setShowPassword2] = useState(false); // стан для показу / приховування пароля другого інпута
+  const auth = getAuth(app);
+  const [user, setUser] = useState(null);
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(username => {
+      if (username != null) {
+        setUser(username);
+      }
+    });
+
+    return unsubscribe;
+  }, [auth]);
 
   const {
     register,
     handleSubmit,
-    // reset,
-    watch,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: yupResolver(registerSchema),
   });
 
-  // Перевірка, чи вказано однакові паролі в обох полях пароля
   const watchPassword1 = watch('password1', '');
   const watchPassword2 = watch('password2', '');
 
@@ -35,13 +52,26 @@ const RegisterForm = ({ onLoginClick }) => {
   };
 
   const onSubmit = ({ email, password1 }) => {
-    // registration({ email, password: password1 })
-    //     .then(response => {
-    //         reset();
-    //     })
-    //     .catch(error => {
-    //         toast.error(error.message);
-    //     });
+    createUserWithEmailAndPassword(auth, email, password1)
+      .then(userCredential => {
+        const user = userCredential.user;
+        setUser(user);
+        navigate('/app', { replace: true });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleAuthProvider)
+      .then(credentials => {
+        const user = credentials.user;
+        setUser(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   return (
@@ -71,7 +101,9 @@ const RegisterForm = ({ onLoginClick }) => {
                   watch('password1') && !errors.password1 ? styles.success : ''
                 }`}
                 placeholder="Пароль"
-                {...register('password1', { required: true })}
+                {...register('password1', {
+                  required: true,
+                })}
                 type={showPassword1 ? 'text' : 'password'}
               />
               <button
@@ -86,7 +118,6 @@ const RegisterForm = ({ onLoginClick }) => {
                 )}
               </button>
             </div>
-
             {errors.password1 && (
               <p className={styles.errorsMassage}>{errors.password1.message}</p>
             )}
@@ -123,6 +154,9 @@ const RegisterForm = ({ onLoginClick }) => {
         </div>
         <button className={styles.authBtn} type="submit">
           Зареєструватися
+        </button>
+        <button className={styles.authBtn} onClick={handleGoogleSignIn}>
+          Увійти через Google
         </button>
         <p className={styles.authScreenNavigation}>
           Вже є аккаунт?&nbsp;
