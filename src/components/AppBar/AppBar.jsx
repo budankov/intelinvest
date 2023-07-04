@@ -37,6 +37,7 @@ const AppBar = () => {
 
   useEffect(() => {
     closeMenu();
+    setShowModal(false);
   }, [location.pathname]);
 
   useEffect(() => {
