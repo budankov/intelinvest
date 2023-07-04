@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkintelinvest=self.webpackChunkintelinvest||[]).push([[692],{692:function(e,n,t){t.r(n);var s=t(791),i=t(184);n.default=function(){return(0,s.useEffect)((function(){}),[]),(0,i.jsx)("div",{className:"container",children:(0,i.jsx)("h2",{children:"Features Page"})})}}}]);
-//# sourceMappingURL=692.3338e8d3.chunk.js.map
