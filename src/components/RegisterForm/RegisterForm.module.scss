@@ -1,4 +1,5 @@
 .registerFormContainer {
+  text-align: center;
   width: 420px;
   padding: 48px;
 }
@@ -53,6 +54,34 @@
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  &:focus,
+  &:hover {
+    color: #ffc107;
+  }
+}
+
+.googleAuth {
+  margin-top: 20px;
+  border: none;
+  background-color: transparent;
+}
+.googleAuth__container {
+  display: flex;
+  align-items: center;
+}
+.googleAuth__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.googleAuth__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #888888;
+  transition: color var(--timing);
 
   &:focus,
   &:hover {
