@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import { useLocation, Link } from 'react-router-dom';
+import { Link as SrollLink } from 'react-scroll';
 import { Spin as Hamburger } from 'hamburger-react';
-
+import { useAuth } from 'shared/hooks/useAuth';
 import Modal from 'shared/components/Modal/Modal';
 import LoginForm from 'components/LoginForm/LoginForm';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
@@ -17,6 +17,9 @@ const AppBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState(null);
+
+  const { isAuth } = useAuth();
+  console.log(isAuth);
 
   const handleModal = componentName => {
     setSelectedComponent(componentName);
@@ -51,7 +54,7 @@ const AppBar = () => {
     <header className={`${styles.header} ${isScrolled ? styles.fixed : ''}`}>
       <nav className={styles.nav__container}>
         <div>
-          <a className={styles.logo} href="/">
+          <a className={styles.logo} href="/intelinvest">
             <img src={logo} alt="logo" />
           </a>
         </div>
@@ -64,7 +67,7 @@ const AppBar = () => {
           )}
           <ul className={`${styles.nav__list} ${menuOpen ? styles.open : ''}`}>
             <li className={styles.nav__item}>
-              <Link
+              <SrollLink
                 className={styles.nav__link}
                 to="about-the-service"
                 onClick={closeMenu}
@@ -74,10 +77,10 @@ const AppBar = () => {
                 duration={500}
               >
                 О сервісі
-              </Link>
+              </SrollLink>
             </li>
             <li className={styles.nav__item}>
-              <Link
+              <SrollLink
                 className={styles.nav__link}
                 to="advantages"
                 onClick={closeMenu}
@@ -87,10 +90,10 @@ const AppBar = () => {
                 duration={500}
               >
                 Переваги
-              </Link>
+              </SrollLink>
             </li>
             <li className={styles.nav__item}>
-              <Link
+              <SrollLink
                 className={styles.nav__link}
                 to="they-trust-us"
                 onClick={closeMenu}
@@ -100,10 +103,10 @@ const AppBar = () => {
                 duration={500}
               >
                 Нам довіряють
-              </Link>
+              </SrollLink>
             </li>
             <li className={styles.nav__item}>
-              <Link
+              <SrollLink
                 className={styles.nav__link}
                 to="features"
                 onClick={closeMenu}
@@ -113,35 +116,40 @@ const AppBar = () => {
                 duration={500}
               >
                 Можливості
-              </Link>
+              </SrollLink>
             </li>
           </ul>
-          <div className={styles.nav__btn}>
-            <button
-              className={styles.btnSignIn}
-              type="button"
-              onClick={() => handleModal('LoginForm')}
-            >
-              Увійти
-            </button>
-            <button
-              className={styles.btnRegister}
-              type="button"
-              onClick={() => handleModal('RegisterForm')}
-            >
-              Реєстрація
-            </button>
-          </div>
+          {isAuth ? (
+            <Link className={styles.btnRegister} to="/app">
+              Повернутись до портфелю
+            </Link>
+          ) : (
+            <div className={styles.nav__btn}>
+              <button
+                className={styles.btnSignIn}
+                type="button"
+                onClick={() => handleModal('LoginForm')}
+              >
+                Увійти
+              </button>
+              <button
+                className={styles.btnRegister}
+                type="button"
+                onClick={() => handleModal('RegisterForm')}
+              >
+                Реєстрація
+              </button>
+            </div>
+          )}
         </div>
       </nav>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          {selectedComponent === 'LoginForm' && (
+          {selectedComponent === 'LoginForm' ? (
             <LoginForm
               onRegisterClick={() => setSelectedComponent('RegisterForm')}
             />
-          )}
-          {selectedComponent === 'RegisterForm' && (
+          ) : (
             <RegisterForm
               onLoginClick={() => setSelectedComponent('LoginForm')}
             />
