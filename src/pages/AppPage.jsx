@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { getAuth, signOut } from 'firebase/auth';
 import { useAuth } from '../shared/hooks/useAuth';
 import { removeUser } from 'redux/auth/userSlice';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const AppPage = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,9 @@ const AppPage = () => {
       const auth = getAuth();
       await signOut(auth);
       dispatch(removeUser());
+      Notify.info('Ви успішно розлогіненні');
     } catch (error) {
-      console.log('Помилка при розлогіненні користувача', error);
+      Notify.failure('Помилка при розлогіненні користувача');
     }
   };
 

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from 'redux/auth/userSlice';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import Form from 'components/Form/Form';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import styles from './RegisterForm.module.scss';
 
@@ -23,8 +24,9 @@ const RegisterForm = ({ onLoginClick }) => {
           })
         );
         navigate('/app');
+        Notify.success('Ви успішно зареєструвались');
       })
-      .catch(console.error);
+      .catch(() => Notify.failure('Такий користувач вже існує'));
   };
   return (
     <div className={styles.registerFormContainer}>

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from 'redux/auth/userSlice';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import Form from 'components/Form/Form';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import styles from './LoginForm.module.scss';
 
@@ -23,8 +24,9 @@ const LoginForm = ({ onRegisterClick }) => {
           })
         );
         navigate('/app');
+        Notify.success(`${user.email} доброго дня`);
       })
-      .catch(() => alert('Invalid user!'));
+      .catch(() => Notify.failure('Недійсний користувач!'));
   };
 
   return (
