@@ -1,5 +1,36 @@
+.hero {
+    background-color: #3f79d5;
+    background-image: url('../../images/home-page/hero/charts.svg');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 238px 0 190px;
+}
+
 .wrapper {
-  border: 1px solid red;
-  padding: 20px;
-  margin: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    // Mobile
+    @media screen and (max-width: 767px) {
+        max-width: 480px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    // Tablet
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+        max-width: 1280px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }

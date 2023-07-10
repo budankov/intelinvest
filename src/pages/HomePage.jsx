@@ -10,7 +10,7 @@ const HomePage = () => {
       <header>
         <AppBar />
       </header>
-      <main className="container">
+      <main className="wrapper-all">
         <Hero />
         <AboutTheService />
         <Advantages />

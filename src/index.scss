@@ -28,34 +28,34 @@ button {
   cursor: pointer;
 }
 
-.container {
+.wrapper-all {
+  width: 100%;
+  background: var(--white);
+  font-family: OpenSans;
+}
+
+.wrapper {
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-}
 
-// Mobile
-@media screen and (max-width: 767px) {
-  .container {
+  // Mobile
+  @media screen and (max-width: 767px) {
     max-width: 480px;
     padding-left: 20px;
     padding-right: 20px;
   }
-}
 
-// Tablet
-@media screen and (min-width: 768px) {
-  .container {
+  // Tablet
+  @media screen and (min-width: 768px) {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
-}
 
-// Desktop
-@media screen and (min-width: 1280px) {
-  .container {
+  // Desktop
+  @media screen and (min-width: 1280px) {
     max-width: 1280px;
     padding-left: 16px;
     padding-right: 16px;
