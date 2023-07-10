@@ -49,10 +49,12 @@
 
 .hero__item {
     color: var(--white);
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 12px;
 
     &::marker {
         color: #abe808;
     }
 }
+
+.hero__btn {}
