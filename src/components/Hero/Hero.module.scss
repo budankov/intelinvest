@@ -1,12 +1,3 @@
-.hero {
-    background-color: #3f79d5;
-    background-image: url('../../images/home-page/hero/charts.svg');
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 238px 0 190px;
-}
-
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -28,9 +19,40 @@
     }
 
     // Desktop
-    @media screen and (min-width: 1280px) {
-        max-width: 1280px;
+    @media screen and (min-width: 940px) {
+        max-width: 940px;
         padding-left: 16px;
         padding-right: 16px;
+    }
+}
+
+.hero {
+    background-color: #3f79d5;
+    background-image: url('../../images/home-page/hero/charts.svg');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 238px 0 190px;
+}
+
+.hero__title {
+    color: var(--white);
+    font-family: "Gilroy Bold";
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.hero__list {
+    padding: 0px 18px;
+    margin-bottom: 56px;
+}
+
+.hero__item {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 12px;
+
+    &::marker {
+        color: #abe808;
     }
 }
