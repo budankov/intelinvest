@@ -6,9 +6,9 @@ import LoginForm from 'components/LoginForm/LoginForm';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
 import Button from 'components/Button/Button';
 
-import styles from './Hero.module.scss';
+import styles from './ImportTransactions.module.scss';
 
-const Hero = () => {
+const ImportTransactions = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState(null);
   const navigate = useNavigate();
@@ -22,19 +22,15 @@ const Hero = () => {
   };
 
   const { isAuth } = useAuth();
-
   return (
-    <section className={styles.hero}>
-      <div className={styles.wrapper}>
-        <h1 className={styles.hero__title}>Облік та контроль ваших інвестицій!</h1>
-        <ul className={styles.hero__list}>
-          <li className={styles.hero__item}>Додайте куплені акції та облігації</li>
-          <li className={styles.hero__item}>Слідкуйте за портфелем</li>
-          <li className={styles.hero__item}>Аналізуйте прибутковість</li>
-        </ul>
-        <Button className={styles.hero__btn} type="button" onClick={clickBtnHero}>
-          Почати користуватися <span>безкоштовно</span>
-        </Button>
+    <section className={styles.importTransactions}>
+      <div className={styles.importTransactions__wrapper}>
+        <div className={styles.wrapper}>
+          <div className={styles.importTransactions__container}>
+            <h2 className={styles.importTransactions__title}>Імпорт угод від 18 брокерів</h2>
+            <p className={styles.importTransactions__text}>Заощаджуємо час за рахунок швидкого завантаження угод від брокера в один крок.</p>
+            <Button className={styles.importTransactions__btn} type="button" onClick={clickBtnHero}>Імпортувати угоди</Button>
+          </div></div>
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
@@ -48,5 +44,4 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
+export default ImportTransactions;

@@ -1,5 +1,6 @@
 import AppBar from 'components/AppBar/AppBar';
 import Hero from 'components/Hero/Hero';
+import ImportTransactions from 'components/ImportTransactions/ImportTransactions';
 import AboutTheService from 'components/AboutTheService/AboutTheService';
 import Advantages from 'components/Advantages/Advantages';
 import TheyTrustUs from 'components/TheyTrustUs/TheyTrustUs';
@@ -13,6 +14,7 @@ const HomePage = () => {
       <main className="wrapper-all">
         <Hero />
         <AboutTheService />
+        <ImportTransactions />
         <Advantages />
         <TheyTrustUs />
       </main>

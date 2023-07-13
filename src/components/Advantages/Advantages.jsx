@@ -1,77 +1,92 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from 'shared/hooks/useAuth';
+import Modal from 'shared/components/Modal/Modal';
+import LoginForm from 'components/LoginForm/LoginForm';
+import RegisterForm from 'components/RegisterForm/RegisterForm';
+import Button from 'components/Button/Button';
+
 import styles from './Advantages.module.scss';
 
 const Advantages = () => {
+  const [showModalLinkMore, setShowModalLinkMore] = useState(false);
+  const [showModalAuth, setShowModalAuth] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [selectedText, setSelectedText] = useState('');
+
+  const navigate = useNavigate();
+  const { isAuth } = useAuth();
+
+  const openModal = (text) => {
+    setSelectedText(text);
+    setShowModalLinkMore(true);
+  };
+
+  const clickBtnStartUse = () => {
+    if (isAuth) {
+      navigate('/app');
+    } else {
+      setShowModalAuth(true);
+    }
+  };
+
+  const text1 = 'Привіт світ 1';
+  const text2 = 'Привіт світ 2';
+
   return (
-    <div id="advantages" className={styles.wrapper}>
-      <h2>Advantages</h2>
-      <p>
-        Стандартний Lorem Ipsum, використовуваний з XVI ст. "Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum." Розділ 1.10.32 "de Finibus Bonorum et Malorum", написаного
-        Цицероном у 45 році до н.е. "Sed ut perspiciatis unde omnis iste natus
-        error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-        beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-        voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-        dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore
-        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-        illum qui dolorem eum fugiat quo voluptas nulla pariatur?" Переклад
-        Х.Рекема англійською, 1914 "But I must explain to you how all this
-        mistaken idea of denouncing pleasure and praising pain was born and I
-        will give you a complete account of the system, and expound the actual
-        teachings of the great explorer of the truth, the master-builder of
-        human happiness. No one rejects, dislikes, or avoids pleasure itself,
-        because it is pleasure, but because those who do not know how to pursue
-        pleasure rationally encounter consequences that are extremely painful.
-        Nor again is there anyone who loves or pursues or desires to obtain pain
-        of itself, because it is pain, but because occasionally circumstances
-        occur in which toil and pain can procure him some great pleasure.
-      </p>
-      <br></br>
-      <p>
-        Стандартний Lorem Ipsum, використовуваний з XVI ст. "Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum." Розділ 1.10.32 "de Finibus Bonorum et Malorum", написаного
-        Цицероном у 45 році до н.е. "Sed ut perspiciatis unde omnis iste natus
-        error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-        beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-        voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-        dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore
-        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-        illum qui dolorem eum fugiat quo voluptas nulla pariatur?" Переклад
-        Х.Рекема англійською, 1914 "But I must explain to you how all this
-        mistaken idea of denouncing pleasure and praising pain was born and I
-        will give you a complete account of the system, and expound the actual
-        teachings of the great explorer of the truth, the master-builder of
-        human happiness. No one rejects, dislikes, or avoids pleasure itself,
-        because it is pleasure, but because those who do not know how to pursue
-        pleasure rationally encounter consequences that are extremely painful.
-        Nor again is there anyone who loves or pursues or desires to obtain pain
-        of itself, because it is pain, but because occasionally circumstances
-        occur in which toil and pain can procure him some great pleasure.
-      </p>
-    </div>
+    <section id="advantages" className={styles.advantages}>
+      <div className={styles.wrapper}>
+        <div className={styles.advantages__сontainer}>
+          <div className={styles.advantages__block}>
+            <div className={styles.advantages__text_block}>
+              <h2 className={styles.advantages__title}>Заголовок 1</h2>
+              <p className={styles.advantages__text}>
+                Lorem 1 ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam quibusdam ducimus? Suscipit et, sit sequi tempora laudantium quaerat. Esse adipisci non repudiandae eos magni sint ullam incidunt, tenetur repellendus.
+              </p>
+              <button type="button" onClick={() => openModal(text1)}>
+                Дізнатись більше
+              </button>
+            </div>
+            <div className={styles.advantages__image_block}></div>
+          </div>
+          <div className={styles.advantages__block}>
+            <div className={styles.advantages__text_block}>
+              <h2 className={styles.advantages__title}>Заголовок 2</h2>
+              <p className={styles.advantages__text}>
+                Lorem 2 ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam quibusdam ducimus? Suscipit et, sit sequi tempora laudantium quaerat. Esse adipisci non repudiandae eos magni sint ullam incidunt, tenetur repellendus.
+              </p>
+              <button type="button" onClick={() => openModal(text2)}>
+                Дізнатись більше
+              </button>
+            </div>
+            <div className={styles.advantages__image_block}></div>
+          </div>
+        </div>
+      </div>
+
+      {showModalLinkMore && (
+        <Modal onClose={() => setShowModalLinkMore(false)}>
+          <div className={styles.linkMore}>
+            <div>
+              <p className={styles.linkMore__text}>{selectedText}</p>
+              <Button className={styles.hero__btn} type="button" onClick={clickBtnStartUse}>
+                Почати користуватися <span>безкоштовно</span>
+              </Button>
+            </div>
+          </div>
+        </Modal>
+      )}
+      {showModalAuth && (
+        <Modal onClose={() => setShowModalAuth(false)}>
+          {selectedComponent === 'LoginForm' ? (
+            <LoginForm onRegisterClick={() => setSelectedComponent('RegisterForm')} />
+          ) : (
+            <RegisterForm onLoginClick={() => setSelectedComponent('LoginForm')} />
+          )}
+        </Modal>
+      )}
+    </section>
   );
 };
+
 export default Advantages;

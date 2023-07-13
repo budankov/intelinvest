@@ -86,7 +86,7 @@ const AppBar = () => {
                 onClick={closeMenu}
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-48}
                 duration={500}
               >
                 Переваги

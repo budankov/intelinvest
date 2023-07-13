@@ -1,5 +1,86 @@
 .wrapper {
-  border: 1px solid red;
-  padding: 20px;
-  margin: 50px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Mobile
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // Tablet
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  // Desktop
+  @media screen and (min-width: 940px) {
+    max-width: 940px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.advantages {
+  padding: 60px 0px;
+}
+
+.advantages__сontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages__block {
+  display: flex;
+  flex-direction: row;
+}
+
+.advantages__text_block {
+  width: 50%;
+}
+
+.advantages__image_block {
+  width: 50%;
+  background-image: url('../../images/home-page/advantages/employee-working.jpg');
+  background-size: 460px auto;
+}
+
+.advantages__block:nth-child(even) .advantages__text_block {
+  order: 2;
+}
+
+.advantages__block:nth-child(even) .advantages__image_block {
+  order: 1;
+}
+
+.advantages__block:nth-child(odd) .advantages__text_block {
+  order: 1;
+}
+
+.advantages__block:nth-child(odd) .advantages__image_block {
+  order: 2;
+}
+
+.advantages__title {
+  background-image: url('../../images/home-page/advantages/chat.svg');
+  background-repeat: no-repeat;
+  background-size: 44px;
+  padding-top: 68px;
+
+  color: var(--text-grey);
+  font-size: 26px;
+  letter-spacing: 0;
+}
+
+.advantages__text {
+  color: var(--text-grey);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin: 16px 0 11px;
 }
