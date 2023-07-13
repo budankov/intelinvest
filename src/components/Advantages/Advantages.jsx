@@ -26,6 +26,7 @@ const Advantages = () => {
     if (isAuth) {
       navigate('/app');
     } else {
+      setShowModalLinkMore(false);
       setShowModalAuth(true);
     }
   };
