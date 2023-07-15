@@ -26,10 +26,6 @@
   }
 }
 
-.advantages {
-  padding: 60px 0px;
-}
-
 .advantages__сontainer {
   display: flex;
   flex-wrap: wrap;
@@ -38,16 +34,45 @@
 .advantages__block {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  flex: 1 0 100%;
+  margin: 34px 0px;
 }
 
 .advantages__text_block {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 50%;
+  justify-content: center;
 }
 
 .advantages__image_block {
-  width: 50%;
-  background-image: url('../../images/home-page/advantages/employee-working.jpg');
-  background-size: 460px auto;
+  flex: 1 0 50%;
+  height: 302px;
+  background-image: url('../../images/home-page/advantages/employee-working-1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &.chat {
+    background-image: url('../../images/home-page/advantages/employee-working-3.jpg');
+  }
+
+  &.analytics {
+    background-image: url('../../images/home-page/advantages/employee-working-2.jpg');
+  }
+
+  &.set {
+    background-image: url('../../images/home-page/advantages/employee-working-5.jpg');
+  }
+
+  &.time {
+    background-image: url('../../images/home-page/advantages/employee-working-4.jpg');
+  }
+
+  &.true_indicators {
+    background-image: url('../../images/home-page/advantages/employee-working-1.jpg');
+  }
 }
 
 .advantages__block:nth-child(even) .advantages__text_block {
@@ -66,12 +91,33 @@
   order: 2;
 }
 
-.advantages__title {
-  background-image: url('../../images/home-page/advantages/chat.svg');
+.advantages__icon {
   background-repeat: no-repeat;
   background-size: 44px;
   padding-top: 68px;
 
+  &.chat {
+    background-image: url('../../images/home-page/advantages/chat.svg');
+  }
+
+  &.analytics {
+    background-image: url('../../images/home-page/advantages/analytics.svg');
+  }
+
+  &.set {
+    background-image: url('../../images/home-page/advantages/set.svg');
+  }
+
+  &.time {
+    background-image: url('../../images/home-page/advantages/time.svg');
+  }
+
+  &.true_indicators {
+    background-image: url('../../images/home-page/advantages/true-indicators.svg');
+  }
+}
+
+.advantages__title {
   color: var(--text-grey);
   font-size: 26px;
   letter-spacing: 0;
@@ -79,8 +125,88 @@
 
 .advantages__text {
   color: var(--text-grey);
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 24px;
   margin: 16px 0 11px;
+}
+
+.advantages__linkMore {
+  background-color: transparent;
+  border: none;
+  color: var(--text-blue);
+  width: max-content;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  padding: 0;
+
+  &::after {
+    content: "";
+    background-image: url('../../images/home-page/advantages/right-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    vertical-align: center;
+    opacity: 1;
+  }
+
+  &:hover::after {
+    animation: slideRight 0.7s linear 0.1s infinite;
+  }
+
+  @keyframes slideRight {
+    0% {
+      margin-left: 10px;
+      opacity: 1;
+    }
+
+    100% {
+      margin-left: 30px;
+      opacity: 0;
+    }
+  }
+}
+
+
+// Modal linkMore
+.linkMore {
+  max-width: 600px;
+  padding: 48px;
+}
+
+.linkMore__text {
+  color: var(--text-grey);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: 32px;
+}
+
+.linkMore__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white);
+  border: 2px solid var(--text-blue);
+  border-radius: 33px;
+  background-color: var(--text-blue);
+  padding: 14px 60px;
+  transition: var(--timing);
+
+  & span {
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: var(--blue);
+    background-color: var(--white);
+  }
 }
