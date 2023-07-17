@@ -1,0 +1,82 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Mobile
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // Tablet
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  // Desktop
+  @media screen and (min-width: 940px) {
+    max-width: 940px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.importTransactions {
+  background-image: url('../../images/home-page/import-transactions/import-transactions-bcg.jpeg');
+  background-position: calc(100% - 230px) bottom;
+  background-size: 550px auto;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #e2e9f3;
+}
+
+.importTransactions__wrapper {
+  background-image: url('../../images/home-page/import-transactions/import-transactions-bcg-left.jpeg');
+  background-position: calc(10%) bottom;
+  background-size: auto 350px;
+  background-repeat: no-repeat;
+
+}
+
+.importTransactions__container {
+  text-align: center;
+  padding: 100px 0px;
+}
+
+.importTransactions__title {
+  color: var(--text-grey);
+  font-size: 26px;
+  letter-spacing: 0;
+}
+
+.importTransactions__text {
+  color: var(--text-grey);
+  font-size: 16px;
+  margin: 16px auto 28px;
+  max-width: 650px;
+}
+
+.importTransactions__btn {
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white);
+  border: 2px solid var(--text-blue);
+  border-radius: 33px;
+  background-color: var(--text-blue);
+  padding: 14px 60px;
+  transition: var(--timing);
+
+  & span {
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: var(--blue);
+    background-color: var(--white);
+  }
+}

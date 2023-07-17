@@ -5,6 +5,7 @@ import AboutTheService from 'components/AboutTheService/AboutTheService';
 import Advantages from 'components/Advantages/Advantages';
 import TheyTrustUs from 'components/TheyTrustUs/TheyTrustUs';
 import FollowPopularInvestors from 'components/FollowPopularInvestors/FollowPopularInvestors';
+import JoinInvestors from 'components/JoinInvestors/JoinInvestors';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
         <Advantages />
         <TheyTrustUs />
         <FollowPopularInvestors />
+        <JoinInvestors />
       </main>
     </>
   );
