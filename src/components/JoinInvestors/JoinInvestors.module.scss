@@ -26,41 +26,29 @@
   }
 }
 
-.importTransactions {
-  background-image: url('../../images/home-page/import-transactions/import-transactions-bcg.jpeg');
-  background-position: calc(100% - 230px) bottom;
-  background-size: 550px auto;
+.joinInvestors {
+  background-image: url('../../images/home-page/join-investors/map.png');
+  background-position: center 32px;
   background-repeat: no-repeat;
-  border-bottom: 1px solid #e2e9f3;
-}
-
-.importTransactions__wrapper {
-  background-image: url('../../images/home-page/import-transactions/import-transactions-bcg-left.jpeg');
-  background-position: calc(10%) bottom;
-  background-size: auto 350px;
-  background-repeat: no-repeat;
-
-}
-
-.importTransactions__container {
+  background-size: contain;
   text-align: center;
-  padding: 100px 0px;
+  padding: 278px 0 220px;
 }
 
-.importTransactions__title {
+.joinInvestors__title {
   color: var(--text-grey);
+  font-family: "Gilroy Semibold";
   font-size: 26px;
   letter-spacing: 0;
+  margin: 0 auto 32px;
+
+  & span {
+    color: var(--text-blue);
+    font-weight: 700;
+  }
 }
 
-.importTransactions__text {
-  color: var(--text-grey);
-  font-size: 16px;
-  margin: 16px auto 28px;
-  max-width: 650px;
-}
-
-.importTransactions__btn {
+.joinInvestors__btn {
   font-family: OpenSans;
   font-size: 16px;
   font-weight: 400;

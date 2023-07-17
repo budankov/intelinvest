@@ -23,14 +23,12 @@ const JoinInvestors = () => {
 
   const { isAuth } = useAuth();
   return (
-    <section className={styles.importTransactions}>
-      <div className={styles.importTransactions__wrapper}>
-        <div className={styles.wrapper}>
-          <div className={styles.importTransactions__container}>
-            <h2 className={styles.importTransactions__title}>Імпорт угод від 18 брокерів</h2>
-            <p className={styles.importTransactions__text}>Заощаджуємо час за рахунок швидкого завантаження угод від брокера в один крок.</p>
-            <Button className={styles.importTransactions__btn} type="button" onClick={clickBtnHero}>Імпортувати угоди</Button>
-          </div></div>
+    <section className={styles.joinInvestors}>
+      <div className={styles.wrapper}>
+        <div className={styles.joinInvestors__container}>
+          <h2 className={styles.joinInvestors__title}>Приєднуйтесь до більш ніж <span>300 000</span> інвесторів!</h2>
+          <Button className={styles.joinInvestors__btn} type="button" onClick={clickBtnHero}>Почати користуватися <span>безкоштовно</span></Button>
+        </div>
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
