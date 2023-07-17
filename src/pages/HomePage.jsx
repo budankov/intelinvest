@@ -4,6 +4,7 @@ import ImportTransactions from 'components/ImportTransactions/ImportTransactions
 import AboutTheService from 'components/AboutTheService/AboutTheService';
 import Advantages from 'components/Advantages/Advantages';
 import TheyTrustUs from 'components/TheyTrustUs/TheyTrustUs';
+import FollowPopularInvestors from 'components/FollowPopularInvestors/FollowPopularInvestors';
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
         <ImportTransactions />
         <Advantages />
         <TheyTrustUs />
+        <FollowPopularInvestors />
       </main>
     </>
   );

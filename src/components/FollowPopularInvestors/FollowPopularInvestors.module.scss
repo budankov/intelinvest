@@ -1,0 +1,152 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Mobile
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+
+  }
+
+  // Tablet
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  // Desktop
+  @media screen and (min-width: 940px) {
+    max-width: 940px;
+
+  }
+}
+
+.followPopularInvestors {
+  text-align: center;
+  background-color: var(--section-bcg-color);
+  padding: 70px 0;
+}
+
+.followPopularInvestors__title {
+  color: var(--text-grey);
+  font-size: 26px;
+  letter-spacing: 0;
+}
+
+.followPopularInvestors__text {
+  color: var(--text-grey);
+  font-size: 16px;
+  margin: 20px auto 70px;
+}
+
+.investorsCards {
+  display: flex;
+  justify-content: space-around;
+  max-width: 960px;
+}
+
+.investorsCard {
+  width: 300px;
+  border: 2px solid var(--border-blue);
+  border-radius: 24px;
+  cursor: pointer;
+  margin: 10px auto;
+
+  &:hover {
+    border: 2px solid var(--border-blue-hoover);
+  }
+}
+
+.investorsCard__top {
+  background-color: #467bd0;
+  border: 2px solid #467bd0;
+  border-radius: 24px 24px 24px 0;
+  margin: -2px;
+  padding: 2px 20px 12px;
+}
+
+.investorsCard__titile {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: -15px;
+  text-align: left;
+
+  &_img {
+    width: 76px;
+    height: 76px;
+    margin-left: 20px;
+  }
+
+  &_header {
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-left: 12px;
+  }
+
+  &_description {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    margin-left: 12px;
+  }
+}
+
+.investorsCard__bottom {
+  color: var(--text-grey);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 120px;
+  line-height: 21px;
+  padding: 12px 20px;
+  text-align: left;
+}
+
+.investorsCard__top__row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  justify-content: space-between;
+}
+
+.investorsCard__top__textLeft {
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.investorsCard__top__textRight {
+  color: var(--white);
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 700;
+
+  &_column {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+  }
+}
+
+.border {
+  border-bottom: 1px solid hsla(0, 0%, 100%, .159);
+}
+
+.percent {
+  font-family: Gilroy;
+  font-size: 12px;
+  font-weight: 400;
+
+  & span {
+    color: greenyellow;
+  }
+}
