@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/intelinvest/static/css/main.e47d0027.css",
-    "main.js": "/intelinvest/static/js/main.c44d8876.js",
-    "static/css/272.810efa89.chunk.css": "/intelinvest/static/css/272.810efa89.chunk.css",
-    "static/js/272.ab779026.chunk.js": "/intelinvest/static/js/272.ab779026.chunk.js",
+    "main.css": "/intelinvest/static/css/main.a92aada1.css",
+    "main.js": "/intelinvest/static/js/main.21edc64c.js",
+    "static/css/985.51d08e64.chunk.css": "/intelinvest/static/css/985.51d08e64.chunk.css",
+    "static/js/985.cfedc43c.chunk.js": "/intelinvest/static/js/985.cfedc43c.chunk.js",
     "static/js/500.dddd9831.chunk.js": "/intelinvest/static/js/500.dddd9831.chunk.js",
     "static/js/264.fe6631e8.chunk.js": "/intelinvest/static/js/264.fe6631e8.chunk.js",
     "static/js/463.8417bff4.chunk.js": "/intelinvest/static/js/463.8417bff4.chunk.js",
@@ -16,6 +16,9 @@
     "static/media/employee-working-1.jpg": "/intelinvest/static/media/employee-working-1.667dcd033567f4af6217.jpg",
     "static/media/employee-working-2.jpg": "/intelinvest/static/media/employee-working-2.bd2057a8f9eb35136900.jpg",
     "static/media/employee-working-3.jpg": "/intelinvest/static/media/employee-working-3.3a955ff5130e40883a5e.jpg",
+    "static/media/photo-yuhtenko.svg": "/intelinvest/static/media/photo-yuhtenko.84cb1dd88191cbbb78249854aed4a2b1.svg",
+    "static/media/photo-tolstyakov.svg": "/intelinvest/static/media/photo-tolstyakov.54f02ffa39e689c0c79c3bdc0d416c09.svg",
+    "static/media/photo-gogoladze.svg": "/intelinvest/static/media/photo-gogoladze.8a325f1d39b1012186e0505955d755da.svg",
     "static/media/charts.svg": "/intelinvest/static/media/charts.5cbcfc23a856614cf618.svg",
     "static/media/apple-store.svg": "/intelinvest/static/media/apple-store.af23732bf50bed1f03e6570bb21feda7.svg",
     "static/media/true-indicators.svg": "/intelinvest/static/media/true-indicators.f94306dbea75b9510986.svg",
@@ -30,16 +33,16 @@
     "static/media/set.svg": "/intelinvest/static/media/set.18c43bb5f505d5e510bd.svg",
     "static/media/cross-small.svg": "/intelinvest/static/media/cross-small.d3724015a28ada69681849cfbfcf9f21.svg",
     "static/media/time.svg": "/intelinvest/static/media/time.00d71a1351b33beed720.svg",
-    "main.e47d0027.css.map": "/intelinvest/static/css/main.e47d0027.css.map",
-    "main.c44d8876.js.map": "/intelinvest/static/js/main.c44d8876.js.map",
-    "272.810efa89.chunk.css.map": "/intelinvest/static/css/272.810efa89.chunk.css.map",
-    "272.ab779026.chunk.js.map": "/intelinvest/static/js/272.ab779026.chunk.js.map",
+    "main.a92aada1.css.map": "/intelinvest/static/css/main.a92aada1.css.map",
+    "main.21edc64c.js.map": "/intelinvest/static/js/main.21edc64c.js.map",
+    "985.51d08e64.chunk.css.map": "/intelinvest/static/css/985.51d08e64.chunk.css.map",
+    "985.cfedc43c.chunk.js.map": "/intelinvest/static/js/985.cfedc43c.chunk.js.map",
     "500.dddd9831.chunk.js.map": "/intelinvest/static/js/500.dddd9831.chunk.js.map",
     "264.fe6631e8.chunk.js.map": "/intelinvest/static/js/264.fe6631e8.chunk.js.map",
     "463.8417bff4.chunk.js.map": "/intelinvest/static/js/463.8417bff4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e47d0027.css",
-    "static/js/main.c44d8876.js"
+    "static/css/main.a92aada1.css",
+    "static/js/main.21edc64c.js"
   ]
 }
