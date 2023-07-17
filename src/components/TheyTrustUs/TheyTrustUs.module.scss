@@ -1,5 +1,76 @@
 .wrapper {
-  border: 1px solid red;
-  padding: 20px;
-  margin: 50px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Mobile
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+
+  }
+
+  // Tablet
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  // Desktop
+  @media screen and (min-width: 940px) {
+    max-width: 940px;
+
+  }
+}
+
+.theyTrustUs__title {
+  color: var(--text-blue);
+  font-size: 30px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.theyTrustUs__list {
+  display: flex;
+  flex: 1 0 100%;
+}
+
+.theyTrustUs__item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 0 25%;
+  width: 170px;
+  position: relative;
+  padding: 0px 20px;
+
+
+  &:not(:first-child)::before {
+    content: "";
+    background-color: #e7eefc;
+    height: 100px;
+    width: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.theyTrustUs__subTitle {
+  color: var(--text-grey);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.theyTrustUs__text {
+  color: var(--text-grey);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+
+  & a {
+    color: var(--text-blue);
+    text-decoration: none;
+  }
 }
