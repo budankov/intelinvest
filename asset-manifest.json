@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/intelinvest/static/css/main.a92aada1.css",
-    "main.js": "/intelinvest/static/js/main.e0c4e479.js",
-    "static/css/217.662b6e2d.chunk.css": "/intelinvest/static/css/217.662b6e2d.chunk.css",
-    "static/js/217.30e5cf2d.chunk.js": "/intelinvest/static/js/217.30e5cf2d.chunk.js",
+    "main.css": "/intelinvest/static/css/main.f9777a23.css",
+    "main.js": "/intelinvest/static/js/main.16f4fec7.js",
+    "static/css/375.f4a35a78.chunk.css": "/intelinvest/static/css/375.f4a35a78.chunk.css",
+    "static/js/375.98cfa6e4.chunk.js": "/intelinvest/static/js/375.98cfa6e4.chunk.js",
     "static/js/500.dddd9831.chunk.js": "/intelinvest/static/js/500.dddd9831.chunk.js",
     "static/js/264.fe6631e8.chunk.js": "/intelinvest/static/js/264.fe6631e8.chunk.js",
     "static/js/463.8417bff4.chunk.js": "/intelinvest/static/js/463.8417bff4.chunk.js",
@@ -23,27 +23,33 @@
     "static/media/charts.svg": "/intelinvest/static/media/charts.5cbcfc23a856614cf618.svg",
     "static/media/apple-store.svg": "/intelinvest/static/media/apple-store.af23732bf50bed1f03e6570bb21feda7.svg",
     "static/media/true-indicators.svg": "/intelinvest/static/media/true-indicators.f94306dbea75b9510986.svg",
+    "static/media/instagram.svg": "/intelinvest/static/media/instagram.3f6fe613f924513be2951bab110587fe.svg",
+    "static/media/visa.svg": "/intelinvest/static/media/visa.63960836de6aeddf144089452ae918f8.svg",
     "index.html": "/intelinvest/index.html",
     "static/media/google-icon.svg": "/intelinvest/static/media/google-icon.9a7800d06783d80a1c12249a8ca58e9d.svg",
     "static/media/right-arrow.svg": "/intelinvest/static/media/right-arrow.ce890bf839f936920414.svg",
+    "static/media/youtube.svg": "/intelinvest/static/media/youtube.17feafc021db4d5e3e146398a2b0a440.svg",
+    "static/media/facebook.svg": "/intelinvest/static/media/facebook.9f4c682216061e8fba72d7217b9b7815.svg",
+    "static/media/telegram.svg": "/intelinvest/static/media/telegram.ecd39d1b28f9945f3466900b1bb09fb7.svg",
     "static/media/eye-closed.svg": "/intelinvest/static/media/eye-closed.095a971de4c426c21e89ae6c71345c51.svg",
     "static/media/eye-open.svg": "/intelinvest/static/media/eye-open.1aad4261a9f03e6275c5a789e0a7310b.svg",
     "static/media/google-play-store.svg": "/intelinvest/static/media/google-play-store.2316b5b5c54f54fe6785581b4f4e9b54.svg",
     "static/media/chat.svg": "/intelinvest/static/media/chat.53a925a9ec3fc28de892.svg",
     "static/media/analytics.svg": "/intelinvest/static/media/analytics.555b0f871c79e4f325d0.svg",
     "static/media/set.svg": "/intelinvest/static/media/set.18c43bb5f505d5e510bd.svg",
+    "static/media/master-card.svg": "/intelinvest/static/media/master-card.5b774724cc9f628c56bf0eaa5bbb1bf7.svg",
     "static/media/cross-small.svg": "/intelinvest/static/media/cross-small.d3724015a28ada69681849cfbfcf9f21.svg",
     "static/media/time.svg": "/intelinvest/static/media/time.00d71a1351b33beed720.svg",
-    "main.a92aada1.css.map": "/intelinvest/static/css/main.a92aada1.css.map",
-    "main.e0c4e479.js.map": "/intelinvest/static/js/main.e0c4e479.js.map",
-    "217.662b6e2d.chunk.css.map": "/intelinvest/static/css/217.662b6e2d.chunk.css.map",
-    "217.30e5cf2d.chunk.js.map": "/intelinvest/static/js/217.30e5cf2d.chunk.js.map",
+    "main.f9777a23.css.map": "/intelinvest/static/css/main.f9777a23.css.map",
+    "main.16f4fec7.js.map": "/intelinvest/static/js/main.16f4fec7.js.map",
+    "375.f4a35a78.chunk.css.map": "/intelinvest/static/css/375.f4a35a78.chunk.css.map",
+    "375.98cfa6e4.chunk.js.map": "/intelinvest/static/js/375.98cfa6e4.chunk.js.map",
     "500.dddd9831.chunk.js.map": "/intelinvest/static/js/500.dddd9831.chunk.js.map",
     "264.fe6631e8.chunk.js.map": "/intelinvest/static/js/264.fe6631e8.chunk.js.map",
     "463.8417bff4.chunk.js.map": "/intelinvest/static/js/463.8417bff4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a92aada1.css",
-    "static/js/main.e0c4e479.js"
+    "static/css/main.f9777a23.css",
+    "static/js/main.16f4fec7.js"
   ]
 }
