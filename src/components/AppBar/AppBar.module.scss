@@ -4,14 +4,10 @@
   top: 0;
   display: flex;
   justify-content: center;
-  background: var(--hero-bcg);
-  padding: 20px 0px;
+  background-color: var(--hero-bcg);
+  padding: 20px 0px 0px;
   transition: padding var(--timing);
   z-index: 100;
-
-  // @media screen and (min-width: 1280px) {
-  //   padding: 40px 20px;
-  // }
 }
 
 .header.fixed {
@@ -19,14 +15,20 @@
 }
 
 .nav__container {
-  width: 1320px;
+  width: 1360px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 20px;
+  position: relative;
+}
 
-  @media screen and (max-width: 768px) {
-    justify-content: left;
+.logoWrapper {
+  display: block;
+
+  &.active {
+    display: none;
   }
 }
 
@@ -40,30 +42,48 @@
 
 .nav__wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  margin-right: 58px;
 
-.menu__icon {
-  display: none;
+  &.active {
+    margin: 40px auto 20px;
+  }
+
+  @media screen and (min-width: 880px) {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin: 0;
+    align-items: baseline;
+  }
 }
 
 .nav__list {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  justify-content: center;
+  display: none;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
   z-index: 30;
+
+
+  &.hidden {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 880px) {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 
 .nav__link {
   font-size: 14px;
   font-family: OpenSans;
-  color: var(--white);
+  color: var(--text-blue);
   text-decoration: none;
   transition: var(--timing);
   position: relative;
@@ -83,36 +103,10 @@
   &:hover::after {
     width: 100%;
   }
-}
 
-.open {
-  display: flex;
-}
+  @media screen and (min-width: 880px) {
+    color: var(--white);
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f0f0f0;
-  z-index: 20;
-}
-
-@media screen and (max-width: 767px) {
-  .menu__icon {
-    display: block;
-    cursor: pointer;
-    z-index: 30;
-    position: relative;
-  }
-
-  .nav__list {
-    display: none;
-  }
-
-  .open {
-    display: flex;
   }
 }
 
@@ -123,17 +117,21 @@
   font-family: OpenSans;
   color: var(--white);
   text-decoration: none;
-  transition: var(--timing);
+  // transition: var(--timing);
   position: relative;
   line-height: 1;
   padding: 0;
-  margin-left: 40px;
+
+  &.active {
+    color: var(--text-blue);
+    font-weight: 700;
+  }
 
   &::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 7px;
     width: 0;
     height: 1px;
     background-color: var(--white);
@@ -147,6 +145,7 @@
 }
 
 .btnRegister {
+  width: min-content;
   border: none;
   background-color: #3b6ec9;
   border-radius: 6px;
@@ -154,7 +153,10 @@
   font-family: OpenSans;
   color: var(--white);
   padding: 6px 40px;
-  margin-left: 40px;
+
+  &.active {
+    font-weight: 700;
+  }
 
   &:focus,
   &:hover {
@@ -166,3 +168,82 @@
     display: none;
   }
 }
+
+.nav__btnAuth {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: min-content;
+  margin: 0 auto;
+  z-index: 30;
+
+  &.active {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 880px) {}
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  min-height: 260px;
+  background-color: #FFF;
+  z-index: 20;
+}
+
+.btnHamburgerMenu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 30;
+  transition: transform .15s linear;
+
+  @media screen and (min-width: 880px) {
+    display: none;
+  }
+
+  & span {
+    background-color: #fff;
+    display: block;
+    height: 2px;
+    margin: 6px auto;
+    position: relative;
+  }
+
+  &.active span {
+    background-color: #1e5ebb;
+    z-index: 30;
+
+    &:first-child {
+      top: 10px;
+      transform: rotate(45deg);
+      transition: transform .15s linear;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      bottom: 6px;
+      transform: rotate(-45deg);
+      transition: transform .15s linear;
+    }
+  }
+
+}
+
+@media screen and (max-width: 880px) {}

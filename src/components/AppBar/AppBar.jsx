@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Link as SrollLink } from 'react-scroll';
-import { Spin as Hamburger } from 'hamburger-react';
 import { useAuth } from 'shared/hooks/useAuth';
 import Modal from 'shared/components/Modal/Modal';
 import LoginForm from 'components/LoginForm/LoginForm';
@@ -53,19 +52,13 @@ const AppBar = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.fixed : ''}`}>
       <nav className={styles.nav__container}>
-        <div>
+        <div className={`${styles.logoWrapper} ${menuOpen ? styles.active : ''}`}>
           <a className={styles.logo} href="/intelinvest">
             <img src={logo} alt="logo" />
           </a>
         </div>
-        <div className={styles.nav__wrapper}>
-          <div className={styles.menu__icon}>
-            <Hamburger toggled={menuOpen} toggle={handleToggleMenu} />
-          </div>
-          {menuOpen && (
-            <div className={styles.overlay} onClick={handleToggleMenu} />
-          )}
-          <ul className={`${styles.nav__list} ${menuOpen ? styles.open : ''}`}>
+        <div className={`${styles.nav__wrapper} ${menuOpen ? styles.active : ''}`}>
+          <ul className={`${styles.nav__list} ${menuOpen ? styles.hidden : ''}`}>
             <li className={styles.nav__item}>
               <SrollLink
                 className={styles.nav__link}
@@ -124,16 +117,16 @@ const AppBar = () => {
               Повернутись до портфелю
             </Link>
           ) : (
-            <div className={styles.nav__btn}>
+            <div className={`${styles.nav__btnAuth} ${menuOpen ? styles.active : ''}`}>
               <button
-                className={styles.btnSignIn}
+                className={`${styles.btnSignIn} ${menuOpen ? styles.active : ''}`}
                 type="button"
                 onClick={() => handleModal('LoginForm')}
               >
                 Увійти
               </button>
               <button
-                className={styles.btnRegister}
+                className={`${styles.btnRegister} ${menuOpen ? styles.active : ''}`}
                 type="button"
                 onClick={() => handleModal('RegisterForm')}
               >
@@ -141,22 +134,33 @@ const AppBar = () => {
               </button>
             </div>
           )}
+
         </div>
+        <button className={!menuOpen ? styles.btnHamburgerMenu : `${styles.btnHamburgerMenu} ${styles.active}`} onClick={handleToggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          {selectedComponent === 'LoginForm' ? (
-            <LoginForm
-              onRegisterClick={() => setSelectedComponent('RegisterForm')}
-            />
-          ) : (
-            <RegisterForm
-              onLoginClick={() => setSelectedComponent('LoginForm')}
-            />
-          )}
-        </Modal>
+      {menuOpen && (
+        <div className={styles.overlay} onClick={handleToggleMenu} />
       )}
-    </header>
+      {
+        showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            {selectedComponent === 'LoginForm' ? (
+              <LoginForm
+                onRegisterClick={() => setSelectedComponent('RegisterForm')}
+              />
+            ) : (
+              <RegisterForm
+                onLoginClick={() => setSelectedComponent('LoginForm')}
+              />
+            )}
+          </Modal>
+        )
+      }
+    </header >
   );
 };
 
