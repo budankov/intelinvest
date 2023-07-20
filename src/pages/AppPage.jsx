@@ -4,6 +4,8 @@ import { useAuth } from '../shared/hooks/useAuth';
 import { removeUser } from 'redux/auth/userSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+import Test from 'components/Test/Test';
+
 const AppPage = () => {
   const dispatch = useDispatch();
   const { email } = useAuth();
@@ -23,6 +25,7 @@ const AppPage = () => {
     <div className="container">
       <h2>Персональна сторінка</h2>
       <button onClick={handleLogout}>Вийти з {email}</button>
+      <Test />
     </div>
   );
 };
