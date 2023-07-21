@@ -1,0 +1,99 @@
+.sideBar {
+    width: 100px;
+    background-color: var(--side-bar-bcg);
+    color: #fff;
+    padding: 10px;
+    transition: all var(--timing);
+    position: relative;
+
+    &__active {
+        width: 300px;
+    }
+
+    &:hover .sideBar__arrovBtn {
+        display: inline-block;
+    }
+}
+
+.sideBar__arrovBtn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: var(--side-bar-dark-bcg);
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    transition: all var(--timing);
+
+    position: absolute;
+    top: 50px;
+    right: -20px;
+
+    & .arrovBtn__icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        background-color: var(--side-bar-bcg-hover);
+    }
+}
+
+
+.sideBar__active .arrovBtn__icon {
+    transform: rotate(180deg);
+}
+
+
+// sideBar__top
+.sideBar__top {
+    height: 73px;
+}
+
+.sideBar__fastBtn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.fastBtn__img {
+    width: 40px;
+    height: 40px;
+}
+
+.fastBtn__title {
+    color: #fff;
+    display: none;
+
+    &_hidden {
+        display: inline-block;
+    }
+}
+
+
+// sideBar__middle
+.sideBar__navLink {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    stroke: yellow;
+}
+
+.sideBar__navIcon {
+    width: 40px;
+    height: 40px;
+    fill: yellowgreen;
+}
+
+.sideBar__navTitle {
+    color: #fff;
+    display: none;
+
+    &_hidden {
+        display: inline-block;
+    }
+}
