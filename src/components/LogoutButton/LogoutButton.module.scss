@@ -1,0 +1,20 @@
+.logOutBtn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+
+    &__icon {
+        width: 26px;
+        height: 26px;
+        fill: #96a5be;
+    }
+
+    &:hover {
+        background-color: #252a35;
+        border-radius: 4px;
+
+        .logOutBtn__icon {
+            fill: #1976d2;
+        }
+    }
+}

@@ -1,17 +1,18 @@
 .sideBar {
-    width: 100px;
+    width: 64px;
     background-color: var(--side-bar-bcg);
     color: #fff;
-    padding: 10px;
-    transition: all var(--timing);
+    transition: width var(--timing);
     position: relative;
 
     &__active {
-        width: 300px;
+        width: 250px;
     }
 
     &:hover .sideBar__arrovBtn {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -29,14 +30,15 @@
     top: 50px;
     right: -20px;
 
-    & .arrovBtn__icon {
-        width: 20px;
-        height: 20px;
-    }
-
     &:hover {
         background-color: var(--side-bar-bcg-hover);
     }
+}
+
+.arrovBtn__icon {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
 }
 
 
@@ -48,52 +50,173 @@
 // sideBar__top
 .sideBar__top {
     height: 73px;
+    border-bottom: 1px solid #282c38;
+    display: flex;
+    align-items: center;
+}
+
+.sideBar__wrapper {
+    width: 64px;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    padding: 5px 0;
+    cursor: pointer;
+
+    &_hidden {
+        width: 250px;
+    }
+
+    &:hover {
+        background-color: #3d404f;
+        border-radius: 4px;
+    }
 }
 
 .sideBar__fastBtn {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    justify-content: center;
     align-items: center;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-}
-
-.fastBtn__img {
     width: 40px;
     height: 40px;
+    border: none;
+    background-color: #252a35;
+    border-radius: 50%;
+    margin-left: 15px;
+    transition: var(--timing);
+
+    &:hover {
+        background-color: var(--side-bar-bcg-hover);
+    }
+}
+
+.fastBtn__icon {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
 }
 
 .fastBtn__title {
-    color: #fff;
+    width: 64px;
+    color: #96a5be;
     display: none;
+    font-size: 13px;
 
     &_hidden {
+        width: 150px;
         display: inline-block;
     }
 }
 
-
 // sideBar__middle
+.sideBar__navList {
+    display: block;
+    list-style: none;
+    padding: 10px;
+}
+
+.sideBar__navItem {
+    width: 46px;
+
+    &_active {
+        width: 230px;
+    }
+}
+
 .sideBar__navLink {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
     text-decoration: none;
-    stroke: yellow;
+    padding: 10px;
+
+    &:hover {
+        background-color: #252a35;
+        border-radius: 4px;
+
+
+        .sideBar__navIcon,
+        .sideBar__navTitle {
+            color: #1976d2;
+            fill: #1976d2;
+        }
+    }
 }
 
 .sideBar__navIcon {
-    width: 40px;
-    height: 40px;
-    fill: yellowgreen;
+    width: 26px;
+    height: 26px;
+    fill: #96a5be;
 }
 
 .sideBar__navTitle {
-    color: #fff;
     display: none;
+    font-size: 13px;
+    color: #96a5be;
+
+    &_hidden {
+        display: inline-block;
+
+
+    }
+}
+
+// sideBar__bottom
+.sideBar__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+}
+
+.subscribeStatus {
+    display: none;
+    border: 1px solid #b0b4c2;
+    font-size: 9px;
+    line-height: 20px;
+    color: #b0b4c2;
+    padding: 1px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 24px;
+    position: relative;
 
     &_hidden {
         display: inline-block;
     }
+
+    &:hover {
+        .subscribeStatus__info {
+            display: inline-block;
+        }
+    }
+}
+
+.subscribeStatus__title {
+    color: #96a5be;
+}
+
+.subscribeStatus__info {
+    display: none;
+    position: absolute;
+    top: -47px;
+    left: 0;
+    width: max-content;
+    border: none;
+    background-color: #21232f;
+    font-size: 14px;
+    line-height: 20px;
+    color: #b0b4c2;
+    padding: 10px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
+
 }
