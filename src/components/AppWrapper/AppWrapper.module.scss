@@ -1,5 +1,13 @@
 .appWrapper {
-    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
     background-color: var(--app-wrapper);
-    padding: 100px;
+    padding-left: 64px;
+    transition: padding var(--timing);
+
+    &__active {
+        padding-left: 250px;
+    }
 }

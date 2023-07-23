@@ -1,9 +1,11 @@
 .sideBar {
+    position: fixed;
     width: 64px;
+    height: 100vh;
     background-color: var(--side-bar-bcg);
     color: #fff;
     transition: width var(--timing);
-    position: relative;
+    z-index: 50;
 
     &__active {
         width: 250px;
@@ -25,6 +27,7 @@
     border-radius: 50%;
     padding: 0;
     transition: all var(--timing);
+    z-index: 60;
 
     position: absolute;
     top: 50px;
@@ -50,6 +53,7 @@
 // sideBar__top
 .sideBar__top {
     height: 73px;
+    border-right: 1px solid #282c38;
     border-bottom: 1px solid #282c38;
     display: flex;
     align-items: center;

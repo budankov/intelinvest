@@ -1,5 +1,7 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+import styles from './Test.module.scss'
+
 const data = [
     {
         name: 'Page A',
@@ -47,24 +49,56 @@ const data = [
 
 const Test = () => {
     return (
-        <div style={{ width: '100%', height: 300 }}>
-            <ResponsiveContainer>
-                <AreaChart
-                    data={data}
-                    margin={{
-                        top: 10,
-                        right: 30,
-                        left: 0,
-                        bottom: 0,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="2 2" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#246CF9" />
-                </AreaChart>
-            </ResponsiveContainer>
+        <div className={styles.testWrapper}>
+            <div style={{ width: '100%', height: 300 }}>
+                <ResponsiveContainer>
+                    <AreaChart
+                        data={data}
+                        margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="2 2" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#246CF9" />
+                    </AreaChart>
+                </ResponsiveContainer>
+            </div>
+            <div className={styles.text}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+            </div>
+            <div className={styles.text}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
+            </div>
         </div>
     );
 }

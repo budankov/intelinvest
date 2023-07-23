@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSideBarOpen } from 'redux/actions';
+
 import LogoutButton from 'components/LogoutButton/LogoutButton';
 
 // Icons
 import { ReactComponent as ArrowIcon } from '../../images/side-bar/arrow_icon.svg'
 import { ReactComponent as BarChartIcon } from '../../images/side-bar/bar_chart_icon.svg'
-// import { ReactComponent as Briefcase_cashIcon } from '../../images/side-bar/briefcase_cash_icon.svg'
 import { ReactComponent as BriefcaseIcon } from '../../images/side-bar/briefcase_icon.svg'
 import { ReactComponent as CupIcon } from '../../images/side-bar/cup_icon.svg'
 import { ReactComponent as GearIcon } from '../../images/side-bar/gear_icon.svg'
@@ -22,6 +24,16 @@ import styles from './SideBar.module.scss';
 const SideBar = () => {
     const [open, setOpen] = useState(false)
 
+    const dispatch = useDispatch();
+
+    const handleToggleSidebar = () => {
+        // Оновлюємо локальний стан компонента SideBar
+        setOpen(!open);
+
+        // Передаємо стан open в Redux-стор за допомогою екшена setSideBarOpen
+        dispatch(setSideBarOpen(!open));
+    };
+
     return (
         <nav className={`${styles.sideBar} ${open ? styles.sideBar__active : ''}`}>
             <div className={styles.sideBar__top}>
@@ -35,61 +47,61 @@ const SideBar = () => {
             <div className={styles.sideBar__middle}>
                 <ul className={styles.sideBar__navList}>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <BriefcaseIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Портфель</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <PieIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Аналітика</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <SunIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Мій 2023</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <ListIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Угоди</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <HexagonIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Управління портфелеми</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <ToolIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Інструменти</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <GearIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Налаштування</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <BarChartIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Ринок</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <CupIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Інвестотека</span>
                         </a>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <HelpIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Допомога</span>
                         </a>
@@ -99,7 +111,7 @@ const SideBar = () => {
             <div className={styles.sideBar__bottom}>
                 <ul className={styles.sideBar__navList}>
                     <li className={styles.sideBar__navItem}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={() => setOpen(!open)}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
                             <PersonIcon className={styles.sideBar__navIcon} />
                         </a>
                     </li>
@@ -112,7 +124,7 @@ const SideBar = () => {
                     <span className={styles.subscribeStatus__info}>Підписка закінчилася 25.07.2023</span>
                 </a>
             </div>
-            <button className={styles.sideBar__arrovBtn} onClick={() => setOpen(!open)}>
+            <button className={styles.sideBar__arrovBtn} onClick={handleToggleSidebar}>
                 <ArrowIcon className={styles.arrovBtn__icon} />
             </button>
         </nav>
