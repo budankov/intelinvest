@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/intelinvest/static/css/main.457328bb.css",
-    "main.js": "/intelinvest/static/js/main.7ee72359.js",
+    "main.js": "/intelinvest/static/js/main.0271aee7.js",
     "static/css/375.4d5df5ff.chunk.css": "/intelinvest/static/css/375.4d5df5ff.chunk.css",
     "static/js/375.f5129ed1.chunk.js": "/intelinvest/static/js/375.f5129ed1.chunk.js",
-    "static/css/362.57402327.chunk.css": "/intelinvest/static/css/362.57402327.chunk.css",
-    "static/js/362.8a395f9d.chunk.js": "/intelinvest/static/js/362.8a395f9d.chunk.js",
+    "static/css/934.c4b83591.chunk.css": "/intelinvest/static/css/934.c4b83591.chunk.css",
+    "static/js/934.1804c3f1.chunk.js": "/intelinvest/static/js/934.1804c3f1.chunk.js",
     "static/js/211.94266773.chunk.js": "/intelinvest/static/js/211.94266773.chunk.js",
     "static/js/360.83824481.chunk.js": "/intelinvest/static/js/360.83824481.chunk.js",
     "static/js/34.875dd799.chunk.js": "/intelinvest/static/js/34.875dd799.chunk.js",
@@ -24,6 +24,7 @@
     "static/media/photo-gogoladze.svg": "/intelinvest/static/media/photo-gogoladze.8a325f1d39b1012186e0505955d755da.svg",
     "static/media/gear_icon.svg": "/intelinvest/static/media/gear_icon.b548653f6b5bcce54a80c21db2351b15.svg",
     "static/media/charts.svg": "/intelinvest/static/media/charts.5cbcfc23a856614cf618.svg",
+    "static/media/briefcase_cash_icon.svg": "/intelinvest/static/media/briefcase_cash_icon.3df1a81a7eeabb6790e33277de7ecb48.svg",
     "static/media/help_icon.svg": "/intelinvest/static/media/help_icon.067ea96e0e593455bf02acd6c53d352e.svg",
     "static/media/sun_icon.svg": "/intelinvest/static/media/sun_icon.389377dfc7f660a7f52a746a16530c4f.svg",
     "static/media/bar_chart_icon.svg": "/intelinvest/static/media/bar_chart_icon.9bb9b5046faf5677f4f95902c5eeb208.svg",
@@ -57,17 +58,17 @@
     "static/media/cross-small.svg": "/intelinvest/static/media/cross-small.d3724015a28ada69681849cfbfcf9f21.svg",
     "static/media/time.svg": "/intelinvest/static/media/time.00d71a1351b33beed720.svg",
     "main.457328bb.css.map": "/intelinvest/static/css/main.457328bb.css.map",
-    "main.7ee72359.js.map": "/intelinvest/static/js/main.7ee72359.js.map",
+    "main.0271aee7.js.map": "/intelinvest/static/js/main.0271aee7.js.map",
     "375.4d5df5ff.chunk.css.map": "/intelinvest/static/css/375.4d5df5ff.chunk.css.map",
     "375.f5129ed1.chunk.js.map": "/intelinvest/static/js/375.f5129ed1.chunk.js.map",
-    "362.57402327.chunk.css.map": "/intelinvest/static/css/362.57402327.chunk.css.map",
-    "362.8a395f9d.chunk.js.map": "/intelinvest/static/js/362.8a395f9d.chunk.js.map",
+    "934.c4b83591.chunk.css.map": "/intelinvest/static/css/934.c4b83591.chunk.css.map",
+    "934.1804c3f1.chunk.js.map": "/intelinvest/static/js/934.1804c3f1.chunk.js.map",
     "211.94266773.chunk.js.map": "/intelinvest/static/js/211.94266773.chunk.js.map",
     "360.83824481.chunk.js.map": "/intelinvest/static/js/360.83824481.chunk.js.map",
     "34.875dd799.chunk.js.map": "/intelinvest/static/js/34.875dd799.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.457328bb.css",
-    "static/js/main.7ee72359.js"
+    "static/js/main.0271aee7.js"
   ]
 }
