@@ -11,7 +11,7 @@ const PrivateRoute = () => {
   }
 
   if (!isAuth && !token) {
-    return <Navigate to="/app" />;
+    return <Navigate to="/" />;
   }
 
   return <Outlet />;
