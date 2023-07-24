@@ -18,7 +18,6 @@ const AppBar = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
 
   const { isAuth } = useAuth();
-  console.log(isAuth);
 
   const handleModal = componentName => {
     setSelectedComponent(componentName);

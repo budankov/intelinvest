@@ -1,14 +1,14 @@
-import AppWrapper from 'components/AppWrapper/AppWrapper';
-import SideBar from 'components/SideBar/SideBar';
-
-import styles from './AppPage.module.scss'
+import { useAuth } from "shared/hooks/useAuth";
+import AppLayout from "components/AppLayout/AppLayout";
+import AppHome from "components/AppHome/AppHome";
 
 const AppPage = () => {
+  const { isAuth } = useAuth();
+
   return (
-    <div className={styles.appPage}>
-      <SideBar />
-      <AppWrapper />
-    </div>
+    <>
+      {isAuth ? <AppLayout /> : <AppHome />}
+    </>
   );
 };
 

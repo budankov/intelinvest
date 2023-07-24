@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setSideBarOpen } from 'redux/actions';
 
@@ -19,18 +20,18 @@ import { ReactComponent as PlusIcon } from '../../images/side-bar/plus_icon.svg'
 import { ReactComponent as SunIcon } from '../../images/side-bar/sun_icon.svg'
 import { ReactComponent as ToolIcon } from '../../images/side-bar/tool_icon.svg'
 
-import styles from './SideBar.module.scss';
+import styles from './AppSideBar.module.scss';
 
-const SideBar = () => {
+const AppSideBar = () => {
     const [open, setOpen] = useState(false)
 
     const dispatch = useDispatch();
 
     const handleToggleSidebar = () => {
-        // Оновлюємо локальний стан компонента SideBar
+        // Оновлюємо локальний стан компонента SideBar для розуміння відкритий чи закритий Sidebar
         setOpen(!open);
 
-        // Передаємо стан open в Redux-стор за допомогою екшена setSideBarOpen
+        // Передаємо стан open в Redux-стор за допомогою екшена setSideBarOpen для адаптації шириги AppLayout
         dispatch(setSideBarOpen(!open));
     };
 
@@ -47,71 +48,71 @@ const SideBar = () => {
             <div className={styles.sideBar__middle}>
                 <ul className={styles.sideBar__navList}>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <BriefcaseIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Портфель</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <PieIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Аналітика</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <SunIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Мій 2023</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <ListIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Угоди</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <HexagonIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Управління портфелеми</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <ToolIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Інструменти</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <GearIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Налаштування</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <BarChartIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Ринок</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="portfolio" className={styles.sideBar__navLink}>
                             <CupIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Інвестотека</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={`${styles.sideBar__navItem} ${open ? styles.sideBar__navItem_active : ''}`}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <NavLink to="help" className={styles.sideBar__navLink}>
                             <HelpIcon className={styles.sideBar__navIcon} />
                             <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}>Допомога</span>
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </div>
             <div className={styles.sideBar__bottom}>
                 <ul className={styles.sideBar__navList}>
                     <li className={styles.sideBar__navItem}>
-                        <a className={styles.sideBar__navLink} href="intelinvest/app" onClick={handleToggleSidebar}>
+                        <a className={styles.sideBar__navLink} href="intelinvest/app">
                             <PersonIcon className={styles.sideBar__navIcon} />
                         </a>
                     </li>
@@ -131,4 +132,4 @@ const SideBar = () => {
     );
 };
 
-export default SideBar;
+export default AppSideBar;
