@@ -19,6 +19,19 @@ const App = () => {
           <Route path="/app" element={<AppPage />}>
             <Route index element={<Portfolio />} />
             <Route path="portfolio" element={<Portfolio />} />
+            {/* <Route path="analytics/dashboard" element={<AnalyticsDashboard />} />
+            <Route path="analytics/reports" element={<AnalyticsReports />} />
+            <Route path="my-results/dashboard" element={<MyResultsDashboard />} />
+            <Route path="trades" element={<Trades />} />
+            <Route path="portfolio-management" element={<PortfolioManagement />} />
+            <Route path="calculations" element={<Calculations />} />
+            <Route path="events" element={<Events />} />
+            <Route path="rebalancing" element={<Rebalancing />} />
+            <Route path="settings/import" element={<SettingsImport />} />
+            <Route path="settings/notifications" element={<SettingsNotifications />} />
+            <Route path="quotes/stock" element={<QuotesStock />} />
+            <Route path="quotes/share-info/:id" element={<QuotesStock />} />
+            <Route path="investoteka" element={<Investoteka />} /> */}
             <Route path="help" element={<Help />} />
           </Route>
         </Route>
@@ -29,23 +42,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-// {/* <Route element={<PrivateRoute />}> */ }
-// {/* <Route path="/app" element={<AppPage />} /> */ }
-// {/* <Route path="/app/portfolio" element={<Portfolio />} /> */ }
-// {/* <Route path="/app/analytics/dashboard" element={<AnalyticsDashboard />} /> */ }
-// {/* <Route path="/app/analytics/reports" element={<AnalyticsReports />} /> */ }
-// {/* <Route path="/app/my-results/dashboard" element={<MyResultsDashboard />} /> */ }
-// {/* <Route path="/app/trades" element={<Trades/>} /> */ }
-// {/* <Route path="/app/portfolio-management" element={<PortfolioManagement/>} /> */ }
-// {/* <Route path="/app/calculations" element={<Calculations/>} /> */ }
-// {/* <Route path="/app/events" element={<Events/>} /> */ }
-// {/* <Route path="/app/rebalancing" element={<Rebalancing/>} /> */ }
-// {/* <Route path="/app/settings/import" element={<SettingsImport/>} /> */ }
-// {/* <Route path="/app/settings/notifications" element={<SettingsNotifications/>} /> */ }
-// {/* <Route path="/app/quotes/stock" element={<QuotesStock/>} /> */ }
-// {/* <Route path="/app/quotes/share-info/:id" element={<QuotesStock/>} /> */ }
-// {/* <Route path="/app/investoteka" element={<Investoteka/>} /> */ }
-// {/* <Route path="/app/help" element={<Help/>} /> */ }

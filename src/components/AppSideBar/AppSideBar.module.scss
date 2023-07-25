@@ -7,7 +7,7 @@
     transition: width var(--timing);
     z-index: 50;
 
-    &__active {
+    &.active {
         width: 250px;
     }
 
@@ -70,7 +70,7 @@
     padding: 5px 0;
     cursor: pointer;
 
-    &_hidden {
+    &.hidden {
         width: 250px;
     }
 
@@ -121,12 +121,15 @@
     display: block;
     list-style: none;
     padding: 10px;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sideBar__navItem {
     width: 46px;
 
-    &_active {
+    &.active {
         width: 230px;
     }
 }
@@ -137,6 +140,7 @@
     align-items: center;
     text-decoration: none;
     padding: 10px;
+    position: relative;
 
     &:hover {
         background-color: #252a35;
@@ -144,7 +148,8 @@
 
 
         .sideBar__navIcon,
-        .sideBar__navTitle {
+        .sideBar__navTitle,
+        .sideBar__subMenuIcon {
             color: #1976d2;
             fill: #1976d2;
         }
@@ -157,12 +162,33 @@
     fill: #96a5be;
 }
 
+.sideBar__subMenuIcon {
+    position: absolute;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    fill: #fff;
+    transform: rotate(90deg);
+
+    &.hidden {
+        right: 6px;
+        width: 16px;
+        height: 16px;
+        fill: #96a5be;
+    }
+
+    &.reverse {
+        transform: rotate(270deg);
+    }
+
+}
+
 .sideBar__navTitle {
     display: none;
     font-size: 13px;
     color: #96a5be;
 
-    &_hidden {
+    &.hidden {
         display: inline-block;
 
 
@@ -173,9 +199,49 @@
 .sideBar__bottom {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    position: fixed;
+    align-items: end;
+    position: sticky;
     bottom: 0;
+    padding-bottom: 10px;
+}
+
+.sideBarBottom__navList {
+    display: block;
+    list-style: none;
+}
+
+.sideBarBottom__navItem {
+    width: 46px;
+
+    &.active {
+        width: 230px;
+    }
+}
+
+.sideBarBottom__navLink {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+
+    &:hover {
+        background-color: #252a35;
+        border-radius: 4px;
+
+        .sideBarBottom__navIcon,
+        .sideBarBottom__navTitle {
+            color: #1976d2;
+            fill: #1976d2;
+        }
+    }
+}
+
+.sideBarBottom__navIcon {
+    width: 26px;
+    height: 26px;
+    fill: #96a5be;
 }
 
 .subscribeStatus {
@@ -188,7 +254,8 @@
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
-    margin-bottom: 24px;
+    height: max-content;
+    margin-bottom: 13px;
     position: relative;
 
     &_hidden {
