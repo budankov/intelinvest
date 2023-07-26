@@ -9,6 +9,7 @@ import styles from './AppLayout.module.scss';
 
 const AppLayout = () => {
     const openFromReduxStore = useSelector((state) => state.open);
+    console.log(`AppLayout`, openFromReduxStore)
 
     return (
         <>

@@ -120,17 +120,29 @@
 .sideBar__navList {
     display: block;
     list-style: none;
-    padding: 10px;
     height: calc(100vh - 200px);
+    padding: 5px 8px;
     overflow-y: auto;
     overflow-x: hidden;
+    user-select: none;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: #444c5e;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+        border-radius: 5px;
+    }
 }
 
 .sideBar__navItem {
-    width: 46px;
+    width: 48px;
 
     &.active {
-        width: 230px;
+        width: 234px;
     }
 }
 
@@ -141,20 +153,25 @@
     text-decoration: none;
     padding: 10px;
     position: relative;
+    border-radius: 4px;
 
     &:hover {
         background-color: #252a35;
-        border-radius: 4px;
-
-
-        .sideBar__navIcon,
-        .sideBar__navTitle,
-        .sideBar__subMenuIcon {
-            color: #1976d2;
-            fill: #1976d2;
-        }
     }
 }
+
+.sideBar__navLink[aria-current="page"] {
+    background-color: #252a35;
+
+    & .sideBar__navTitle {
+        color: #1976d2;
+    }
+
+    & .sideBar__navIcon {
+        fill: #1976d2;
+    }
+}
+
 
 .sideBar__navIcon {
     width: 26px;
@@ -190,31 +207,54 @@
 
     &.hidden {
         display: inline-block;
-
-
     }
+}
+
+.subMenu__navLink {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+
+    &:hover {
+        background-color: #252a35;
+        border-radius: 4px;
+
+        .subMenu__navTitle {
+            color: #1976d2;
+        }
+    }
+}
+
+
+.subMenu__navTitle {
+    display: inline-block;
+    font-size: 13px;
+    color: #96a5be;
 }
 
 // sideBar__bottom
 .sideBar__bottom {
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: flex-end;
     position: sticky;
     bottom: 0;
-    padding-bottom: 10px;
+    width: 230px;
 }
 
 .sideBarBottom__navList {
     display: block;
     list-style: none;
+    padding: 5px 8px;
 }
 
 .sideBarBottom__navItem {
-    width: 46px;
+    width: 48px;
 
     &.active {
-        width: 230px;
+        width: 234px;
     }
 }
 
@@ -255,7 +295,7 @@
     cursor: pointer;
     text-decoration: none;
     height: max-content;
-    margin-bottom: 13px;
+    margin-bottom: 19px;
     position: relative;
 
     &_hidden {

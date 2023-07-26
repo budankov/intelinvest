@@ -19,6 +19,9 @@ const AppSideBar = () => {
     const [open, setOpen] = useState(false)
     const [activeSubMenus, setActiveSubMenus] = useState({});
 
+    console.log(`AppSideBar`, open)
+
+
     const dispatch = useDispatch();
 
     const handleToggleSidebar = () => {
@@ -29,6 +32,11 @@ const AppSideBar = () => {
     };
 
     const handleSubMenuToggle = (title) => {
+        if (open === false) {
+            setOpen(true);
+            dispatch(setSideBarOpen(!open));
+        }
+
         setActiveSubMenus((prevState) => ({
             ...prevState,
             [title]: !prevState[title],
@@ -64,7 +72,7 @@ const AppSideBar = () => {
                                     <span className={`${styles.sideBar__navTitle} ${open ? styles.hidden : ''}`}>{title}</span>
                                 </NavLink>
                             )}
-                            {submenu && activeSubMenus[title] && appRenderSubMenu(submenu)}
+                            {submenu && open && activeSubMenus[title] && appRenderSubMenu(submenu)}
                         </li>
                     ))}
                 </ul>

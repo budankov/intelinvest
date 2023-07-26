@@ -11,9 +11,9 @@ const appRenderSubMenu = (submenu) => {
         <ul className={styles.subMenu}>
             {submenu.map((item) => (
                 <li key={item.title}>
-                    <NavLink to={item.path} className={styles.sideBar__navLink}>
+                    <NavLink to={item.path} className={styles.subMenu__navLink}>
                         {/* <span className={`${styles.sideBar__navTitle} ${open ? styles.sideBar__navTitle_hidden : ''}`}> */}
-                        <span className={styles.sideBar__navTitle_hidden}>
+                        <span className={styles.subMenu__navTitle}>
                             {item.title}
                         </span>
                     </NavLink>

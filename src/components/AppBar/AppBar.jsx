@@ -112,7 +112,7 @@ const AppBar = () => {
             </li>
           </ul>
           {isAuth ? (
-            <Link className={styles.btnRegister} to="/app">
+            <Link className={styles.btnRegister} to="app/portfolio">
               Повернутись до портфелю
             </Link>
           ) : (
