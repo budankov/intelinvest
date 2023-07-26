@@ -33,6 +33,12 @@
     top: 50px;
     right: -20px;
 
+    &.rotate {
+        .arrovBtn__icon {
+            transform: rotate(180deg);
+        }
+    }
+
     &:hover {
         background-color: var(--side-bar-bcg-hover);
     }
@@ -43,12 +49,6 @@
     height: 20px;
     fill: #fff;
 }
-
-
-.sideBar__active .arrovBtn__icon {
-    transform: rotate(180deg);
-}
-
 
 // sideBar__top
 .sideBar__top {
@@ -227,6 +227,7 @@
     }
 }
 
+.subMenu {}
 
 .subMenu__navTitle {
     display: inline-block;

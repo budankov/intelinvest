@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import SideBar from 'components/AppSideBar/AppSideBar';
 import AppTopBar from 'components/AppTopBar/AppTopBar';
+import AppContentWrapper from 'components/AppContentWrapper/AppContentWrapper';
 import AppFooter from 'components/AppFooter/AppFooter';
 
 import { Outlet } from 'react-router-dom';
@@ -9,14 +10,15 @@ import styles from './AppLayout.module.scss';
 
 const AppLayout = () => {
     const openFromReduxStore = useSelector((state) => state.open);
-    console.log(`AppLayout`, openFromReduxStore)
 
     return (
         <>
             <SideBar />
             <main className={`${styles.appWrapper} ${openFromReduxStore ? styles.appWrapper__active : ''}`}>
                 <AppTopBar />
-                <Outlet />
+                <AppContentWrapper>
+                    <Outlet />
+                </AppContentWrapper>
                 <AppFooter />
             </main>
         </>

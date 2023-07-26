@@ -8,7 +8,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const AppPage = lazy(() => import('./pages/AppPage'));
 const Portfolio = lazy(() => import('./components/Portfolio/Portfolio'));
 const Help = lazy(() => import('./components/Help/Help'));
-
+const Test = lazy(() => import('./components/Test/Test'));
 
 const App = () => {
   return (
@@ -19,19 +19,20 @@ const App = () => {
           <Route path="/app" element={<AppPage />}>
             <Route index element={<Portfolio />} />
             <Route path="portfolio" element={<Portfolio />} />
-            {/* <Route path="analytics/dashboard" element={<AnalyticsDashboard />} />
-            <Route path="analytics/reports" element={<AnalyticsReports />} />
-            <Route path="my-results/dashboard" element={<MyResultsDashboard />} />
-            <Route path="trades" element={<Trades />} />
-            <Route path="portfolio-management" element={<PortfolioManagement />} />
-            <Route path="calculations" element={<Calculations />} />
-            <Route path="events" element={<Events />} />
-            <Route path="rebalancing" element={<Rebalancing />} />
-            <Route path="settings/import" element={<SettingsImport />} />
-            <Route path="settings/notifications" element={<SettingsNotifications />} />
-            <Route path="quotes/stock" element={<QuotesStock />} />
-            <Route path="quotes/share-info/:id" element={<QuotesStock />} />
-            <Route path="investoteka" element={<Investoteka />} /> */}
+            <Route path="analytics/dashboard" element={<Test />} />
+            <Route path="analytics/reports" element={<Test />} />
+            <Route path="my-results/dashboard" element={<Test />} />
+            <Route path="trades" element={<Test />} />
+            <Route path="portfolio-management" element={<Test />} />
+            <Route path="calculations" element={<Test />} />
+            <Route path="events" element={<Test />} />
+            <Route path="rebalancing" element={<Test />} />
+            <Route path="settings/import" element={<Test />} />
+            <Route path="settings/import" element={<Test />} />
+            <Route path="notifications" element={<Test />} />
+            <Route path="quotes/stock" element={<Test />} />
+            <Route path="quotes/share-info/:id" element={<Test />} />
+            <Route path="investoteka" element={<Test />} />
             <Route path="help" element={<Help />} />
           </Route>
         </Route>

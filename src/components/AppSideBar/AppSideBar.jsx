@@ -93,7 +93,7 @@ const AppSideBar = () => {
                     <span className={styles.subscribeStatus__info}>Підписка закінчилася 25.07.2023</span>
                 </a>
             </div>
-            <button className={styles.sideBar__arrovBtn} onClick={handleToggleSidebar}>
+            <button className={`${styles.sideBar__arrovBtn} ${open ? styles.rotate : ''}`} onClick={handleToggleSidebar}>
                 <ArrowIcon className={styles.arrovBtn__icon} />
             </button>
         </nav >

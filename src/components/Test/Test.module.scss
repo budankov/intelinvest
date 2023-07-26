@@ -1,10 +1,15 @@
 .testWrapper {
-    margin-top: 73px;
-    padding: 10px;
+
+    h2,
+    h3 {
+        text-align: center;
+        color: #fff;
+        margin: 20px auto;
+    }
 }
 
 .text {
-    max-width: 1000px;
+    max-width: 1500px;
     color: #fff;
     margin: 20px auto;
 }
