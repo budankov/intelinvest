@@ -9,12 +9,12 @@ import { Outlet } from 'react-router-dom';
 import styles from './AppLayout.module.scss';
 
 const AppLayout = () => {
-    const openFromReduxStore = useSelector((state) => state.open);
+    const openSideBar = useSelector((state) => state.open);
 
     return (
         <>
             <SideBar />
-            <main className={`${styles.appWrapper} ${openFromReduxStore ? styles.appWrapper__active : ''}`}>
+            <main className={`${styles.appWrapper} ${openSideBar ? styles.appWrapper__active : ''}`}>
                 <AppTopBar />
                 <AppContentWrapper>
                     <Outlet />
