@@ -1,7 +1,4 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { useState } from 'react';
-import { getDocs } from 'firebase/firestore';
-import { colRef } from 'shared/api/firebaseApi';
 
 import Stocks from 'components/Stocks/Stocks';
 
@@ -53,21 +50,6 @@ const data = [
 ];
 
 const Portfolio = () => {
-    const [users, setUsers] = useState([]);
-
-    const handleGetUsers = () => {
-        getDocs(colRef)
-            .then((querySnapshot) => {
-                const fetchedUsers = [];
-                querySnapshot.forEach((doc) => {
-                    fetchedUsers.push({ id: doc.id, ...doc.data() });
-                });
-                setUsers(fetchedUsers);
-            })
-            .catch((error) => {
-                console.error('Помилка при отриманні документів:', error);
-            });
-    };
 
     return (
         <div className={styles.testWrapper}>
@@ -91,15 +73,6 @@ const Portfolio = () => {
                 </ResponsiveContainer>
             </div>
             <Stocks />
-            <div>
-                <h1 className={styles.text}>Користувачі</h1>
-                <button onClick={handleGetUsers} >Отримати користувачів</button>
-                <ul>
-                    {users.map((user) => (
-                        <li key={user.id} className={styles.text}>{user.name}</li>
-                    ))}
-                </ul>
-            </div>
             <div className={styles.text}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
