@@ -23,7 +23,6 @@ const LoginForm = ({ onRegisterClick }) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -43,7 +42,7 @@ const LoginForm = ({ onRegisterClick }) => {
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then(({ user }) => {
-        console.log(user);
+        // console.log(user);
         dispatch(
           setUser({
             email: user.email,

@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getFirestore, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -9,4 +10,12 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
+// Init firebase app
 export const app = initializeApp(firebaseConfig);
+
+// Init firestore database
+export const db = getFirestore(app);
+console.log(db)
+
+// Init collection ref
+export const colRef = collection(db, 'stocks')

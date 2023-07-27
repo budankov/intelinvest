@@ -19,9 +19,6 @@ const AppSideBar = () => {
     const [open, setOpen] = useState(false)
     const [activeSubMenus, setActiveSubMenus] = useState({});
 
-    console.log(`AppSideBar`, open)
-
-
     const dispatch = useDispatch();
 
     const handleToggleSidebar = () => {

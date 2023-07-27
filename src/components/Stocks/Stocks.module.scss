@@ -1,0 +1,68 @@
+.stocksWrapper {}
+
+.stocksHeader {
+    padding: 20px 10px;
+}
+
+.stocksTitle {
+    font-size: 18px;
+    color: #fff;
+}
+
+.stocksInputWrapper {
+    background-color: #2c3040;
+    padding: 20px 10px;
+    border-radius: 4px;
+}
+
+/* Стилі для таблиці акцій */
+.stocksTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Стилі для заголовка таблиці */
+.stocksTableThead {
+    background-color: #252a35;
+    /* Колір заголовка таблиці */
+}
+
+.stocksTableThead tr:nth-child(odd) {
+    background-color: #2c3040;
+    /* Колір першого рядка заголовка */
+}
+
+.stocksTableThead tr:nth-child(even) {
+    background-color: #272b39;
+    /* Колір другого рядка заголовка */
+}
+
+.stocksTableThead th {
+    padding: 20px 20px;
+    text-align: left;
+    color: #fff;
+    background-color: #272b39;
+}
+
+/* Стилі для тіла таблиці */
+.stocksTableTbody {
+    background-color: #252a35;
+    /* Колір тіла таблиці */
+}
+
+.stocksTableTbody tr:nth-child(odd) {
+    background-color: #2c3040;
+    border-bottom: 1px solid #464957;
+    /* Колір першого рядка тіла */
+}
+
+.stocksTableTbody tr:nth-child(even) {
+    background-color: #272b39;
+    border-bottom: 1px solid #464957;
+    /* Колір другого рядка тіла */
+}
+
+.stocksTableTbody td {
+    padding: 10px;
+    color: #fff;
+}

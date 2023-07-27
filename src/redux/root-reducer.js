@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import { SIDE_BAR_OPEN } from './actions';
 
 import authReducer from './auth/userSlice';
+import stocksSlice from './stocks/stocksSlice';
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +25,7 @@ const openReducer = (state = false, action) => {
 const rootReducer = combineReducers({
   user: persistedAuthReducer,
   open: openReducer,
+  stocks: stocksSlice,
 });
 
 export default rootReducer;
