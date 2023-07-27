@@ -16,12 +16,12 @@ export const fetchStocks = createAsyncThunk('stocks/fetchStocks', async (_, thun
 });
 
 // Додавання акцій до Firestore для поточного користувача
-export const addStock = createAsyncThunk('stocks/addStock', async (stock, thunkAPI) => {
+export const addStock = createAsyncThunk('stocks/addStock', async (stockData, thunkAPI) => {
     try {
         const user = thunkAPI.getState().user;
         const userId = user.id;
-        const docRef = await addDoc(collection(db, 'users', userId, 'stocks'), stock);
-        return { id: docRef.id, ...stock };
+        const docRef = await addDoc(collection(db, 'users', userId, 'stocks'), stockData);
+        return { id: docRef.id, ...stockData };
     } catch (error) {
         return thunkAPI.rejectWithValue({ error: error.message });
     }

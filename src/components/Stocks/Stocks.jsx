@@ -25,15 +25,14 @@ const Stocks = () => {
     };
 
     const handleAddStock = async () => {
-        const stockId = new Date().getTime();
-
         try {
-            await dispatch(addStock({
-                id: stockId,
+            const stockData = {
                 name: newStock.name,
                 price: newStock.price,
                 quantity: newStock.quantity,
-            }));
+            };
+
+            await dispatch(addStock(stockData));
 
             Notify.success(`Акція ${newStock.name} успішно додана до вашого портфелю!`);
             setNewStock({
@@ -46,9 +45,13 @@ const Stocks = () => {
         }
     };
 
+
     const handleRemoveStock = async (id) => {
         try {
-            await dispatch(removeStock(id));
+            console.log(id)
+            const test = await dispatch(removeStock(id));
+            console.log(test)
+
             Notify.success(`Акція успішно видалена з вашого портфелю!`);
         } catch (error) {
             Notify.info('Помилка при видаленні акції:', error.message);
