@@ -6,12 +6,10 @@ export const setSideBarOpen = (isOpen) => ({
     payload: isOpen,
 });
 
-// Записую яка валюта вибрана
+// Записую валюту яка вибрана в AppBar
 export const SET_SELECTED_CURRENCY = 'SET_SELECTED_CURRENCY';
 
-export const setSelectedCurrency = (currency) => (dispatch) => {
-    dispatch({
-        type: SET_SELECTED_CURRENCY,
-        payload: currency,
-    });
-};
+export const setSelectedCurrency = (currency) => ({
+    type: SET_SELECTED_CURRENCY,
+    payload: currency,
+});

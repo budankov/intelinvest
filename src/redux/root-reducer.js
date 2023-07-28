@@ -23,8 +23,8 @@ const openReducer = (state = false, action) => {
   }
 };
 
-// Записую яка валюта вибрана
-const currencyReducer = (state = 'USD', action) => {
+// Записую валюту яка вибрана в AppBar
+const selectedCurrencyReducer = (state = 'USD', action) => {
   switch (action.type) {
     case SET_SELECTED_CURRENCY:
       return action.payload;
@@ -33,11 +33,12 @@ const currencyReducer = (state = 'USD', action) => {
   }
 };
 
+
 const rootReducer = combineReducers({
   user: persistedAuthReducer,
   open: openReducer,
   stocks: stocksSlice,
-  selectedCurrency: currencyReducer,
+  selectedCurrency: selectedCurrencyReducer,
 });
 
 export default rootReducer;

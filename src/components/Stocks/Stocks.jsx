@@ -9,8 +9,15 @@ const Stocks = () => {
     const dispatch = useDispatch();
 
     const stocks = useSelector(state => state.stocks.stocks);
-    const currentCurrency = useSelector(state => state);
-    console.log(currentCurrency.selectedCurrency)
+    const selectedCurrency = useSelector(state => state.selectedCurrency.value);
+    const currentCurrency = selectedCurrency ? selectedCurrency : 'USD';
+
+    const currencySymbols = {
+        USD: '$',
+        EUR: '€',
+        GBP: '£',
+        UAH: '₴'
+    };
 
     const [newStock, setNewStock] = useState({
         name: '',
@@ -106,9 +113,9 @@ const Stocks = () => {
                         <th>Ціна купівлі</th>
                         <th>Кількість</th>
                         <th>Тепер. ціна</th>
-                        <th>Серед. ціна</th>
+                        <th>Серед. ціна, {currencySymbols[currentCurrency]}</th>
                         <th>Тепер. дохід, %</th>
-                        <th>Сум. дохід</th>
+                        <th>Сум. дохід, {currencySymbols[currentCurrency]}</th>
                         <th>Дохідність, %</th>
                         <th>Доля</th>
                         <th>Видалити</th>

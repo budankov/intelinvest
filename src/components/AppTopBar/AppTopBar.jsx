@@ -1,6 +1,7 @@
 import Select from 'react-select';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedCurrency } from 'redux/actions';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { currency, customStyles } from './CurrencyCustom';
@@ -12,15 +13,15 @@ import { ReactComponent as BriefcaseСashIcon } from '../../images/side-bar/brie
 import styles from './AppTopBar.module.scss';
 
 const AppTopBar = () => {
-    const [selectedCurrency, setSelectedCurrency] = useState(currency[0]);
-
-    const dispatch = useDispatch();
+    const [currentCurrency, setCurrentCurrency] = useState(currency[0]);
 
     const openSideBar = useSelector((state) => state.open);
 
+    const dispatch = useDispatch();
+
     const handleCurrencyChange = (selectedOption) => {
-        setSelectedCurrency(selectedOption);
-        dispatch({ type: 'SET_SELECTED_CURRENCY', payload: selectedOption });
+        setCurrentCurrency(selectedOption);
+        dispatch(setSelectedCurrency(selectedOption));
     };
 
     const notificationPopUp = () => {
@@ -29,7 +30,6 @@ const AppTopBar = () => {
 
     return (
         <div className={`${styles.appTopBar} ${openSideBar ? styles.activeSideBar : ''}`}>
-            {/* <div className={styles.appTopBar}> */}
             <div className={styles.appTopBar__leftPart} >
                 <div className={styles.portfolioSelect}>
                     <BriefcaseСashIcon className={styles.portfolioSelect__icon} />
@@ -38,7 +38,7 @@ const AppTopBar = () => {
                     <p className={styles.portfolioSelectNameBlock__title}>Портфель за замовчування</p>
                     <p className={styles.portfolioSelectNameBlock__text}>Фондовий</p>
                 </div>
-                <Select options={currency} value={selectedCurrency} onChange={handleCurrencyChange} styles={customStyles} />
+                <Select options={currency} value={currentCurrency} onChange={handleCurrencyChange} styles={customStyles} />
             </div>
             <div className={styles.appTopBar__rightPart}>
                 <button className={styles.fillter} onClick={notificationPopUp}>
