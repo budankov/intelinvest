@@ -1,6 +1,6 @@
 import Select from 'react-select';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { currency, customStyles } from './CurrencyCustom';
@@ -14,10 +14,13 @@ import styles from './AppTopBar.module.scss';
 const AppTopBar = () => {
     const [selectedCurrency, setSelectedCurrency] = useState(currency[0]);
 
+    const dispatch = useDispatch();
+
     const openSideBar = useSelector((state) => state.open);
 
     const handleCurrencyChange = (selectedOption) => {
         setSelectedCurrency(selectedOption);
+        dispatch({ type: 'SET_SELECTED_CURRENCY', payload: selectedOption });
     };
 
     const notificationPopUp = () => {

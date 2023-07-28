@@ -9,6 +9,8 @@ const Stocks = () => {
     const dispatch = useDispatch();
 
     const stocks = useSelector(state => state.stocks.stocks);
+    const currentCurrency = useSelector(state => state);
+    console.log(currentCurrency.selectedCurrency)
 
     const [newStock, setNewStock] = useState({
         name: '',
@@ -100,9 +102,16 @@ const Stocks = () => {
             <table className={styles.stocksTable}>
                 <thead className={styles.stocksTableThead}>
                     <tr>
-                        <th>Назва</th>
-                        <th>Ціна</th>
+                        <th>Актив</th>
+                        <th>Ціна купівлі</th>
                         <th>Кількість</th>
+                        <th>Тепер. ціна</th>
+                        <th>Серед. ціна</th>
+                        <th>Тепер. дохід, %</th>
+                        <th>Сум. дохід</th>
+                        <th>Дохідність, %</th>
+                        <th>Доля</th>
+                        <th>Видалити</th>
                     </tr>
                 </thead>
                 <tbody className={styles.stocksTableTbody}>
@@ -111,6 +120,12 @@ const Stocks = () => {
                             <td>{name}</td>
                             <td>{price}</td>
                             <td>{quantity}</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                             <td>
                                 <button onClick={() => handleRemoveStock(id)}>Видалити</button>
                             </td>
