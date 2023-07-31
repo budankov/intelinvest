@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiKey = '91aceb06219d44fbb1f1ad9691d8e791';
+const apiKey = process.env.REACT_APP_OPEN_EXCHANGE_RATES_API_KEY;
 
 const getExchangeRate = async (baseCurrency, targetCurrency) => {
     try {
