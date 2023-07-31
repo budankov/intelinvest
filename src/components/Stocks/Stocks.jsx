@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchStocks, addStock, removeStock } from 'redux/stocks/opetations';
+import { selectExchangeRate } from 'redux/currencyConverter/currencyConverterSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import styles from './Stocks.module.scss';
@@ -9,6 +10,7 @@ const Stocks = () => {
     const dispatch = useDispatch();
 
     const stocks = useSelector(state => state.stocks.stocks);
+    const exchangeRate = useSelector(selectExchangeRate);
     const selectedCurrency = useSelector(state => state.selectedCurrency.value);
     const currentCurrency = selectedCurrency ? selectedCurrency : 'USD';
 
@@ -57,10 +59,7 @@ const Stocks = () => {
 
     const handleRemoveStock = async (id) => {
         try {
-            console.log(id)
-            const test = await dispatch(removeStock(id));
-            console.log(test)
-
+            await dispatch(removeStock(id));
             Notify.success(`Акція успішно видалена з вашого портфелю!`);
         } catch (error) {
             Notify.info('Помилка при видаленні акції:', error.message);
@@ -91,7 +90,7 @@ const Stocks = () => {
                     name="price"
                     value={newStock.price}
                     onChange={handleInputChange}
-                    placeholder="Ціна"
+                    placeholder="Ціна, $"
                     autoComplete="off"
                     className={styles.stocksInput}
                 />
@@ -125,7 +124,7 @@ const Stocks = () => {
                     {stocks.map(({ id, name, price, quantity }) => (
                         <tr key={id}>
                             <td>{name}</td>
-                            <td>{price}</td>
+                            <td>{(price * exchangeRate).toFixed(2)}</td>
                             <td>{quantity}</td>
                             <td>-</td>
                             <td>-</td>

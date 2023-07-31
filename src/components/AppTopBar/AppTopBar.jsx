@@ -1,7 +1,8 @@
 import Select from 'react-select';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedCurrency } from 'redux/actions';
+import { updateExchangeRate } from 'redux/currencyConverter/currencyConverterOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { currency, customStyles } from './CurrencyCustom';
@@ -13,15 +14,31 @@ import { ReactComponent as BriefcaseСashIcon } from '../../images/side-bar/brie
 import styles from './AppTopBar.module.scss';
 
 const AppTopBar = () => {
-    const [currentCurrency, setCurrentCurrency] = useState(currency[0]);
+    const [currentCurrency, setCurrentCurrency] = useState(() => {
+        const savedCurrency = localStorage.getItem('selectedCurrency');
+        return savedCurrency ? JSON.parse(savedCurrency) : currency[0];
+    });
+    const dispatch = useDispatch();
 
     const openSideBar = useSelector((state) => state.open);
 
-    const dispatch = useDispatch();
+    useEffect(() => {
+        const savedCurrency = localStorage.getItem('selectedCurrency');
+        if (savedCurrency) {
+            dispatch(setSelectedCurrency(JSON.parse(savedCurrency)));
+            const baseCurrency = 'USD';
+            const targetCurrency = JSON.parse(savedCurrency).value;
+            dispatch(updateExchangeRate(baseCurrency, targetCurrency));
+        }
+    }, [dispatch]);
 
-    const handleCurrencyChange = (selectedOption) => {
+    const handleCurrencyChange = async (selectedOption) => {
         setCurrentCurrency(selectedOption);
         dispatch(setSelectedCurrency(selectedOption));
+        localStorage.setItem('selectedCurrency', JSON.stringify(selectedOption));
+        const baseCurrency = 'USD';
+        const targetCurrency = selectedOption.value;
+        await dispatch(updateExchangeRate(baseCurrency, targetCurrency));
     };
 
     const notificationPopUp = () => {

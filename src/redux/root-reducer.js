@@ -5,6 +5,7 @@ import { SIDE_BAR_OPEN, SET_SELECTED_CURRENCY } from './actions';
 
 import authReducer from './auth/userSlice';
 import stocksSlice from './stocks/stocksSlice';
+import currencyConverterSlice from './currencyConverter/currencyConverterSlice';
 
 const persistConfig = {
   key: 'root',
@@ -39,6 +40,7 @@ const rootReducer = combineReducers({
   open: openReducer,
   stocks: stocksSlice,
   selectedCurrency: selectedCurrencyReducer,
+  currencyConverter: currencyConverterSlice,
 });
 
 export default rootReducer;

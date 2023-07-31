@@ -6,16 +6,28 @@ Service for accounting for the profitability of investments in stocks and bonds.
 -   Add purchased stocks and bonds
 -   Keep track of your portfolio
 -   Analyze profitability
+-   Choose a currency convenient for you
 
 ## Technologies Used
 
 -   React
 -   React Router
--   Fairbase
 -   Redux
 -   Axios
 -   Sass
+-   React scroll
+-   React select
+-   React popup
+-   Recharts
 -   Notiflix
+-   YUP
+
+## API Used
+
+-   Fairbase
+-   Firestore
+-   Open Exchange Rates
+-   Finnhub Stock
 
 ## Getting Started
 
