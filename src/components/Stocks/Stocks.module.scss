@@ -107,3 +107,22 @@
     padding: 10px;
     color: #fff;
 }
+
+// Popup
+.tooltipIcon {
+    width: 14px;
+    height: 14px;
+    fill: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.tooltipContent {
+    max-width: 300px;
+    font-size: 13px;
+    color: #fff;
+    background-color: #1d1f29;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
