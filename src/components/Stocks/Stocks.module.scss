@@ -51,6 +51,11 @@
     }
 }
 
+.stocksInputBtnDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /* Стилі для таблиці акцій */
 .stocksTable {
     width: 100%;
