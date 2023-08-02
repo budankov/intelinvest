@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import AsyncSelect from 'react-select/async';
 import { fetchStocks, addStock, removeStock } from 'redux/stocks/opetations';
 import { selectExchangeRate } from 'redux/currencyConverter/currencyConverterSlice';
+import { getStockSuggestions } from 'shared/api/finnhubApi';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import styles from './Stocks.module.scss';
+import { selectCustomStyles } from './selectCustomStyles';
 
 const Stocks = () => {
+    const [selectedStock, setSelectedStock] = useState(null);
+    const [newStock, setNewStock] = useState({
+        name: '',
+        price: '',
+        quantity: ''
+    });
+
     const dispatch = useDispatch();
 
     const stocks = useSelector(state => state.stocks.stocks);
@@ -21,12 +31,6 @@ const Stocks = () => {
         UAH: '₴'
     };
 
-    const [newStock, setNewStock] = useState({
-        name: '',
-        price: '',
-        quantity: ''
-    });
-
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setNewStock({
@@ -38,7 +42,7 @@ const Stocks = () => {
     const handleAddStock = async () => {
         try {
             const stockData = {
-                name: newStock.name,
+                name: selectedStock.value,
                 price: newStock.price,
                 quantity: newStock.quantity,
             };
@@ -56,7 +60,6 @@ const Stocks = () => {
         }
     };
 
-
     const handleRemoveStock = async (id) => {
         try {
             await dispatch(removeStock(id));
@@ -65,6 +68,26 @@ const Stocks = () => {
             Notify.info('Помилка при видаленні акції:', error.message);
         }
     };
+
+    const loadStockOptions = async (inputValue, callback) => {
+        if (inputValue.trim() === '') {
+            callback([]);
+            return;
+        }
+
+        try {
+            const suggestions = await getStockSuggestions(inputValue);
+            const options = suggestions.map((stock) => ({
+                value: stock.symbol, // Вам, можливо, потрібно коректно підібрати значення
+                label: `${stock.symbol} - ${stock.description}`,
+            }));
+            callback(options);
+        } catch (error) {
+            console.log('Error fetching stock suggestions:', error.message);
+            callback([]);
+        }
+    };
+
 
     useEffect(() => {
         dispatch(fetchStocks());
@@ -76,14 +99,13 @@ const Stocks = () => {
                 <h2 className={styles.stocksTitle}>Акції</h2>
             </div>
             <div className={styles.stocksInputWrapper}>
-                <input
-                    type="text"
-                    name="name"
-                    value={newStock.name}
-                    onChange={handleInputChange}
+                <AsyncSelect
+                    cacheOptions
+                    styles={selectCustomStyles}
+                    isClearable={true}
+                    loadOptions={loadStockOptions}
                     placeholder="Назва акції"
-                    autoComplete="off"
-                    className={styles.stocksInput}
+                    onChange={(selectedOption) => setSelectedStock(selectedOption)}
                 />
                 <input
                     type="number"

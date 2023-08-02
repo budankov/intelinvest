@@ -10,9 +10,45 @@
 }
 
 .stocksInputWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     background-color: #2c3040;
     padding: 20px 10px;
     border-radius: 4px;
+}
+
+.stocksInput {
+    font-size: 16px;
+    color: #fff;
+    background-color: #444c5e;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 10px;
+    transition: border 0.3s;
+
+    &::placeholder {
+        color: #fff;
+    }
+
+    &:hover,
+    &:active {
+        border: 1px solid #757b8c;
+    }
+}
+
+.stocksInputBtn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #444c5e;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 10px;
+
+    &:hover,
+    &:active {
+        border: 1px solid #757b8c;
+    }
 }
 
 /* Стилі для таблиці акцій */
