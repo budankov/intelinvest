@@ -18,4 +18,19 @@ const getStockSuggestions = async (query) => {
   }
 };
 
-export { getStockSuggestions };
+const getStockPrice = async (symbol) => {
+  try {
+    const response = await axios.get(`${baseURL}/quote`, {
+      params: {
+        symbol: symbol,
+        token: apiKey,
+      },
+    });
+    return response.data.c;
+  } catch (error) {
+    console.log('Error fetching stock price:', error.message);
+    return null;
+  }
+};
+
+export { getStockSuggestions, getStockPrice };

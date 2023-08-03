@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AsyncSelect from 'react-select/async';
 import { fetchStocks, addStock, removeStock } from 'redux/stocks/opetations';
 import { selectExchangeRate } from 'redux/currencyConverter/currencyConverterSlice';
-import { getStockSuggestions } from 'shared/api/finnhubApi';
+import { fetchStockSuggestions, fetchStockPrice } from 'redux/stockSuggestions/stockSuggestionsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Popup from 'reactjs-popup';
 
@@ -12,16 +12,24 @@ import { selectCustomStyles } from './selectCustomStyles';
 
 // Icons
 import { ReactComponent as InfoIcon } from '../../images/icons/info-icon.svg'
+import { ReactComponent as TrashIcon } from '../../images/icons/trash-icon.svg'
 
 const Stocks = () => {
     const [selectedStock, setSelectedStock] = useState(null);
     const [isFormValid, setIsFormValid] = useState(false);
     const [asyncSelectKey, setAsyncSelectKey] = useState(0);
+    const [stockPrices, setStockPrices] = useState({});
     const [newStock, setNewStock] = useState({
         name: '',
         price: '',
         quantity: ''
     });
+
+    const dispatch = useDispatch();
+    const stocks = useSelector(state => state.stocks.stocks);
+    const exchangeRate = useSelector(selectExchangeRate);
+    const selectedCurrency = useSelector(state => state.selectedCurrency.value);
+    const currentCurrency = selectedCurrency ? selectedCurrency : 'USD';
 
     const currencySymbols = useMemo(() => ({
         USD: '$',
@@ -29,13 +37,6 @@ const Stocks = () => {
         GBP: '£',
         UAH: '₴'
     }), []);
-
-    const dispatch = useDispatch();
-
-    const stocks = useSelector(state => state.stocks.stocks);
-    const exchangeRate = useSelector(selectExchangeRate);
-    const selectedCurrency = useSelector(state => state.selectedCurrency.value);
-    const currentCurrency = selectedCurrency ? selectedCurrency : 'USD';
 
     useEffect(() => {
         if (selectedStock !== null && newStock.price !== '' && newStock.quantity !== '') {
@@ -102,17 +103,35 @@ const Stocks = () => {
         }
 
         try {
-            const suggestions = await getStockSuggestions(inputValue);
+            const response = await dispatch(fetchStockSuggestions(inputValue));
+            const suggestions = response.payload; // Отримання данних зі стору
             const options = suggestions.map((stock) => ({
                 value: stock.symbol,
                 label: `${stock.symbol} - ${stock.description}`,
             }));
+            console.log(suggestions);
             callback(options);
         } catch (error) {
-            console.log('Error fetching stock suggestions:', error.message);
+            console.log('Error fetching stock options:', error.message);
             callback([]);
         }
     };
+
+    const calculateRowValues = useCallback((name, price, quantity) => {
+        const totalPositionValue = (quantity * price).toFixed(2);
+        const currentStockPrice = stockPrices[name] !== undefined ? stockPrices[name] : 0;
+        const currentTotalPositionValue = (quantity * currentStockPrice).toFixed(2);
+        const profitability = (currentTotalPositionValue - totalPositionValue).toFixed(2);
+        const profitabilityPercentage = ((profitability / totalPositionValue) * 100).toFixed(2);
+
+        return {
+            totalPositionValue,
+            currentStockPrice,
+            currentTotalPositionValue,
+            profitability,
+            profitabilityPercentage,
+        };
+    }, [stockPrices]);
 
     const stocksTable = useMemo(() => {
         return (
@@ -120,19 +139,8 @@ const Stocks = () => {
                 <thead className={styles.stocksTableThead}>
                     <tr>
                         <th>Актив</th>
+                        <th>Кількість, шт</th>
                         <th>Ціна купівлі, {currencySymbols[currentCurrency]}</th>
-                        <th>Кількість</th>
-                        <th>Серед. ціна, {currencySymbols[currentCurrency]}
-                            <Popup
-                                trigger={<InfoIcon className={styles.tooltipIcon} />}
-                                position="bottom center"
-                                on="hover"
-                            >
-                                <div className={styles.tooltipContent}>
-                                    Середня ціна відкритої позиції. Якщо акція кілька разів купувалася та продавалася, то середня ціна буде підрахована серед тих паперів, що залишилися зараз у портфелі.
-                                </div>
-                            </Popup>
-                        </th>
                         <th>Тепер. ціна, {currencySymbols[currentCurrency]}
                             <Popup
                                 trigger={<InfoIcon className={styles.tooltipIcon} />}
@@ -140,52 +148,63 @@ const Stocks = () => {
                                 on="hover"
                             >
                                 <div className={styles.tooltipContent}>
-                                    Поточна біржова вартість акції. Якщо торги завершилися, відображається ціна закриття. *Дані надаються з доріжкою. Для архівних (не торгованих) акцій поточна ціна завжди буде 0.
+                                    Поточна біржова вартість акції. Якщо торги завершилися, відображається ціна закриття. *Дані оновлюются при оновленні сторінки, або змінах в таблиці. Для архівних (не торгованих) акцій поточна ціна завжди буде 0.
                                 </div>
                             </Popup>
                         </th>
-                        <th>Тепер. дохід, %
+                        <th>Загальна сума позицій, {currencySymbols[currentCurrency]}
                             <Popup
                                 trigger={<InfoIcon className={styles.tooltipIcon} />}
                                 position="bottom center"
                                 on="hover"
                             >
                                 <div className={styles.tooltipContent}>
-                                    Це поточний прибуток, виражений у відсотках щодо вартості покупок відкритих на даний момент позицій. Інакше висловлюючись, це прибутковість від зміни ціни відкритої позиції.
+                                    Це загальна сумма (кількіть * на ціну купівлі) вартості акцій. Відображає скільки загалом було витраченно на купівлю акції.
                                 </div>
                             </Popup>
                         </th>
-                        <th>Сум. дохід, {currencySymbols[currentCurrency]}
+                        <th>Поточна вартість позиції, {currencySymbols[currentCurrency]}
                             <Popup
                                 trigger={<InfoIcon className={styles.tooltipIcon} />}
                                 position="bottom center"
                                 on="hover"
                             >
                                 <div className={styles.tooltipContent}>
-                                    Це сумарний прибуток за акціями за весь час роботи портфеля.
+                                    Це загальна сумма (кількіть * на поточну вартість) акцій. Відображає актуальну ціну на даний момент.
                                 </div>
                             </Popup>
                         </th>
                         <th>
-                            Дохідність, %
+                            Дохідність, {currencySymbols[currentCurrency]}
                             <Popup
                                 trigger={<InfoIcon className={styles.tooltipIcon} />}
                                 position="bottom center"
                                 on="hover"
                             >
                                 <div className={styles.tooltipContent}>
-                                    Прибутковість річнихб розрахована за методом XIRR.
+                                    Відображає сумму прибутку/збитку. Розраховуєтся сумарна поточна ціна від сумарної загальної ціни.
                                 </div>
                             </Popup>
                         </th>
-                        <th>Доля
+                        <th>Дохідність, %
                             <Popup
                                 trigger={<InfoIcon className={styles.tooltipIcon} />}
                                 position="bottom center"
                                 on="hover"
                             >
                                 <div className={styles.tooltipContent}>
-                                    Частка паперу порахована до сумарної вартості активів, до якої належить папір.
+                                    Відображає відсоток прибутку/збитку. Розраховуєтся сумарна поточна ціна поділена на сумарну загальну ціни і помножена на 100%.
+                                </div>
+                            </Popup>
+                        </th>
+                        <th>Частка від портфелю, %
+                            <Popup
+                                trigger={<InfoIcon className={styles.tooltipIcon} />}
+                                position="bottom center"
+                                on="hover"
+                            >
+                                <div className={styles.tooltipContent}>
+                                    Частка паперу порахована до сумарної вартості активів, до якої належить папір. ВІдображає долю паперу від загального портфелю у %.
                                 </div>
                             </Popup>
                         </th>
@@ -193,27 +212,65 @@ const Stocks = () => {
                     </tr>
                 </thead>
                 <tbody className={styles.stocksTableTbody}>
-                    {stocks.map(({ id, name, price, quantity }) => (
-                        <tr key={id}>
-                            <td>{name}</td>
-                            <td>{(price * exchangeRate).toFixed(2)}</td>
-                            <td>{quantity}</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>
-                                <button onClick={() => handleRemoveStock(id)}>Видалити</button>
-                            </td>
-                        </tr>
-                    ))}
+                    {stocks.map(({ id, name, price, quantity }) => {
+                        const {
+                            totalPositionValue,
+                            currentStockPrice,
+                            currentTotalPositionValue,
+                            profitabilityPercentage,
+                        } = calculateRowValues(name, price, quantity);
+
+                        const totalSumOfPositions = stocks.reduce((total, stock) => {
+                            const { price, quantity } = stock;
+                            return total + (price * quantity);
+                        }, 0);
+
+                        return (
+                            <tr key={id}>
+                                <td>{name}</td>
+                                <td>{quantity}</td>
+                                <td>{(price * exchangeRate).toFixed(2)}</td>
+                                <td>{currentStockPrice.toFixed(2)}</td>
+                                <td>{(totalPositionValue * exchangeRate).toFixed(2)}</td>
+                                <td>{(currentTotalPositionValue * exchangeRate).toFixed(2)}</td>
+                                <td className={((currentTotalPositionValue - totalPositionValue) * exchangeRate) >= 0 ? styles.greenText : styles.redText}>
+                                    {((currentTotalPositionValue - totalPositionValue) * exchangeRate).toFixed(2)}
+                                </td>
+                                <td className={profitabilityPercentage >= 0 ? styles.greenText : styles.redText}>
+                                    {profitabilityPercentage}%
+                                </td>
+                                <td>{((totalPositionValue / totalSumOfPositions) * 100).toFixed(2)}%</td>
+                                <td>
+                                    <button className={styles.trashBtn} onClick={() => handleRemoveStock(id)}><TrashIcon className={styles.trashIcon} /></button>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         );
-    }, [stocks, exchangeRate, currencySymbols, currentCurrency, handleRemoveStock]);
+    }, [stocks, exchangeRate, currencySymbols, currentCurrency, calculateRowValues, handleRemoveStock]);
 
+    const handleGetPrice = useCallback(async (symbol) => {
+        try {
+            const response = await dispatch(fetchStockPrice(symbol));
+            const price = response.payload;
+            if (price !== null) {
+                setStockPrices((prevPrices) => ({
+                    ...prevPrices,
+                    [symbol]: price,
+                }));
+            }
+        } catch (error) {
+            console.log(`Error getting stock price for ${symbol}:`, error.message);
+        }
+    }, [dispatch, setStockPrices]);
+
+    useEffect(() => {
+        stocks.forEach(({ name }) => {
+            handleGetPrice(name);
+        });
+    }, [stocks, handleGetPrice]);
 
     useEffect(() => {
         dispatch(fetchStocks());

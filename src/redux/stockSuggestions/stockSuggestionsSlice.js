@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchStockSuggestions } from './stockSuggestionsOperations';
+import { fetchStockSuggestions, fetchStockPrice } from './stockSuggestionsOperations';
 
 const stockSuggestionsSlice = createSlice({
     name: 'stockSuggestions',
@@ -13,9 +13,16 @@ const stockSuggestionsSlice = createSlice({
             .addCase(fetchStockSuggestions.rejected, (state, action) => {
                 console.log('Error fetching stock suggestions:', action.payload);
                 return [];
+            })
+            .addCase(fetchStockPrice.fulfilled, (state, action) => {
+                return action.payload;
+            })
+            .addCase(fetchStockPrice.rejected, (state, action) => {
+                console.log('Error fetching stock price:', action.payload);
+                return [];
+
             });
     },
 });
 
 export default stockSuggestionsSlice.reducer;
-
