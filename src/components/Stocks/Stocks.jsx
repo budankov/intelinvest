@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AsyncSelect from 'react-select/async';
 import { fetchStocks, addStock, removeStock } from 'redux/stocks/opetations';
 import { selectExchangeRate } from 'redux/currencyConverter/currencyConverterSlice';
+import { updateTotalCurrentValue, updateTotalProfitability, updateTotalProfitabilityPercentage, updateBestStock } from 'redux/stocksDashboard/stocksDashboardSlice';
 import { fetchStockSuggestions, fetchStockPrice } from 'redux/stockSuggestions/stockSuggestionsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Popup from 'reactjs-popup';
@@ -64,6 +65,7 @@ const Stocks = () => {
         });
     };
 
+
     const handleAddStock = async () => {
         try {
             const stockData = {
@@ -109,7 +111,6 @@ const Stocks = () => {
                 value: stock.symbol,
                 label: `${stock.symbol} - ${stock.description}`,
             }));
-            console.log(suggestions);
             callback(options);
         } catch (error) {
             console.log('Error fetching stock options:', error.message);
@@ -132,6 +133,48 @@ const Stocks = () => {
             profitabilityPercentage,
         };
     }, [stockPrices]);
+
+    const calculateStocksSummary = useCallback(() => {
+        let totalCurrentValue = 0;
+        let totalProfitability = 0;
+        let totalPositionValue = 0;
+        let bestStock = {
+            name: '',
+            percentage: 0,
+        };
+
+        stocks.forEach(({ name, price, quantity }) => {
+            const {
+                totalPositionValue: rowTotalPositionValue,
+                currentTotalPositionValue,
+                profitability,
+                profitabilityPercentage,
+            } = calculateRowValues(name, price, quantity);
+
+            totalCurrentValue += parseFloat(currentTotalPositionValue);
+            totalProfitability += parseFloat(profitability);
+            totalPositionValue += parseFloat(rowTotalPositionValue);
+
+            if (parseFloat(profitabilityPercentage) > bestStock.percentage) {
+                bestStock = {
+                    name,
+                    percentage: parseFloat(profitabilityPercentage),
+                };
+            }
+        });
+
+        const totalProfitabilityPercentage = ((totalProfitability / totalPositionValue) * 100).toFixed(2);
+
+        dispatch(updateTotalCurrentValue(totalCurrentValue));
+        dispatch(updateTotalProfitability(totalProfitability));
+        dispatch(updateTotalProfitabilityPercentage(totalProfitabilityPercentage));
+        dispatch(updateBestStock(bestStock));
+    }, [stocks, calculateRowValues, dispatch]);
+
+
+    useEffect(() => {
+        calculateStocksSummary();
+    }, [stocks, calculateStocksSummary]);
 
     const stocksTable = useMemo(() => {
         return (

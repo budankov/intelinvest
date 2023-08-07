@@ -1,5 +1,6 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+import Dashboard from 'components/Dashboard/Dashboard';
 import Stocks from 'components/Stocks/Stocks';
 
 import styles from './Portfolio.module.scss'
@@ -53,6 +54,8 @@ const Portfolio = () => {
 
     return (
         <div className={styles.testWrapper}>
+            <Dashboard />
+            <Stocks />
             <div style={{ width: '100%', height: 300 }}>
                 <ResponsiveContainer>
                     <AreaChart
@@ -72,7 +75,6 @@ const Portfolio = () => {
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
-            <Stocks />
             <div className={styles.text}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius voluptate assumenda fuga, beatae temporibus provident animi sequi similique officiis alias odio id, possimus rem, consectetur velit nesciunt illum. Error.
