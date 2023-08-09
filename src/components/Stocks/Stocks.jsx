@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import AsyncSelect from 'react-select/async';
+import Popup from 'reactjs-popup';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchStocks, addStock, removeStock } from 'redux/stocks/opetations';
 import { selectExchangeRate } from 'redux/currencyConverter/currencyConverterSlice';
 import { updateTotalCurrentValue, updateTotalProfitability, updateTotalProfitabilityPercentage, updateBestStock } from 'redux/stocksDashboard/stocksDashboardSlice';
 import { fetchStockSuggestions, fetchStockPrice } from 'redux/stockSuggestions/stockSuggestionsOperations';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import Popup from 'reactjs-popup';
 
 import styles from './Stocks.module.scss';
 import { selectCustomStyles } from './selectCustomStyles';

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import Loader from 'shared/components/Loader/Loader';
@@ -7,6 +7,9 @@ import Loader from 'shared/components/Loader/Loader';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AppPage = lazy(() => import('./pages/AppPage'));
 const Portfolio = lazy(() => import('./components/Portfolio/Portfolio'));
+const Analytics = lazy(() => import('./components/Analytics/Analytics'));
+const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard/AnalyticsDashboard'));
+const Reports = lazy(() => import('./components/Reports/Reports'));
 const Help = lazy(() => import('./components/Help/Help'));
 const Test = lazy(() => import('./components/Test/Test'));
 
@@ -19,8 +22,11 @@ const App = () => {
           <Route path="/app" element={<AppPage />}>
             <Route index element={<Portfolio />} />
             <Route path="portfolio" element={<Portfolio />} />
-            <Route path="analytics/dashboard" element={<Test />} />
-            <Route path="analytics/reports" element={<Test />} />
+            <Route path="analytics" element={<Analytics />}>
+              <Route index element={<Navigate to="dashboard" />} />
+              <Route path="dashboard" element={<AnalyticsDashboard />} />
+              <Route path="reports" element={<Reports />} />
+            </Route>
             <Route path="my-results/dashboard" element={<Test />} />
             <Route path="trades" element={<Test />} />
             <Route path="portfolio-management" element={<Test />} />
