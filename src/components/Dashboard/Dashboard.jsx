@@ -11,6 +11,8 @@ import Popup from 'reactjs-popup';
 
 // Icons
 import { ReactComponent as InfoIcon } from '../../images/icons/info-icon.svg'
+import { ReactComponent as DashBullIcon } from '../../images/icons/dash-bull-icon.svg'
+import { ReactComponent as DashBearIcon } from '../../images/icons/dash-bear-icon.svg'
 
 import styles from './Dashboard.module.scss';
 
@@ -44,9 +46,16 @@ const Dashboard = () => {
                         </div>
                     </Popup>
                 </p>
-                <p className={styles.dashboard__value}>
-                    {(totalCurrentValue * exchangeRate).toFixed(2)}{currencySymbols[currentCurrency]}
-                </p>
+                <div className={styles.dashboard__dashConteiner}>
+                    <p className={styles.dashboard__value}>
+                        {(totalCurrentValue * exchangeRate).toFixed(2)}{currencySymbols[currentCurrency]}
+                    </p>
+                    {totalCurrentValue >= 0 ? (
+                        <DashBullIcon className={styles.dashboard__dashIcon} />
+                    ) : (
+                        <DashBearIcon className={styles.dashboard__dashIcon} />
+                    )}
+                </div>
             </div>
             <div className={`${styles.dashboard__item} ${styles.border}`}>
                 <p className={styles.dashboard__title}>Сумарний прибуток
@@ -60,9 +69,16 @@ const Dashboard = () => {
                         </div>
                     </Popup>
                 </p>
-                <p className={styles.dashboard__value}>
-                    {(totalProfitability * exchangeRate).toFixed(2)}{currencySymbols[currentCurrency]}
-                </p>
+                <div className={styles.dashboard__dashConteiner}>
+                    <p className={styles.dashboard__value}>
+                        {(totalProfitability * exchangeRate).toFixed(2)}{currencySymbols[currentCurrency]}
+                    </p>
+                    {totalProfitability >= 0 ? (
+                        <DashBullIcon className={styles.dashboard__dashIcon} />
+                    ) : (
+                        <DashBearIcon className={styles.dashboard__dashIcon} />
+                    )}
+                </div>
             </div>
             <div className={`${styles.dashboard__item} ${styles.border}`}>
                 <p className={styles.dashboard__title}>Дохідність

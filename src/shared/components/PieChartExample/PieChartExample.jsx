@@ -7,8 +7,6 @@ import { schemeSet2 } from 'd3-scale-chromatic';
 
 import styles from './PieChartExample.module.scss'
 
-
-
 const PieChartExample = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 

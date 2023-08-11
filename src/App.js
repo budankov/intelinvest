@@ -8,7 +8,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const AppPage = lazy(() => import('./pages/AppPage'));
 const Portfolio = lazy(() => import('./components/Portfolio/Portfolio'));
 const Analytics = lazy(() => import('./components/Analytics/Analytics'));
-const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard/AnalyticsDashboard'));
+const AnalyticsDashboardWrapper = lazy(() => import('./components/AnalyticsDashboardWrapper/AnalyticsDashboardWrapper'));
 const Reports = lazy(() => import('./components/Reports/Reports'));
 const Help = lazy(() => import('./components/Help/Help'));
 const Test = lazy(() => import('./components/Test/Test'));
@@ -24,7 +24,7 @@ const App = () => {
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="analytics" element={<Analytics />}>
               <Route index element={<Navigate to="dashboard" />} />
-              <Route path="dashboard" element={<AnalyticsDashboard />} />
+              <Route path="dashboard" element={<AnalyticsDashboardWrapper />} />
               <Route path="reports" element={<Reports />} />
             </Route>
             <Route path="my-results/dashboard" element={<Test />} />

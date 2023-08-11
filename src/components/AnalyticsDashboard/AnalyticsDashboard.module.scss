@@ -1,6 +1,24 @@
-.title {
+.analyticsDashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.analyticsDashboard__title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
     font-size: 20px;
-    text-align: center;
+    line-height: 20px;
     color: #fff;
-    margin-bottom: 15px;
+}
+
+.analyticsDashboard__value {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1;
+    color: #fff;
+    padding-top: 10px;
 }
