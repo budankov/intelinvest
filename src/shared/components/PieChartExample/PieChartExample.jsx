@@ -81,6 +81,7 @@ const PieChartExample = () => {
 
     return (
         <div className={styles.pieChart__wrapper}>
+            <h3 className={styles.title}>Склад портфелю по бумагам</h3>
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                     <Pie
