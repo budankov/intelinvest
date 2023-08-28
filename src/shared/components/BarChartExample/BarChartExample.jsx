@@ -12,7 +12,7 @@ import styles from './BarChartExample.module.scss'
 const BarChartExample = ({ data }) => {
     return (
         <div>
-            <h3 className={styles.title}>Склад портфелю по бумагам</h3>
+            <h3 className={styles.title}>Динаміка кількості по активам</h3>
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={data}>
                     <XAxis dataKey="name" />

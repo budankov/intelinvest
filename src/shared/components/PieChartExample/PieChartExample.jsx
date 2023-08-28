@@ -81,8 +81,8 @@ const PieChartExample = () => {
 
     return (
         <div className={styles.pieChart__wrapper}>
-            <h3 className={styles.title}>Склад портфелю по бумагам</h3>
-            <ResponsiveContainer width="100%" height="100%">
+            <h3 className={styles.title}>Склад портфелю по активам</h3>
+            <ResponsiveContainer width={700} height="100%">
                 <PieChart>
                     <Pie
                         data={pieChartData}
@@ -107,7 +107,7 @@ const PieChartExample = () => {
                         content={(props) => {
                             const { payload } = props;
                             return (
-                                <div>
+                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                     {payload.map((entry, index) => (
                                         <div key={`legend-item-${index}`} style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', color: '#fff' }}>
                                             <div style={{ width: '10px', height: '10px', backgroundColor: entry.color, marginRight: '10px' }}></div>
@@ -120,8 +120,9 @@ const PieChartExample = () => {
                         align="right"
                         verticalAlign="middle"
                         layout="vertical"
-                        wrapperStyle={{ paddingRight: '200px' }}
+                        wrapperStyle={{ paddingRight: '100px' }}
                     />
+
                 </PieChart>
             </ResponsiveContainer>
         </div>

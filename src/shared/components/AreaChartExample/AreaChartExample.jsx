@@ -17,7 +17,7 @@ export default function AreaChartExample({ data }) {
 
     return (
         <div>
-            <h3 className={styles.title}>Динаміка по бумагам</h3>
+            <h3 className={styles.title}>Динаміка по активам</h3>
             <ResponsiveContainer width="100%" height={400}>
                 <AreaChart data={data} margin={{ top: 20, right: 20, left: 20, bottom: 20 }}>
                     <defs>

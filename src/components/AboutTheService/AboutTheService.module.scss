@@ -27,9 +27,11 @@
 }
 
 .aboutTheService {
-  background-image: url('../../images/home-page/about-the-service/about-the-service.svg');
-  background-position: calc(100% - 230px) bottom;
+  background-image: url('../../images/pic6.svg');
+  // background-image: url('../../images/home-page/about-the-service/about-the-service.svg');
+  background-position: calc(100% - 330px) bottom;
   background-repeat: no-repeat;
+  background-size: 21%;
   padding: 50px 0px;
   background-color: var(--section-bcg-color);
 }
@@ -39,6 +41,7 @@
 }
 
 .aboutTheService__title {
+  font-family: "Gilroy SemiBold", sans-serif;
   color: var(--text-blue);
   font-size: 30px;
   margin-bottom: 30px;
