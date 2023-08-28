@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'shared/hooks/useAuth';
 import Modal from 'shared/components/Modal/Modal';
@@ -13,6 +13,7 @@ const Advantages = () => {
   const [showModalAuth, setShowModalAuth] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState(null);
   const [selectedText, setSelectedText] = useState('');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth >= 768);
 
   const navigate = useNavigate();
   const { isAuth } = useAuth();
@@ -31,6 +32,18 @@ const Advantages = () => {
     }
   };
 
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const textTime = (
     <>

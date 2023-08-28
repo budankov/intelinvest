@@ -31,13 +31,24 @@
   font-weight: 500;
   color: var(--text-blue);
   font-size: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
 }
 
 .theyTrustUs__list {
   display: flex;
-  flex: 1 0 100%;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex: 1 0 100%;
+    gap: 0;
+  }
 }
 
 .theyTrustUs__item {
@@ -45,19 +56,31 @@
   flex-direction: column;
   flex-wrap: wrap;
   flex: 1 0 25%;
-  width: 170px;
   position: relative;
   padding: 0px 20px;
-
 
   &:not(:first-child)::before {
     content: "";
     background-color: #e7eefc;
-    height: 100px;
-    width: 1px;
-    left: 0;
+    height: 1px;
+    width: 100px;
+    left: 20px;
     position: absolute;
-    top: 0;
+    top: -20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 170px;
+
+    &:not(:first-child)::before {
+      content: "";
+      background-color: #e7eefc;
+      height: 100px;
+      width: 1px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
   }
 }
 
@@ -66,7 +89,11 @@
   font-size: 20px;
   letter-spacing: 0;
   line-height: normal;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
+  }
 }
 
 .theyTrustUs__text {

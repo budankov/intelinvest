@@ -33,10 +33,18 @@
 
 .advantages__block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex: 1 0 100%;
-  margin: 34px 0px;
+  margin: 0px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 940px) {
+    margin: 34px 0px;
+  }
 }
 
 .advantages__text_block {
@@ -45,6 +53,7 @@
   flex: 1 0 50%;
   justify-content: center;
 }
+
 
 .advantages__image_block {
   flex: 1 0 50%;

@@ -32,14 +32,36 @@
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 238px 0 190px;
+    padding: 135px 0 52px;
+
+    & button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: 940px) {
+        padding: 238px 0 190px;
+
+        & button {
+            display: block;
+            margin: 0;
+        }
+    }
 }
 
 .hero__title {
     color: var(--white);
     font-family: "Gilroy Bold", sans-serif;
-    font-size: 42px;
-    margin-bottom: 50px;
+    font-size: 32px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (min-width: 940px) {
+        font-size: 42px;
+    }
 }
 
 .hero__list {
@@ -49,10 +71,14 @@
 
 .hero__item {
     color: var(--white);
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 12px;
 
     &::marker {
         color: #abe808;
+    }
+
+    @media screen and (min-width: 940px) {
+        font-size: 20px;
     }
 }

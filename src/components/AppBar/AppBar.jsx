@@ -135,7 +135,8 @@ const AppBar = () => {
           )}
 
         </div>
-        <button className={!menuOpen ? styles.btnHamburgerMenu : `${styles.btnHamburgerMenu} ${styles.active}`} onClick={handleToggleMenu}>
+        <button className={`${styles.btnHamburgerMenu} ${menuOpen ? styles.active : ''} ${isScrolled ? styles.scrolled : ''}`}
+          onClick={handleToggleMenu}>
           <span></span>
           <span></span>
           <span></span>

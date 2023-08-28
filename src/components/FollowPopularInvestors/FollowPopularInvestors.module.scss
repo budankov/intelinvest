@@ -25,7 +25,11 @@
 .followPopularInvestors {
   text-align: center;
   background-color: var(--section-bcg-color);
-  padding: 70px 0;
+  padding: 20px 0;
+
+  @media screen and (min-width: 940px) {
+    padding: 70px 0;
+  }
 }
 
 .followPopularInvestors__title {
@@ -38,13 +42,22 @@
 .followPopularInvestors__text {
   color: var(--text-grey);
   font-size: 16px;
-  margin: 20px auto 70px;
+  margin: 20px auto;
+
+  @media screen and (min-width: 940px) {
+    margin: 20px auto 70px;
+  }
 }
 
 .investorsCards {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   max-width: 960px;
+
+  @media screen and (min-width: 940px) {
+    flex-direction: row;
+  }
 }
 
 .investorsCard {

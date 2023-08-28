@@ -6,7 +6,7 @@
   border: none;
   border-radius: 33px;
   background-color: var(--white);
-  padding: 14px 20px;
+  padding: 7px 10px;
   transition: var(--timing);
 
   & span {
@@ -16,5 +16,9 @@
   &:hover {
     color: var(--white);
     background-color: var(--button-hover);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 20px;
   }
 }

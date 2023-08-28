@@ -30,23 +30,25 @@ const Footer = () => {
                             <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps"><img src={googlePlayStore} alt="Завантажте програму в Google Play"></img>Google Play</a>
                         </div>
                     </div>
-                    <div className={styles.footerTop__links}>
-                        <div className={styles.footerTop__links_title}>Продукт</div>
-                        <a href="/intelinvest">Можливості</a>
-                        <a href="/intelinvest">Інвестотека</a>
-                        <a href="/intelinvest">Блог</a>
-                        <a href="/intelinvest">Партнерам</a>
-                        <a href="/intelinvest">Тарифи</a>
-                        <a href="/intelinvest">Допомога</a>
-                    </div>
-                    <div className={styles.footerTop__links}>
-                        <div className={styles.footerTop__links_title}>Документи</div>
-                        <a href="/intelinvest">Ліцензійну угоду</a>
-                        <a href="/intelinvest">Політика конфіденційності</a>
-                    </div>
-                    <div className={styles.footerTop__links}>
-                        <p>OOO "Інтелінвест" ОГРН 1271632121270</p>
-                        <p>ІПН 1613326205</p>
+                    <div className={styles.footerTop__wrapper}>
+                        <div className={styles.footerTop__links}>
+                            <div className={styles.footerTop__links_title}>Продукт</div>
+                            <a href="/intelinvest">Можливості</a>
+                            <a href="/intelinvest">Інвестотека</a>
+                            <a href="/intelinvest">Блог</a>
+                            <a href="/intelinvest">Партнерам</a>
+                            <a href="/intelinvest">Тарифи</a>
+                            <a href="/intelinvest">Допомога</a>
+                        </div>
+                        <div className={styles.footerTop__links}>
+                            <div className={styles.footerTop__links_title}>Документи</div>
+                            <a href="/intelinvest">Ліцензійну угоду</a>
+                            <a href="/intelinvest">Політика конфіденційності</a>
+                        </div>
+                        <div className={styles.footerTop__links}>
+                            <p>OOO "Інтелінвест" ОГРН 1271632121270</p>
+                            <p>ІПН 1613326205</p>
+                        </div>
                     </div>
                 </div>
             </div>
