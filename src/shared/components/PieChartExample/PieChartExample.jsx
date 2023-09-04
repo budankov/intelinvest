@@ -9,6 +9,29 @@ import styles from './PieChartExample.module.scss'
 
 const PieChartExample = () => {
     const [activeIndex, setActiveIndex] = useState(null);
+    const [chartRadius, setChartRadius] = useState({ innerRadius: 60, outerRadius: 100 });
+    const [legendStyles, setLegendStyles] = useState({ align: 'right', verticalAlign: 'middle', wrapperStyle: { paddingRight: '200px' } });
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth < 768;
+            setChartRadius(isMobile ? { innerRadius: 40, outerRadius: 70 } : { innerRadius: 60, outerRadius: 100 });
+            setLegendStyles(isMobile
+                ? {
+                    align: 'center', verticalAlign: 'bottom', wrapperStyle: { paddingRight: '10px' }
+                }
+                : {
+                    align: 'right', verticalAlign: 'middle', wrapperStyle: { paddingRight: '200px' }
+                });
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     const dispatch = useDispatch();
 
@@ -78,17 +101,17 @@ const PieChartExample = () => {
         );
     };
 
-
     return (
         <div className={styles.pieChart__wrapper}>
             <h3 className={styles.title}>Склад портфелю по активам</h3>
-            <ResponsiveContainer width={700} height="100%">
+            {/* <ResponsiveContainer width="100%" height={200}> */}
+            <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                     <Pie
                         data={pieChartData}
                         labelLine={false}
-                        innerRadius={60}
-                        outerRadius={100}
+                        innerRadius={chartRadius.innerRadius}
+                        outerRadius={chartRadius.outerRadius}
                         fill="#8884d8"
                         dataKey="value"
                         activeIndex={activeIndex}
@@ -107,7 +130,7 @@ const PieChartExample = () => {
                         content={(props) => {
                             const { payload } = props;
                             return (
-                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                                <div className={styles.legendList} >
                                     {payload.map((entry, index) => (
                                         <div key={`legend-item-${index}`} style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', color: '#fff' }}>
                                             <div style={{ width: '10px', height: '10px', backgroundColor: entry.color, marginRight: '10px' }}></div>
@@ -117,10 +140,10 @@ const PieChartExample = () => {
                                 </div>
                             );
                         }}
-                        align="right"
-                        verticalAlign="middle"
+                        align={legendStyles.align}
+                        verticalAlign={legendStyles.verticalAlign}
+                        wrapperStyle={legendStyles.wrapperStyle}
                         layout="vertical"
-                        wrapperStyle={{ paddingRight: '100px' }}
                     />
 
                 </PieChart>

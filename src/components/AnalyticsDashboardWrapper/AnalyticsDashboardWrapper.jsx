@@ -12,7 +12,7 @@ const AnalyticsDashboardWrapper = () => {
     const stocks = useSelector(state => state.stocks.stocks);
 
     return (
-        <>
+        <div className={styles.dashboardWWrapper}>
             <AnalyticsDashboard />
             <div className={styles.chartsWrapper}>
                 <ChartWrapper>
@@ -25,7 +25,7 @@ const AnalyticsDashboardWrapper = () => {
             <ChartWrapper>
                 <AreaChartExample data={stocks} />
             </ChartWrapper>
-        </>
+        </div>
     )
 }
 

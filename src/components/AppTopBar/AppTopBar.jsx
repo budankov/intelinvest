@@ -14,6 +14,7 @@ import { ReactComponent as BriefcaseСashIcon } from '../../images/side-bar/brie
 import styles from './AppTopBar.module.scss';
 
 const AppTopBar = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth >= 768);
     const [currentCurrency, setCurrentCurrency] = useState(() => {
         const savedCurrency = localStorage.getItem('selectedCurrency');
         return savedCurrency ? JSON.parse(savedCurrency) : currency[0];
@@ -31,6 +32,18 @@ const AppTopBar = () => {
             dispatch(updateExchangeRate(baseCurrency, targetCurrency));
         }
     }, [dispatch]);
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleCurrencyChange = async (selectedOption) => {
         setCurrentCurrency(selectedOption);
@@ -55,15 +68,19 @@ const AppTopBar = () => {
                     <p className={styles.portfolioSelectNameBlock__title}>Портфель за замовчування</p>
                     <p className={styles.portfolioSelectNameBlock__text}>Фондовий</p>
                 </div>
-                <Select options={currency} value={currentCurrency} onChange={handleCurrencyChange} styles={customStyles} />
+                {windowWidth && (
+                    <Select options={currency} value={currentCurrency} onChange={handleCurrencyChange} styles={customStyles} />
+                )}
             </div>
-            <div className={styles.appTopBar__rightPart}>
-                <button className={styles.fillter} onClick={notificationPopUp}>
-                    <span className={styles.fillter__title}>Глобальний фільтр</span>
-                    <ArrowIcon className={styles.fillter__icon} />
-                </button>
-                <button className={styles.import} onClick={notificationPopUp}>Імпорт</button>
-            </div>
+            {windowWidth && (
+                <div className={styles.appTopBar__rightPart}>
+                    <button className={styles.fillter} onClick={notificationPopUp}>
+                        <span className={styles.fillter__title}>Глобальний фільтр</span>
+                        <ArrowIcon className={styles.fillter__icon} />
+                    </button>
+                    <button className={styles.import} onClick={notificationPopUp}>Імпорт</button>
+                </div>
+            )}
         </div>
     );
 };

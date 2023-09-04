@@ -1,5 +1,16 @@
-.text {
-    max-width: 1000px;
-    color: #fff;
-    margin: 20px auto;
+.portfolioWrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    user-select: none;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        background-color: #444c5e;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+        border-radius: 5px;
+    }
 }
