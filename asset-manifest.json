@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/intelinvest/static/css/main.a7e3dabc.css",
-    "main.js": "/intelinvest/static/js/main.b0ab0ea9.js",
-    "static/css/375.79e715c4.chunk.css": "/intelinvest/static/css/375.79e715c4.chunk.css",
-    "static/js/375.ea4159c8.chunk.js": "/intelinvest/static/js/375.ea4159c8.chunk.js",
+    "main.js": "/intelinvest/static/js/main.fe33d407.js",
+    "static/css/375.00bbc125.chunk.css": "/intelinvest/static/css/375.00bbc125.chunk.css",
+    "static/js/375.cbe403ae.chunk.js": "/intelinvest/static/js/375.cbe403ae.chunk.js",
     "static/css/674.b1cc7b1c.chunk.css": "/intelinvest/static/css/674.b1cc7b1c.chunk.css",
     "static/js/674.09df6358.chunk.js": "/intelinvest/static/js/674.09df6358.chunk.js",
     "static/css/590.244991de.chunk.css": "/intelinvest/static/css/590.244991de.chunk.css",
@@ -78,9 +78,9 @@
     "static/media/cross-small.svg": "/intelinvest/static/media/cross-small.d3724015a28ada69681849cfbfcf9f21.svg",
     "static/media/time.svg": "/intelinvest/static/media/time.00d71a1351b33beed720.svg",
     "main.a7e3dabc.css.map": "/intelinvest/static/css/main.a7e3dabc.css.map",
-    "main.b0ab0ea9.js.map": "/intelinvest/static/js/main.b0ab0ea9.js.map",
-    "375.79e715c4.chunk.css.map": "/intelinvest/static/css/375.79e715c4.chunk.css.map",
-    "375.ea4159c8.chunk.js.map": "/intelinvest/static/js/375.ea4159c8.chunk.js.map",
+    "main.fe33d407.js.map": "/intelinvest/static/js/main.fe33d407.js.map",
+    "375.00bbc125.chunk.css.map": "/intelinvest/static/css/375.00bbc125.chunk.css.map",
+    "375.cbe403ae.chunk.js.map": "/intelinvest/static/js/375.cbe403ae.chunk.js.map",
     "674.b1cc7b1c.chunk.css.map": "/intelinvest/static/css/674.b1cc7b1c.chunk.css.map",
     "674.09df6358.chunk.js.map": "/intelinvest/static/js/674.09df6358.chunk.js.map",
     "590.244991de.chunk.css.map": "/intelinvest/static/css/590.244991de.chunk.css.map",
@@ -102,6 +102,6 @@
   },
   "entrypoints": [
     "static/css/main.a7e3dabc.css",
-    "static/js/main.b0ab0ea9.js"
+    "static/js/main.fe33d407.js"
   ]
 }
