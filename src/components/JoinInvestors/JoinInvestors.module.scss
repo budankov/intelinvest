@@ -32,7 +32,11 @@
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
-  padding: 310px 0 78px;
+  padding: 200px 0 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 310px 0 78px;
+  }
 
   @media screen and (min-width: 940px) {
     padding: 278px 0 220px;
@@ -44,11 +48,15 @@
   font-family: "Gilroy Semibold";
   font-size: 26px;
   letter-spacing: 0;
-  margin: 0 auto 32px;
+  margin: 0 auto 16px;
 
   & span {
     color: var(--text-blue);
     font-weight: 700;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto 32px;
   }
 }
 
@@ -60,7 +68,7 @@
   border: 2px solid var(--text-blue);
   border-radius: 33px;
   background-color: var(--text-blue);
-  padding: 14px 60px;
+  padding: 10px;
   transition: var(--timing);
 
   & span {
@@ -70,5 +78,9 @@
   &:hover {
     color: var(--blue);
     background-color: var(--white);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 60px;
   }
 }

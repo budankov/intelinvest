@@ -27,18 +27,20 @@
 }
 
 .aboutTheService {
-  background-image: url('../../images/pic6.svg');
-  // background-image: url('../../images/home-page/about-the-service/about-the-service.svg');
-  background-position: calc(100% - 30px);
-  background-repeat: no-repeat;
-  background-size: 35%;
   padding: 40px 0 35px;
   background-color: var(--section-bcg-color);
+
+  @media screen and (min-width: 768px) {
+    background-image: url('../../images/pic6.svg');
+    background-position: calc(100% - 30px);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
   @media screen and (min-width: 940px) {
     background-position: calc(100% - 330px) bottom;
     background-repeat: no-repeat;
-    background-size: 21%;
+    background-size: contain;
     padding: 50px 0px;
   }
 }

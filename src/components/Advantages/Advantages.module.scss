@@ -29,6 +29,10 @@
 .advantages__сontainer {
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 768px) {
+    gap: 40px;
+  }
 }
 
 .advantages__block {
@@ -102,8 +106,13 @@
 
 .advantages__icon {
   background-repeat: no-repeat;
-  background-size: 44px;
-  padding-top: 68px;
+  background-size: 34px;
+  padding-top: 42px;
+
+  @media screen and (min-width: 768px) {
+    background-size: 44px;
+    padding-top: 68px;
+  }
 
   &.chat {
     background-image: url('../../images/home-page/advantages/chat.svg');
@@ -186,7 +195,11 @@
 // Modal linkMore
 .linkMore {
   max-width: 600px;
-  padding: 48px;
+  padding: 40px 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 48px;
+  }
 }
 
 .linkMore__text {
@@ -208,7 +221,7 @@
   border: 2px solid var(--text-blue);
   border-radius: 33px;
   background-color: var(--text-blue);
-  padding: 14px 60px;
+  padding: 10px;
   transition: var(--timing);
 
   & span {
@@ -218,5 +231,9 @@
   &:hover {
     color: var(--blue);
     background-color: var(--white);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 60px;
   }
 }

@@ -176,9 +176,14 @@
 
     &__copyright_links {
         display: flex;
+        justify-content: center;
         gap: 12px;
         align-items: center;
         margin-bottom: 10px;
+
+        @media screen and (min-width: 768px) {
+            justify-content: left;
+        }
 
         @media screen and (min-width: 940px) {
             margin-bottom: 0;
