@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/intelinvest/static/css/main.a7e3dabc.css",
-    "main.js": "/intelinvest/static/js/main.548e5027.js",
+    "main.js": "/intelinvest/static/js/main.9e0fa891.js",
     "static/css/375.00bbc125.chunk.css": "/intelinvest/static/css/375.00bbc125.chunk.css",
-    "static/js/375.d380bda6.chunk.js": "/intelinvest/static/js/375.d380bda6.chunk.js",
+    "static/js/375.7986e61d.chunk.js": "/intelinvest/static/js/375.7986e61d.chunk.js",
     "static/css/674.b1cc7b1c.chunk.css": "/intelinvest/static/css/674.b1cc7b1c.chunk.css",
-    "static/js/674.18c35f86.chunk.js": "/intelinvest/static/js/674.18c35f86.chunk.js",
+    "static/js/674.8b11f6b4.chunk.js": "/intelinvest/static/js/674.8b11f6b4.chunk.js",
     "static/css/590.95baf8f2.chunk.css": "/intelinvest/static/css/590.95baf8f2.chunk.css",
     "static/js/590.8d2a1968.chunk.js": "/intelinvest/static/js/590.8d2a1968.chunk.js",
     "static/css/23.bfdb876a.chunk.css": "/intelinvest/static/css/23.bfdb876a.chunk.css",
@@ -18,6 +18,8 @@
     "static/js/989.f7c1ca00.chunk.js": "/intelinvest/static/js/989.f7c1ca00.chunk.js",
     "static/css/271.ed4b4b21.chunk.css": "/intelinvest/static/css/271.ed4b4b21.chunk.css",
     "static/js/271.54c55d67.chunk.js": "/intelinvest/static/js/271.54c55d67.chunk.js",
+    "static/css/352.b202b2a4.chunk.css": "/intelinvest/static/css/352.b202b2a4.chunk.css",
+    "static/js/352.9e44bd3b.chunk.js": "/intelinvest/static/js/352.9e44bd3b.chunk.js",
     "static/js/938.8de7e84e.chunk.js": "/intelinvest/static/js/938.8de7e84e.chunk.js",
     "static/js/91.217301bf.chunk.js": "/intelinvest/static/js/91.217301bf.chunk.js",
     "static/js/356.02763cc9.chunk.js": "/intelinvest/static/js/356.02763cc9.chunk.js",
@@ -78,11 +80,11 @@
     "static/media/cross-small.svg": "/intelinvest/static/media/cross-small.d3724015a28ada69681849cfbfcf9f21.svg",
     "static/media/time.svg": "/intelinvest/static/media/time.00d71a1351b33beed720.svg",
     "main.a7e3dabc.css.map": "/intelinvest/static/css/main.a7e3dabc.css.map",
-    "main.548e5027.js.map": "/intelinvest/static/js/main.548e5027.js.map",
+    "main.9e0fa891.js.map": "/intelinvest/static/js/main.9e0fa891.js.map",
     "375.00bbc125.chunk.css.map": "/intelinvest/static/css/375.00bbc125.chunk.css.map",
-    "375.d380bda6.chunk.js.map": "/intelinvest/static/js/375.d380bda6.chunk.js.map",
+    "375.7986e61d.chunk.js.map": "/intelinvest/static/js/375.7986e61d.chunk.js.map",
     "674.b1cc7b1c.chunk.css.map": "/intelinvest/static/css/674.b1cc7b1c.chunk.css.map",
-    "674.18c35f86.chunk.js.map": "/intelinvest/static/js/674.18c35f86.chunk.js.map",
+    "674.8b11f6b4.chunk.js.map": "/intelinvest/static/js/674.8b11f6b4.chunk.js.map",
     "590.95baf8f2.chunk.css.map": "/intelinvest/static/css/590.95baf8f2.chunk.css.map",
     "590.8d2a1968.chunk.js.map": "/intelinvest/static/js/590.8d2a1968.chunk.js.map",
     "23.bfdb876a.chunk.css.map": "/intelinvest/static/css/23.bfdb876a.chunk.css.map",
@@ -95,6 +97,8 @@
     "989.f7c1ca00.chunk.js.map": "/intelinvest/static/js/989.f7c1ca00.chunk.js.map",
     "271.ed4b4b21.chunk.css.map": "/intelinvest/static/css/271.ed4b4b21.chunk.css.map",
     "271.54c55d67.chunk.js.map": "/intelinvest/static/js/271.54c55d67.chunk.js.map",
+    "352.b202b2a4.chunk.css.map": "/intelinvest/static/css/352.b202b2a4.chunk.css.map",
+    "352.9e44bd3b.chunk.js.map": "/intelinvest/static/js/352.9e44bd3b.chunk.js.map",
     "938.8de7e84e.chunk.js.map": "/intelinvest/static/js/938.8de7e84e.chunk.js.map",
     "91.217301bf.chunk.js.map": "/intelinvest/static/js/91.217301bf.chunk.js.map",
     "356.02763cc9.chunk.js.map": "/intelinvest/static/js/356.02763cc9.chunk.js.map",
@@ -102,6 +106,6 @@
   },
   "entrypoints": [
     "static/css/main.a7e3dabc.css",
-    "static/js/main.548e5027.js"
+    "static/js/main.9e0fa891.js"
   ]
 }
