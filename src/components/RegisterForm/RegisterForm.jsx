@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from 'redux/auth/userSlice';
+import { addTariffsPlan } from 'redux/tariffsPlan/tariffsPlanOperations';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -16,45 +18,77 @@ import { ReactComponent as GoogleAuth } from 'images/icons/google-icon.svg';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = ({ onLoginClick }) => {
+  const today = new Date();
+
+  const [subscription, setSubscription] = useState({
+    typeSubscription: 'base',
+    startSubscription: today,
+    endSubscription: 'unlimited',
+  });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleRegister = ({ email, password }) => {
+  const handleRegister = async ({ email, password }) => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        console.log(user);
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken,
-          })
-        );
-        navigate('/app');
-        Notify.success('Ви успішно зареєструвались');
-      })
-      .catch(() => Notify.failure('Такий користувач вже існує'));
+    try {
+      const { user } = await createUserWithEmailAndPassword(auth, email, password);
+
+      const defaultTariffPlan = {
+        typeSubscription: subscription.typeSubscription,
+        startSubscription: subscription.startSubscription,
+        endSubscription: subscription.endSubscription,
+      };
+
+      // Використовуйте діспатч для додавання тарифного плану
+      await dispatch(addTariffsPlan(defaultTariffPlan));
+
+      // Збереження інформації про користувача в Redux
+      dispatch(
+        setUser({
+          email: user.email,
+          id: user.uid,
+          token: user.accessToken,
+        })
+      );
+
+      navigate('/app');
+      Notify.success('Ви успішно зареєструвались');
+    } catch (error) {
+      Notify.failure('Такий користувач вже існує');
+    }
   };
 
   const provider = new GoogleAuthProvider();
 
-  const handleGoogleLogin = () => {
+  const handleGoogleLogin = async () => {
     const auth = getAuth();
-    signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        console.log(user);
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken,
-          })
-        );
-        navigate('/app');
-        Notify.success(`${user.email} доброго дня`);
-      })
-      .catch(() => Notify.failure('Помилка під час авторизації через Google'));
+    try {
+      const { user } = await signInWithPopup(auth, provider);
+
+      const defaultTariffPlan = {
+        typeSubscription: subscription.typeSubscription,
+        startSubscription: subscription.startSubscription,
+        endSubscription: subscription.endSubscription,
+      };
+
+      // Використовуйте діспатч для додавання тарифного плану
+      await dispatch(addTariffsPlan(defaultTariffPlan));
+
+      // Збереження інформації про користувача в Redux
+      dispatch(
+        setUser({
+          email: user.email,
+          id: user.uid,
+          token: user.accessToken,
+        })
+      );
+
+      navigate('/app');
+      Notify.success(`${user.email} доброго дня`);
+    } catch (error) {
+      Notify.failure('Помилка під час авторизації через Google');
+    }
   };
 
   return (
@@ -75,7 +109,7 @@ const RegisterForm = ({ onLoginClick }) => {
           <GoogleAuth className={styles.googleAuth__icon} />
           <span className={styles.googleAuth__title}>Увійти через Google</span>
         </div>
-      </button>{' '}
+      </button>
     </div>
   );
 };

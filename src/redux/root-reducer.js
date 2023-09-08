@@ -5,6 +5,7 @@ import { SIDE_BAR_OPEN, SET_SELECTED_CURRENCY } from './actions';
 
 import authReducer from './auth/userSlice';
 import stocksSlice from './stocks/stocksSlice';
+import tariffsPlanSlice from './tariffsPlan/tariffsPlanSlice';
 import currencyConverterSlice from './currencyConverter/currencyConverterSlice';
 import stockSuggestionsSlice from './stockSuggestions/stockSuggestionsSlice';
 import stocksDashboardSlice from './stocksDashboard/stocksDashboardSlice';
@@ -41,6 +42,7 @@ const rootReducer = combineReducers({
   user: persistedAuthReducer,
   open: openReducer,
   stocks: stocksSlice,
+  tariffsPlan: tariffsPlanSlice,
   selectedCurrency: selectedCurrencyReducer,
   currencyConverter: currencyConverterSlice,
   stockSuggestions: stockSuggestionsSlice,

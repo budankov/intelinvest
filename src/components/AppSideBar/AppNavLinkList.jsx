@@ -53,12 +53,12 @@ const AppNavLinkList = [
         path: '',
         icon: <GearIcon className={styles.sideBar__navIcon} />,
         submenu: [
-            { title: 'Імпорт угод', path: 'import' },
-            { title: 'Повідомлення', path: 'notifications' },
-            { title: 'Тарифи', path: 'tariffs' },
-            { title: 'Управління тегами', path: 'tags' },
-            { title: 'Партнерська програма', path: 'promo-codes' },
-            { title: 'Профіль', path: 'profile' },
+            { title: 'Імпорт угод', path: 'settings/import' },
+            { title: 'Повідомлення', path: 'settings/notifications' },
+            { title: 'Тарифи', path: 'settings/tariffs' },
+            { title: 'Управління тегами', path: 'settings/tags' },
+            { title: 'Партнерська програма', path: 'settings/promo-codes' },
+            { title: 'Профіль', path: 'settings/profile' },
         ],
     },
     {

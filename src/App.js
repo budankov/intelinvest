@@ -12,6 +12,7 @@ const AnalyticsDashboardWrapper = lazy(() => import('./components/AnalyticsDashb
 const Reports = lazy(() => import('./components/Reports/Reports'));
 const Help = lazy(() => import('./components/Help/Help'));
 const Test = lazy(() => import('./components/Test/Test'));
+const Tariffs = lazy(() => import('./components/Tariffs/Tariffs'));
 
 const App = () => {
   return (
@@ -33,8 +34,11 @@ const App = () => {
             <Route path="calculations" element={<Test />} />
             <Route path="events" element={<Test />} />
             <Route path="rebalancing" element={<Test />} />
-            <Route path="settings/import" element={<Test />} />
-            <Route path="settings/import" element={<Test />} />
+            <Route path="settings" element={<Tariffs />}>
+              <Route index element={<Navigate to="tariffs" />} />
+              <Route path="tariffs" element={<Tariffs />} />
+              <Route path="import" element={<Test />} />
+            </Route>
             <Route path="notifications" element={<Test />} />
             <Route path="quotes/stock" element={<Test />} />
             <Route path="quotes/share-info/:id" element={<Test />} />
