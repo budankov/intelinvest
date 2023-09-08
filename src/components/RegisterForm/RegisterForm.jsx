@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from 'redux/auth/userSlice';
@@ -20,11 +19,11 @@ import styles from './RegisterForm.module.scss';
 const RegisterForm = ({ onLoginClick }) => {
   const today = new Date();
 
-  const [subscription, setSubscription] = useState({
+  const defaultTariffPlan = {
     typeSubscription: 'base',
     startSubscription: today,
     endSubscription: 'unlimited',
-  });
+  };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,12 +32,6 @@ const RegisterForm = ({ onLoginClick }) => {
     const auth = getAuth();
     try {
       const { user } = await createUserWithEmailAndPassword(auth, email, password);
-
-      const defaultTariffPlan = {
-        typeSubscription: subscription.typeSubscription,
-        startSubscription: subscription.startSubscription,
-        endSubscription: subscription.endSubscription,
-      };
 
       // Використовуйте діспатч для додавання тарифного плану
       await dispatch(addTariffsPlan(defaultTariffPlan));
@@ -65,12 +58,6 @@ const RegisterForm = ({ onLoginClick }) => {
     const auth = getAuth();
     try {
       const { user } = await signInWithPopup(auth, provider);
-
-      const defaultTariffPlan = {
-        typeSubscription: subscription.typeSubscription,
-        startSubscription: subscription.startSubscription,
-        endSubscription: subscription.endSubscription,
-      };
 
       // Використовуйте діспатч для додавання тарифного плану
       await dispatch(addTariffsPlan(defaultTariffPlan));

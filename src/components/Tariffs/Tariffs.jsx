@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { addMonths, addYears } from 'date-fns';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeTariffsPlan, fetchTariffsPlan } from 'redux/tariffsPlan/tariffsPlanOperations';
+import { useDispatch } from 'react-redux';
+import { changeTariffsPlan } from 'redux/tariffsPlan/tariffsPlanOperations';
 
 import styles from './Tariffs.module.scss';
 
