@@ -16,27 +16,24 @@
   overflow-y: scroll;
 }
 
-// .modal {
-//   min-height: 200px;
-//   min-width: 200px;
-//   border-radius: 20px;
-//   padding: 0px 20px;
-
-//   position: absolute;
-//   top: 10%;
-
-//   background-color: #fff;
-// }
-
 .modal {
   min-height: 200px;
   min-width: 200px;
   border-radius: 20px;
-
-  position: relative;
-  margin: auto 20px;
   background-color: #fff;
+  position: absolute;
+  top: 10%;
 }
+
+// .modal {
+//   min-height: 200px;
+//   min-width: 200px;
+//   border-radius: 20px;
+
+//   position: relative;
+//   margin: auto 20px;
+//   background-color: #fff;
+// }
 
 .closeBtn {
   width: 24px;
