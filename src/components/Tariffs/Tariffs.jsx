@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { addMonths, addYears } from 'date-fns';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeTariffsPlan } from 'redux/tariffsPlan/tariffsPlanOperations';
+import { fetchTariffsPlan } from 'redux/tariffsPlan/tariffsPlanOperations';
 
 import styles from './Tariffs.module.scss';
 
@@ -17,6 +18,18 @@ const Tariffs = () => {
     });
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTariffsPlan());
+    }, [dispatch]);
+
+    const tariffsPlan = useSelector((state) => state.tariffsPlan.tariffsPlan);
+    if (tariffsPlan) {
+        const firstTariff = tariffsPlan[0];
+        console.log(firstTariff);
+    }
+
+    // Решта вашого коду
 
     // Функція для обробки зміни типу підписки
     const handleSubscriptionChange = (event) => {
@@ -71,6 +84,12 @@ const Tariffs = () => {
     return (
         <div className={styles.tariffsWrapper}>
             <h2>Тарифи</h2>
+            <div>
+                <h1>Інформація про тарифний план</h1>
+                {/* <p>Тип підписки: {userTariffPlan?.typeSubscription}</p>
+                <p>Початок підписки: {userTariffPlan?.startSubscription}</p>
+                <p>Кінець підписки: {userTariffPlan?.endSubscription}</p> */}
+            </div>
             <div>
                 <h3>Виберіть тип підписки</h3>
                 <label>
